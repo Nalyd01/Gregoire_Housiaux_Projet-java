@@ -88,7 +88,7 @@ public class DBAcces implements DataAccess {
 
         clients = new ArrayList();
         while(data.next()){
-            clients.add(data.getString("nom"), data.getString("prenom"));
+            //clients.add(data.getString("nom"), data.getString("prenom"));
         }
         return clients;
     }
