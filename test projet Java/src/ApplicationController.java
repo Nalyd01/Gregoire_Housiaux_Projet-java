@@ -27,4 +27,8 @@ public class ApplicationController {
     public ArrayList getLocalite() throws SQLException{
         return manager.getLocalite();
     }
+
+    public ArrayList getClient() throws SQLException {
+        return manager.getClient();
+    }
 }

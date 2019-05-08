@@ -27,4 +27,8 @@ public class Manager {
     public ArrayList getLocalite() throws SQLException{
         return dao.getLocalite();
     }
+
+    public ArrayList getClient() throws SQLException {
+        return dao.getClient();
+    }
 }

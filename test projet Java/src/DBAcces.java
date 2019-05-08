@@ -88,8 +88,8 @@ public class DBAcces implements DataAccess {
 
         clients = new ArrayList();
         while(data.next()){
-            //clients.add(data.getString("nom"), data.getString("prenom"));
-            // récupérer 2 infos dans la table Client
+            clients.add(data.getString("nom"));
+            clients.add(data.getString("prenom")); // ne marche pas, il faurt réussir à mettre nom et prénom dans la même cellule
         }
         return clients;
     }
