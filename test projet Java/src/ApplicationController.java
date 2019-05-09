@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class ApplicationController {
@@ -30,5 +31,17 @@ public class ApplicationController {
 
     public ArrayList getClient() throws SQLException {
         return manager.getClient();
+    }
+
+    public void insertTrajet(Trajet newTrajet) throws SQLException {
+        manager.insertTrajet(newTrajet);
+    }
+
+    public int getChauffeurMatricule(String nom) throws SQLException {
+        return manager.getChauffeurMatricule(nom);
+    }
+
+    public int getClient_id(String nom) throws SQLException {
+        return manager.getClient_id(nom);
     }
 }

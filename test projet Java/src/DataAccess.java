@@ -11,4 +11,10 @@ public interface DataAccess {
     ArrayList getLocalite() throws SQLException;
 
     ArrayList getClient() throws SQLException;
+
+    void insertTrajet(Trajet newTrajet) throws SQLException;
+
+    int getChauffeurMatricule(String nom) throws SQLException;
+
+    int getClient_id(String nom) throws SQLException;
 }

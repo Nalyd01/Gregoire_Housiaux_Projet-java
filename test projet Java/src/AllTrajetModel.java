@@ -1,9 +1,13 @@
 import javax.swing.table.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class AllTrajetModel extends AbstractTableModel {
     private ArrayList<String> columnNames;
     private ArrayList<Trajet> contents;
+    private String hArriveeFormatted, hDepartFormatted;
+    private DateFormat newFormat;
 
     public AllTrajetModel(ArrayList<Trajet> trajets) {
         columnNames = new ArrayList<>();
@@ -51,8 +55,15 @@ public class AllTrajetModel extends AbstractTableModel {
             } else{
                 return "Non";
             }
-            case 9 : return trajet.getHeureArrivee();
-            case 10 : return trajet.getHeureDepart();
+            case 9: {
+                newFormat = new SimpleDateFormat("HH:mm --> dd-MMM-yyyy");
+                hArriveeFormatted = newFormat.format(trajet.getHeureArrivee());
+                return hArriveeFormatted;
+            }
+            case 10: {
+                hDepartFormatted = newFormat.format(trajet.getHeureDepart());
+                return hDepartFormatted;
+            }
             default : return null;
         }
     }

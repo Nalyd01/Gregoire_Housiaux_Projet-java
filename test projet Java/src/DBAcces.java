@@ -73,10 +73,11 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList getLocalite() throws SQLException{
-        récupData("SELECT nom FROM localite");
+        récupData("SELECT codePostal, nom FROM localite");
 
         localites = new ArrayList();
         while(data.next()){
+            localites.add(data.getInt("codePostal"));
             localites.add(data.getString("nom"));
         }
         return localites;
@@ -89,9 +90,52 @@ public class DBAcces implements DataAccess {
         clients = new ArrayList();
         while(data.next()){
             clients.add(data.getString("nom"));
-            clients.add(data.getString("prenom")); // ne marche pas, il faurt réussir à mettre nom et prénom dans la même cellule
+            clients.add(data.getString("prenom"));
         }
         return clients;
+    }
+
+    @Override
+    public void insertTrajet(Trajet newTrajet) throws SQLException {
+        connection = SingletonConnection.getInstance();
+        sql = "INSERT INTO trajet VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        statement = connection.prepareStatement(sql);
+        statement.setInt(1, newTrajet.getIdentifiant());
+        statement.setInt(2, newTrajet.getNbKm());
+        statement.setInt(3, newTrajet.getNbPassagers());
+        statement.setInt(4, newTrajet.getMatricule());
+        statement.setInt(5, newTrajet.getCodePostal());
+        statement.setString(6, newTrajet.getNom());
+        statement.setInt(7, newTrajet.getClient_id());
+        statement.setNull(8, Types.BOOLEAN);
+        statement.setBoolean(9, newTrajet.getaEuEmbouteillage());
+        statement.setTimestamp(10, newTrajet.getHeureArrivee());
+        statement.setTimestamp(11, newTrajet.getHeureDepart());
+
+        statement.executeUpdate();
+
+        // Colonnes facultatives
+        if (aEuPanne != null) {
+            sql = "UPDATE trajet SET panne = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "'";
+            statement = connection.prepareStatement(sql);
+            statement.setBoolean(1, aEuPanne);
+            statement.executeUpdate();
+        }
+    }
+
+    @Override
+    public int getChauffeurMatricule(String nom) throws SQLException {
+        sql = "SELECT matricule FROM chauffeur where nom = '" + nom + "'";
+        récupData(sql);
+        return data.getInt("matricule");
+    }
+
+    @Override
+    public int getClient_id(String nom) throws SQLException {
+        sql = "SELECT identifiant FROM client WHERE nom = '" + nom + "'";
+        récupData(sql);
+        return data.getInt("identifiant");
     }
 
     public void récupData(String sql) throws SQLException{

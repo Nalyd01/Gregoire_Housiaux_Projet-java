@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Manager {
@@ -30,5 +31,17 @@ public class Manager {
 
     public ArrayList getClient() throws SQLException {
         return dao.getClient();
+    }
+
+    public void insertTrajet(Trajet newTrajet) throws SQLException {
+        dao.insertTrajet(newTrajet);
+    }
+
+    public int getChauffeurMatricule(String nom) throws SQLException {
+        return dao.getChauffeurMatricule(nom);
+    }
+
+    public int getClient_id(String nom) throws SQLException {
+        return dao.getClient_id(nom);
     }
 }

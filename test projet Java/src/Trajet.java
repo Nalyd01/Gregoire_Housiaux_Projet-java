@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -5,11 +6,11 @@ import java.text.SimpleDateFormat;
 public class Trajet {
     private Integer identifiant, nbKm, nbPassagers, matricule, codePostal, client_id, numberOfDigits;
     private Boolean aEuPanne, aEuEmbouteillage;
-    private String nom, newFormattedDate;
+    private String nom;
     private Timestamp heureArrivee, heureDepart;
-    private DateFormat newFormat;
 
-    public Trajet(Integer identifiant, Integer nbKm, Integer nbPassagers, Integer matricule, Integer codePostal, String nom, Integer client_id, Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, CodePostalException, IdException, TimeException {
+    public Trajet(Integer identifiant, Integer nbKm, Integer nbPassagers, Integer matricule, Integer codePostal, String nom, Integer client_id,
+                  Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, CodePostalException, IdException, TimeException {
         setIdentifiant(identifiant);
         setNbKm(nbKm);
         setNbPassagers(nbPassagers);
@@ -63,25 +64,21 @@ public class Trajet {
         return nom;
     }
 
-    public String getHeureArrivee() {
-        newFormat = new SimpleDateFormat("HH:mm --> dd-MMM-yyyy");
-        newFormattedDate = newFormat.format(heureArrivee);
-        return newFormattedDate;
+    public Timestamp getHeureArrivee() {
+        return heureArrivee;
     }
 
-    public String getHeureDepart() {
-        newFormat = new SimpleDateFormat("HH:mm --> dd-MMM-yyyy");
-        newFormattedDate = newFormat.format(heureDepart);
-        return newFormattedDate;
+    public Timestamp getHeureDepart() {
+        return heureDepart;
     }
 
 
     public void setIdentifiant(Integer identifiant) throws ValeurException{
-            if(identifiant <= 0){
-                throw new ValeurException(identifiant);
-            } else{
-                this.identifiant = identifiant;
-            }
+        if(identifiant <= 0){
+            throw new ValeurException(identifiant);
+        } else{
+            this.identifiant = identifiant;
+        }
     }
 
     public void setNbKm(Integer nbKm) throws ValeurException {
