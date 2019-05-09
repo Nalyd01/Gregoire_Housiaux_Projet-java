@@ -1,14 +1,18 @@
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.EventListener;
 
 public class PanelInscriptionForm extends JPanel {
     private JLabel idLabel, kmLabel, nbPassagersLabel, chauffeurLabel, localiteLabel, clientLabel, panneLabel, embouteillageLabel, hArriveeLabel, hDepartLabel;
@@ -57,7 +61,7 @@ public class PanelInscriptionForm extends JPanel {
         }
 
         idLabel = new JLabel("Identifiant du trajet : ");
-        idLabel.setToolTipText("L'identifiant doit être composé de 6 chiffres");
+        idLabel.setToolTipText("L'identifiant doit être composé de maximum 6 chiffres");
         this.add(idLabel);
 
         idText = new JFormattedTextField();
@@ -90,13 +94,13 @@ public class PanelInscriptionForm extends JPanel {
         this.add(localiteLabel);
 
         this.add(comboBoxLocalites);
-        comboBoxLocalites.addItemListener(new ComboBoxListener());
+        //comboBoxLocalites.addItemListener(new ComboBoxListener());
 
         clientLabel = new JLabel("Nom et prénom du client : ");
         this.add(clientLabel);
 
         this.add(comboBoxClients);
-        comboBoxClients.addItemListener(new ComboBoxListener());
+        //comboBoxClients.addItemListener(new ComboBoxListener());
 
         jRadioButtonGroup = new ButtonGroup();
 
@@ -137,6 +141,7 @@ public class PanelInscriptionForm extends JPanel {
         editor = new JSpinner.DateEditor(pointDépart, "dd-MM-yyyy HH:mm");
         pointDépart.setEditor(editor);
         this.add(pointDépart);
+        pointDépart.addChangeListener(new JSpinnerListener());
 
         hArriveeLabel = new JLabel("Date et heure d'arrivée du trajet : ");
         this.add(hArriveeLabel);
@@ -147,9 +152,11 @@ public class PanelInscriptionForm extends JPanel {
         editor = new JSpinner.DateEditor(pointFin, "dd-MM-yyyy HH:mm");
         pointFin.setEditor(editor);
         this.add(pointFin);
+        pointFin.addChangeListener(new JSpinnerListener());
 
         insert = new JButton("Insérer le trajet dans la base de données");
         this.add(insert);
+        insert.addActionListener(new InsertListener());
     }
 
     public void concat(String[] tab) {
@@ -194,19 +201,20 @@ public class PanelInscriptionForm extends JPanel {
         public void itemStateChanged(ItemEvent event) {
             try {
                 if (event.getSource() == comboBoxChauffeurs) {
-                    newTrajet.setMatricule(controller.getChauffeurMatricule(comboBoxChauffeurs.getSelectedItem().toString()));
-                }
-                if (event.getSource() == comboBoxLocalites) {
-                    String selectLocalite = comboBoxLocalites.getSelectedItem().toString();
-                    récupAvantEspace(selectLocalite);
-                    int codePostal = Integer.parseInt(selectLocalite);
-                    newTrajet.setCodePostal(codePostal);
-                }
-                if (event.getSource() == comboBoxClients) {
-                    String selectClient = comboBoxClients.getSelectedItem().toString();
-                    récupAvantEspace(selectClient);
-                    int client_id = Integer.parseInt(selectClient);
-                    newTrajet.setClient_id(client_id);
+                    String chauffeur = comboBoxChauffeurs.getSelectedItem().toString();
+                    newTrajet.setMatricule(controller.getChauffeurMatricule(chauffeur));
+                } else {
+                    if (event.getSource() == comboBoxLocalites) {
+                        String selectLocalite = comboBoxLocalites.getSelectedItem().toString();
+                        récupAvantEspace(selectLocalite);
+                        int codePostal = Integer.parseInt(selectLocalite);
+                        newTrajet.setCodePostal(codePostal);
+                    } else {
+                        String selectClient = comboBoxClients.getSelectedItem().toString();
+                        récupAvantEspace(selectClient);
+                        int client_id = Integer.parseInt(selectClient);
+                        newTrajet.setClient_id(client_id);
+                    }
                 }
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -223,12 +231,11 @@ public class PanelInscriptionForm extends JPanel {
     private class JRadioButtonListener implements ItemListener {
 
         public void itemStateChanged(ItemEvent event) {
-            if (event.getSource() == panne && event.getStateChange() == ItemEvent.SELECTED) {
+            if (panne.isSelected()) {
                 newTrajet.setaEuPanne(true);
-            } else if (event.getSource() == notPanne && event.getStateChange() == ItemEvent.SELECTED) {
+            } else {
                 newTrajet.setaEuPanne(false);
             }
-
             if (event.getSource() == embouteillage && event.getStateChange() == ItemEvent.SELECTED) {
                 newTrajet.setaEuEmbouteillage(true);
             } else if (event.getSource() == embouteillage && event.getStateChange() == ItemEvent.SELECTED) {
@@ -237,6 +244,31 @@ public class PanelInscriptionForm extends JPanel {
         }
     }
 
+    private class JSpinnerListener implements ChangeListener {
 
+        public void stateChanged(ChangeEvent event) {
+            try {
+                if (event.getSource() == pointDépart) {
+                    newTrajet.setHeureArrivee((Timestamp) pointDépart.getValue());
+                }
+                if (event.getSource() == pointFin) {
+                    newTrajet.setHeureDepart((Timestamp) pointFin.getValue());
+                }
+            } catch (TimeException timeException) {
+                JOptionPane.showMessageDialog(null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    private class InsertListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent event) {
+            try {
+                controller.insertTrajet(newTrajet);
+            } catch (SQLException sqlException) {
+                JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
 
 }

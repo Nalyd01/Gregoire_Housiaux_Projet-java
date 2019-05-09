@@ -20,12 +20,8 @@ public class Trajet {
         setClient_id(client_id);
         setaEuPanne(aEuPanne);
         setaEuEmbouteillage(aEuEmbouteillage);
-        if(heureArrivee.after(heureDepart)){
-            this.heureArrivee = heureArrivee;
-            this.heureDepart = heureDepart;
-        } else{
-            throw new TimeException();
-        }
+        this.heureDepart = heureDepart;
+        setHeureArrivee(heureArrivee);
     }
 
     public Integer getIdentifiant() {
@@ -132,6 +128,22 @@ public class Trajet {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public void setHeureArrivee(Timestamp heureArrivee) throws TimeException {
+        if (heureArrivee.after(heureDepart)) {
+            this.heureArrivee = heureArrivee;
+        } else {
+            throw new TimeException();
+        }
+    }
+
+    public void setHeureDepart(Timestamp heureDepart) throws TimeException {
+        if (heureDepart.before(heureArrivee)) {
+            this.heureDepart = heureDepart;
+        } else {
+            throw new TimeException();
+        }
     }
 
 }
