@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class AppWindow extends JFrame {
     private Container frameContainer;
-    private MainPanel panel;
+    private WelcomePanel panel;
     private JMenuBar menuBar;
     private JMenu welcome, insert, change, suppression, listing, research, businessTask;
     private JMenuItem welcomeMenu, newTrip, changeTrip, deleteTrip, listTrip, research1, research2, research3, costTrip;
@@ -19,7 +19,7 @@ public class AppWindow extends JFrame {
         super("Gestion de société de taxis");
         setBounds(100,100,500,500);
 
-        panel = new MainPanel();
+        panel = new WelcomePanel();
         frameContainer = this.getContentPane();
         frameContainer.setLayout(new BorderLayout());
         frameContainer.add(panel,BorderLayout.CENTER);
