@@ -12,10 +12,13 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+<<<<<<< HEAD:test projet Java/src/View/PanelInscriptionForm.java
 import Tools.*;
 
 import Constroller.ApplicationController;
 import Exception.*;
+=======
+>>>>>>> 398494ad22a3c693d2e4099c4b6b4d6509b7d0a6:test projet Java/src/PanelInscriptionForm.java
 
 public class PanelInscriptionForm extends JPanel {
     private JLabel idLabel, kmLabel, nbPassagersLabel, chauffeurLabel, localiteLabel, clientLabel, panneLabel, embouteillageLabel, hArriveeLabel, hDepartLabel;
@@ -97,13 +100,13 @@ public class PanelInscriptionForm extends JPanel {
         this.add(localiteLabel);
 
         this.add(comboBoxLocalites);
-        //comboBoxLocalites.addItemListener(new ComboBoxListener());
+        comboBoxLocalites.addItemListener(new ComboBoxListener());
 
         clientLabel = new JLabel("Nom et prénom du client : ");
         this.add(clientLabel);
 
         this.add(comboBoxClients);
-        //comboBoxClients.addItemListener(new ComboBoxListener());
+        comboBoxClients.addItemListener(new ComboBoxListener());
 
         jRadioButtonGroup = new ButtonGroup();
 
@@ -234,14 +237,14 @@ public class PanelInscriptionForm extends JPanel {
     private class JRadioButtonListener implements ItemListener {
 
         public void itemStateChanged(ItemEvent event) {
-            if (panne.isSelected()) {
+            if (event.getSource() == panne) {
                 newTrajet.setaEuPanne(true);
             } else {
                 newTrajet.setaEuPanne(false);
             }
-            if (event.getSource() == embouteillage && event.getStateChange() == ItemEvent.SELECTED) {
+            if (event.getSource() == embouteillage) {
                 newTrajet.setaEuEmbouteillage(true);
-            } else if (event.getSource() == embouteillage && event.getStateChange() == ItemEvent.SELECTED) {
+            } else {
                 newTrajet.setaEuEmbouteillage(false);
             }
         }

@@ -13,7 +13,6 @@ public class DBAcces implements DataAccess {
     private ArrayList<Trajet> allTrajets;
     private PreparedStatement statement;
     private ResultSet data;
-    private ResultSetMetaData meta;
     private ArrayList chauffeurs, localites, clients;
 
     @Override
@@ -25,9 +24,6 @@ public class DBAcces implements DataAccess {
 
         // Récupération des données
         data = statement.executeQuery();
-
-        // Récupération des méta-données
-        meta = data.getMetaData();
 
         allTrajets = new ArrayList<>();
         while(data.next()){

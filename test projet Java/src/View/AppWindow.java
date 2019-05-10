@@ -12,7 +12,8 @@ public class AppWindow extends JFrame {
     private MainPanel panel;
     private JMenuBar menuBar;
     private JMenu welcome, insert, change, suppression, listing, research, businessTask;
-    private JMenuItem newTrip, changeTrip, deleteTrip, listTrip, research1,research2, research3, costTrip;
+    private JMenuItem welcomeMenu, newTrip, changeTrip, deleteTrip, listTrip, research1, research2, research3, costTrip;
+    private JScrollPane scroller;
 
     public AppWindow(){
         super("Gestion de société de taxis");
@@ -28,7 +29,12 @@ public class AppWindow extends JFrame {
 
             welcome = new JMenu("Accueil");
             menuBar.add(welcome);
-                welcome.addActionListener(new AccueilListener());
+
+        welcomeMenu = new JMenuItem("Message d'accueil");
+        welcome.add(welcomeMenu);
+
+        AccueilListener welcomeListener = new AccueilListener();
+        welcomeMenu.addActionListener(welcomeListener);
 
             insert = new JMenu("Insertion");
             menuBar.add(insert);
@@ -98,14 +104,20 @@ public class AppWindow extends JFrame {
     private class AccueilListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event){
+            frameContainer.removeAll();
+            frameContainer.add(new WelcomePanel(), BorderLayout.CENTER);
+            frameContainer.repaint();
+            AppWindow.this.setVisible(true);
         }
     }
 
     private class InsertListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
+            scroller = new JScrollPane(new InsertForm());
             frameContainer.removeAll();
             frameContainer.add(new InsertForm(),BorderLayout.CENTER);
+            frameContainer.add(scroller, BorderLayout.CENTER);
             frameContainer.repaint();
             AppWindow.this.setVisible(true);
         }
