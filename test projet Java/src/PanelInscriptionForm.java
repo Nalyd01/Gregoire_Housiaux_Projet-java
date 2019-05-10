@@ -1,18 +1,15 @@
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.EventListener;
 
 public class PanelInscriptionForm extends JPanel {
     private JLabel idLabel, kmLabel, nbPassagersLabel, chauffeurLabel, localiteLabel, clientLabel, panneLabel, embouteillageLabel, hArriveeLabel, hDepartLabel;
@@ -94,13 +91,13 @@ public class PanelInscriptionForm extends JPanel {
         this.add(localiteLabel);
 
         this.add(comboBoxLocalites);
-        //comboBoxLocalites.addItemListener(new ComboBoxListener());
+        comboBoxLocalites.addItemListener(new ComboBoxListener());
 
         clientLabel = new JLabel("Nom et prénom du client : ");
         this.add(clientLabel);
 
         this.add(comboBoxClients);
-        //comboBoxClients.addItemListener(new ComboBoxListener());
+        comboBoxClients.addItemListener(new ComboBoxListener());
 
         jRadioButtonGroup = new ButtonGroup();
 
@@ -231,14 +228,14 @@ public class PanelInscriptionForm extends JPanel {
     private class JRadioButtonListener implements ItemListener {
 
         public void itemStateChanged(ItemEvent event) {
-            if (panne.isSelected()) {
+            if (event.getSource() == panne) {
                 newTrajet.setaEuPanne(true);
             } else {
                 newTrajet.setaEuPanne(false);
             }
-            if (event.getSource() == embouteillage && event.getStateChange() == ItemEvent.SELECTED) {
+            if (event.getSource() == embouteillage) {
                 newTrajet.setaEuEmbouteillage(true);
-            } else if (event.getSource() == embouteillage && event.getStateChange() == ItemEvent.SELECTED) {
+            } else {
                 newTrajet.setaEuEmbouteillage(false);
             }
         }

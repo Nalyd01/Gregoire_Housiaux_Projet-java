@@ -1,7 +1,5 @@
-import java.sql.Time;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 
 public class Trajet {
     private Integer identifiant, nbKm, nbPassagers, matricule, codePostal, client_id, numberOfDigits;
