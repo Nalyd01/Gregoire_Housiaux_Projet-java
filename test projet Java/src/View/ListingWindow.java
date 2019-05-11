@@ -21,7 +21,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(){
         super("Listing des trajets");
-        setBounds(100,100,1000,400);
+        setBounds(100,100,1250,500);
 
         controller = new ApplicationController();
         panel = new JPanel();

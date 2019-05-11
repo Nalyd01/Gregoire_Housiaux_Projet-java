@@ -13,7 +13,7 @@ import Tools.*;
 import Constroller.ApplicationController;
 
 
-public class TajectFormPanel extends JPanel {
+public class TrajectFormPanel extends JPanel {
     private JLabel idLabel, kmLabel, nbPassagersLabel, chauffeurLabel, localiteLabel, clientLabel, panneLabel, embouteillageLabel, hArriveeLabel, hDepartLabel;
     private JTextField idText, kmText, nbPassagersText;
     private JComboBox comboBoxChauffeurs, comboBoxLocalites, comboBoxClients;
@@ -27,7 +27,31 @@ public class TajectFormPanel extends JPanel {
     private JButton insert;
     private Trajet newTrajet;
 
-    public TajectFormPanel(){
+    public TrajectFormPanel(String id, String nbKm,String nbPassager, boolean aEuPanne, boolean aEuEmbouteillage, String matricule, String codePostal, String nomLocalité, String idCLient){
+        this();
+        idText.setText(id);
+        idText.setEditable(false);
+        kmText.setText(nbKm);
+        nbPassagersText.setText(nbPassager);
+        if(aEuPanne){
+            panne.setSelected(true);
+        }else{
+            notPanne.setSelected(false);
+        }
+        if(aEuEmbouteillage){
+            embouteillage.setSelected(true);
+        }else{
+            notEmbouteillage.setSelected(false);
+        }
+
+        setComboBoxSelection(comboBoxChauffeurs, matricule);
+        setComboBoxSelection(comboBoxLocalites, codePostal +" " + nomLocalité);
+        setComboBoxSelection(comboBoxClients, idCLient);
+
+    }
+
+
+    public TrajectFormPanel(){
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         controller = new ApplicationController();
 
@@ -166,6 +190,16 @@ public class TajectFormPanel extends JPanel {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
             }catch(Exception e){
                 e.printStackTrace();
+            }
+        }
+    }
+
+    public void setComboBoxSelection(JComboBox comboBox, String str){
+        String itemComboBox;
+        for(int i = 0; i < comboBox.getItemCount(); i++){
+            itemComboBox = (String)comboBox.getItemAt(i);
+            if (itemComboBox.contains(" " + str + " ")){
+                comboBox.setSelectedIndex(i);
             }
         }
     }

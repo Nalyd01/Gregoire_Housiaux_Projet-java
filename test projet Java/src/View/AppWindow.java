@@ -117,7 +117,7 @@ public class AppWindow extends JFrame {
     private class InsertListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
-            scroller = new JScrollPane(new TajectFormPanel());
+            scroller = new JScrollPane(new TrajectFormPanel());
             frameContainer.removeAll();
             frameContainer.add(scroller, BorderLayout.CENTER);
             frameContainer.repaint();
@@ -127,7 +127,7 @@ public class AppWindow extends JFrame {
 
     private class ModifyListener implements  ActionListener{
         public void actionPerformed(ActionEvent event){
-            new ModifyWindow();
+            new ModifyWindow(AppWindow.this);
         }
     }
 
@@ -154,6 +154,11 @@ public class AppWindow extends JFrame {
             AppWindow.this.setVisible(true);
         }
     }
+
+    public Container getFrameContainer(){
+        return frameContainer;
+    }
+
 
 }
 
