@@ -135,7 +135,7 @@ public class Trajet {
     }
 
     public void setHeureArrivee(Timestamp heureArrivee) throws TimeException {
-        if (heureArrivee.after(heureDepart)) {
+        if(heureArrivee.after(heureDepart)){
             this.heureArrivee = heureArrivee;
         } else {
             throw new TimeException();

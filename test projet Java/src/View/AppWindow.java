@@ -117,7 +117,7 @@ public class AppWindow extends JFrame {
     private class InsertListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
-            scroller = new JScrollPane(new TrajectFormPanel());
+            scroller = new JScrollPane(new TrajectFormPanel(AppWindow.this));
             frameContainer.removeAll();
             frameContainer.add(scroller, BorderLayout.CENTER);
             frameContainer.repaint();

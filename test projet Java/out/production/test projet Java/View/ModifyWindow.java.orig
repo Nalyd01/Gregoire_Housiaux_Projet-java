@@ -1,28 +1,31 @@
 package View;
 
-
+<<<<<<< HEAD
+import Constroller.ApplicationController;
+=======
 import Controller.ApplicationController;
-import Tools.AllTrajetModel;
 
+>>>>>>> 01f0a6e14686c03efe5f1d1cca0878324d49d04c
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 01f0a6e14686c03efe5f1d1cca0878324d49d04c
 
 public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
-    private ApplicationController controller;
+
     public ModifyWindow(AppWindow appWindow){
         this.appWindow = appWindow;
         modifyButt = new JButton("Modifier");
         this.add(modifyButt, BorderLayout.SOUTH);
 
-        ModifyButtonListener deleteButtonListener = new ModifyButtonListener();
+       ModifyButtonListener deleteButtonListener = new ModifyButtonListener();
         modifyButt.addActionListener(deleteButtonListener);
-
     }
 
     private class ModifyButtonListener implements ActionListener {
@@ -40,22 +43,11 @@ public class ModifyWindow extends ListingWindow {
             boolean panne = ((getTable().getValueAt(selectedRow,7)).equals("Non") ? false : true);
             boolean embouteillage = ((getTable().getValueAt(selectedRow,8)).equals("Non") ? false : true);
 
-            JScrollPane scroller = new JScrollPane(new TrajectFormPanel(id,nbKm, nbPassager, panne, embouteillage, matricule, codePostal, nomLocalite, idClient, appWindow));
+            JScrollPane scroller = new JScrollPane(new TrajectFormPanel(id,nbKm, nbPassager, panne, embouteillage, matricule, codePostal, nomLocalite, idClient));
             appWindow.getFrameContainer().removeAll();
             appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
             appWindow.getFrameContainer().repaint();
             appWindow.setVisible(true);
-
-            controller = new ApplicationController();
-            int selectLine = getTable().getSelectedRow();
-            String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
-            try{
-                controller.removeTrajet(request);
-                ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
-            }
-            catch(SQLException exception){
-                JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
-            }
 
             ModifyWindow.this.dispose();
 

@@ -1,6 +1,7 @@
 package View;
-
+import Exception.TimeException;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -25,9 +26,10 @@ public class TrajectFormPanel extends JPanel {
     private JSpinner.DateEditor editor;
     private JButton insert;
     private Trajet newTrajet;
+    private AppWindow appWindow;
 
-    public TrajectFormPanel(String id, String nbKm,String nbPassager, boolean aEuPanne, boolean aEuEmbouteillage, String matricule, String codePostal, String nomLocalité, String idCLient){
-        this();
+    public TrajectFormPanel(String id, String nbKm,String nbPassager, boolean aEuPanne, boolean aEuEmbouteillage, String matricule, String codePostal, String nomLocalité, String idCLient, AppWindow appWindow){
+        this(appWindow);
         idText.setText(id);
         idText.setEditable(false);
         kmText.setText(nbKm);
@@ -50,7 +52,8 @@ public class TrajectFormPanel extends JPanel {
     }
 
 
-    public TrajectFormPanel(){
+    public TrajectFormPanel(AppWindow appWindow){
+        this.appWindow = appWindow;
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         controller = new ApplicationController();
 
@@ -154,6 +157,7 @@ public class TrajectFormPanel extends JPanel {
         editor = new JSpinner.DateEditor(pointFin, "dd-MM-yyyy HH:mm");
         pointFin.setEditor(editor);
         this.add(pointFin);
+        pointDépart.setValue(pointFin.getValue());
 
         insert = new JButton("Insérer le trajet dans la base de données");
         this.add(insert);
@@ -185,8 +189,16 @@ public class TrajectFormPanel extends JPanel {
 
                 JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
 
+                JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
+                appWindow.getFrameContainer().removeAll();
+                appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
+                appWindow.getFrameContainer().repaint();
+                appWindow.setVisible(true);
+
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+            }catch (TimeException timeException){
+                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure a la date d'arrivée" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
             }catch(Exception e){
                 e.printStackTrace();
             }
