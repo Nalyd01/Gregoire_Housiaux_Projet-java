@@ -1,6 +1,6 @@
 package View;
 
-import Constroller.ApplicationController;
+import Controller.ApplicationController;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,7 +49,7 @@ public class Research3Panel extends JPanel {
             pointDépart = new JSpinner();
             model = new SpinnerDateModel();
             pointDépart.setModel(model);
-            editor = new JSpinner.DateEditor(pointDépart,"yyyy-mm-dd hh:mm:ss");
+            editor = new JSpinner.DateEditor(pointDépart,"dd-MM-yyyy hh:mm:ss");
             pointDépart.setEditor(editor);
             this.add(pointDépart);
 
@@ -62,7 +62,7 @@ public class Research3Panel extends JPanel {
             pointFin = new JSpinner();
             model = new SpinnerDateModel();
             pointFin.setModel(model);
-            editor = new JSpinner.DateEditor(pointFin,"yyyy-mm-dd hh:mm:ss");
+            editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy hh:mm:ss");
             pointFin.setEditor(editor);
             this.add(pointFin);
 

@@ -10,8 +10,7 @@ import java.util.Collections;
 import java.util.Date;
 
 import Tools.*;
-import Constroller.ApplicationController;
-
+import Controller.ApplicationController;
 
 public class TrajectFormPanel extends JPanel {
     private JLabel idLabel, kmLabel, nbPassagersLabel, chauffeurLabel, localiteLabel, clientLabel, panneLabel, embouteillageLabel, hArriveeLabel, hDepartLabel;
@@ -184,7 +183,7 @@ public class TrajectFormPanel extends JPanel {
 
                 controller.insertTrajet(newTrajet);
 
-                JOptionPane.showMessageDialog(null, "Trajet Créer avec Succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
 
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
