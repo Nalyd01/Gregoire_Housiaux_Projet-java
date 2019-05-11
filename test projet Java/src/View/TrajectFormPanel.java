@@ -84,21 +84,26 @@ public class TrajectFormPanel extends JPanel {
         this.add(idLabel);
 
         idText = new JFormattedTextField();
-            this.add(idText);
-
+        idText.setEditable(false);
+        try{
+            idText.setText(controller.getIdTrajet());
+        } catch (SQLException sqlException) {
+            JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+        }
+        this.add(idText);
 
         kmLabel = new JLabel("Nombre de km parcourus : ");
         kmLabel.setToolTipText("A partir du point de départ jusqu'à l'arrivée");
         this.add(kmLabel);
 
-            kmText = new JTextField();
-            this.add(kmText);
+        kmText = new JTextField();
+        this.add(kmText);
 
         nbPassagersLabel = new JLabel("Nombre de passagers : ");
         this.add(nbPassagersLabel);
 
-            nbPassagersText = new JTextField();
-            this.add(nbPassagersText);
+        nbPassagersText = new JTextField();
+        this.add(nbPassagersText);
 
         chauffeurLabel = new JLabel("Nom du chauffeur : ");
         this.add(chauffeurLabel);

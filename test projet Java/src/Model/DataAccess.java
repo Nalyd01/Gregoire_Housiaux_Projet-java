@@ -16,6 +16,8 @@ public interface DataAccess {
 
     ArrayList getClient() throws SQLException;
 
+    String getIdTrajet() throws SQLException;
+
     void insertTrajet(Trajet newTrajet) throws SQLException;
 
 }

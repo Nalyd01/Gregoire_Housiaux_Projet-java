@@ -5,16 +5,14 @@ import Exception.*;
 
 import java.sql.Timestamp;
 
-
-
 public class Trajet {
     private int identifiant, nbKm, nbPassagers, matricule, codePostal, client_id, numberOfDigits;
     private Boolean aEuPanne, aEuEmbouteillage;
     private String nom;
     private Timestamp heureArrivee, heureDepart;
 
-    public Trajet(Integer identifiant, Integer nbKm, Integer nbPassagers, Integer matricule, Integer codePostal, String nom, Integer client_id,
-                  Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, CodePostalException, IdException, TimeException {
+    public Trajet(int identifiant, int nbKm, int nbPassagers, int matricule, int codePostal, String nom, int client_id,
+                  Boolean aEuPanne, boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, CodePostalException, IdException, TimeException {
         setIdentifiant(identifiant);
         setNbKm(nbKm);
         setNbPassagers(nbPassagers);
@@ -28,27 +26,27 @@ public class Trajet {
         setHeureArrivee(heureArrivee);
     }
 
-    public Integer getIdentifiant() {
+    public int getIdentifiant() {
         return identifiant;
     }
 
-    public Integer getNbKm() {
+    public int getNbKm() {
         return nbKm;
     }
 
-    public Integer getNbPassagers() {
+    public int getNbPassagers() {
         return nbPassagers;
     }
 
-    public Integer getMatricule() {
+    public int getMatricule() {
         return matricule;
     }
 
-    public Integer getCodePostal() {
+    public int getCodePostal() {
         return codePostal;
     }
 
-    public Integer getClient_id() {
+    public int getClient_id() {
         return client_id;
     }
 
@@ -56,7 +54,7 @@ public class Trajet {
         return aEuPanne;
     }
 
-    public Boolean getaEuEmbouteillage() {
+    public boolean getaEuEmbouteillage() {
         return aEuEmbouteillage;
     }
 
@@ -137,14 +135,6 @@ public class Trajet {
     public void setHeureArrivee(Timestamp heureArrivee) throws TimeException {
         if(heureArrivee.after(heureDepart)){
             this.heureArrivee = heureArrivee;
-        } else {
-            throw new TimeException();
-        }
-    }
-
-    public void setHeureDepart(Timestamp heureDepart) throws TimeException {
-        if (heureDepart.before(heureArrivee)) {
-            this.heureDepart = heureDepart;
         } else {
             throw new TimeException();
         }

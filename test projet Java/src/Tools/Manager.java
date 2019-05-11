@@ -25,20 +25,24 @@ public class Manager {
         return dao.getAllTrajets(codePostal, nomLocalite ,date1, date2);
     }
 
-    public void removeTrajet(String request) throws SQLException{
+    public void removeTrajet(String request) throws SQLException {
         dao.removeTrajet(request);
     }
 
-    public ArrayList getChauffeurs() throws SQLException{
+    public ArrayList getChauffeurs() throws SQLException {
         return dao.getChauffeurs();
     }
 
-    public ArrayList getLocalite() throws SQLException{
+    public ArrayList getLocalite() throws SQLException {
         return dao.getLocalite();
     }
 
     public ArrayList getClient() throws SQLException {
         return dao.getClient();
+    }
+
+    public String getIdTrajet() throws SQLException {
+        return dao.getIdTrajet();
     }
 
     public void insertTrajet(Trajet newTrajet) throws SQLException {

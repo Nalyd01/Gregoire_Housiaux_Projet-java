@@ -41,6 +41,10 @@ public class ApplicationController {
         return manager.getClient();
     }
 
+    public String getIdTrajet() throws SQLException {
+        return manager.getIdTrajet();
+    }
+
     public void insertTrajet(Trajet newTrajet) throws SQLException {
         manager.insertTrajet(newTrajet);
     }

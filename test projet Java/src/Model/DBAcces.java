@@ -116,6 +116,13 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
+    public String getIdTrajet() throws SQLException{
+        récupData("SELECT MAX(identifiant) FROM trajet");
+        data.next();
+        return String.valueOf(data.getInt(1)+1);
+    }
+
+    @Override
     public void insertTrajet(Trajet newTrajet) throws SQLException {
         connection = SingletonConnection.getInstance();
         sql = "INSERT INTO trajet VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
