@@ -36,13 +36,34 @@ public class DBAcces implements DataAccess {
     public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
-        sql = "SELECT * FROM Trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND matricule = ?;";
+        sql = "SELECT * FROM trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND matricule = ?;";
 
         statement = connection.prepareStatement(sql);
 
-            statement.setTimestamp(1, date1);
-            statement.setTimestamp(2, date2);
-            statement.setInt(3,matricule);
+        statement.setTimestamp(1, date1);
+        statement.setTimestamp(2, date2);
+        statement.setInt(3,matricule);
+
+        data = statement.executeQuery();
+
+        allTrajets = new ArrayList<>();
+        while(data.next()){
+            créaTrajets();
+        }
+        return allTrajets;
+    }
+
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+        connection = SingletonConnection.getInstance();
+
+        sql = "SELECT * FROM trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND codePostal = ? AND nom = ?;";
+
+        statement = connection.prepareStatement(sql);
+
+        statement.setTimestamp(1, date1);
+        statement.setTimestamp(2, date2);
+        statement.setInt(3, codePostal);
+        statement.setString(4, nomLocalite);
 
         data = statement.executeQuery();
 

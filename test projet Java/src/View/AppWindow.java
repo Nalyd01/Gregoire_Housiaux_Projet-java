@@ -86,8 +86,9 @@ public class AppWindow extends JFrame {
                 research3 = new JMenuItem("Listing des clients d’un chauffeur à une certaine date");
                 research.add(research3);
 
-                    ResearchListener researchListener = new ResearchListener();
-                    research3.addActionListener(researchListener);
+                ResearchListener researchListener = new ResearchListener();
+                research1.addActionListener(researchListener);
+                research3.addActionListener(researchListener);
 
             businessTask = new JMenu("Tâche métier");
             menuBar.add(businessTask);
@@ -149,8 +150,14 @@ public class AppWindow extends JFrame {
 
         public void actionPerformed(ActionEvent event) {
             frameContainer.removeAll();
-            frameContainer.add(new Research3Panel(), BorderLayout.NORTH);
-            frameContainer.repaint();
+            if(event.getSource() == research1){
+                frameContainer.add(new Research1Panel(), BorderLayout.NORTH);
+                frameContainer.repaint();
+            }
+            if(event.getSource() == research3){
+                frameContainer.add(new Research3Panel(), BorderLayout.NORTH);
+                frameContainer.repaint();
+            }
             AppWindow.this.setVisible(true);
         }
     }

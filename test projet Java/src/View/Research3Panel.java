@@ -17,8 +17,6 @@ public class Research3Panel extends JPanel {
     private JSpinner pointDépart, pointFin;
     private SpinnerDateModel model;
     private JSpinner.DateEditor editor;
-    private String selectChauffeur;
-    private String dateD, dateF;
     private JButton researchButton;
     private ArrayList list;
 
@@ -30,6 +28,7 @@ public class Research3Panel extends JPanel {
         this.add(chauffeur);
 
         controller = new ApplicationController();
+
         try{
             list = controller.getChauffeurs();
             Collections.sort(list);
@@ -46,12 +45,12 @@ public class Research3Panel extends JPanel {
         dateDébut.setHorizontalAlignment(SwingConstants.RIGHT);
         this.add(dateDébut);
 
-            pointDépart = new JSpinner();
-            model = new SpinnerDateModel();
-            pointDépart.setModel(model);
-            editor = new JSpinner.DateEditor(pointDépart,"dd-MM-yyyy hh:mm:ss");
-            pointDépart.setEditor(editor);
-            this.add(pointDépart);
+        pointDépart = new JSpinner();
+        model = new SpinnerDateModel();
+        pointDépart.setModel(model);
+        editor = new JSpinner.DateEditor(pointDépart,"dd-MM-yyyy HH:mm:ss");
+        pointDépart.setEditor(editor);
+        this.add(pointDépart);
 
 
 
@@ -59,12 +58,12 @@ public class Research3Panel extends JPanel {
         dateFin.setHorizontalAlignment(SwingConstants.RIGHT);
         this.add(dateFin);
 
-            pointFin = new JSpinner();
-            model = new SpinnerDateModel();
-            pointFin.setModel(model);
-            editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy hh:mm:ss");
-            pointFin.setEditor(editor);
-            this.add(pointFin);
+        pointFin = new JSpinner();
+        model = new SpinnerDateModel();
+        pointFin.setModel(model);
+        editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy HH:mm:ss");
+        pointFin.setEditor(editor);
+        this.add(pointFin);
 
 
         researchButton = new JButton("Rechercher");

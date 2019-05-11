@@ -15,6 +15,7 @@ public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
     private ApplicationController controller;
+
     public ModifyWindow(AppWindow appWindow){
         this.appWindow = appWindow;
         modifyButt = new JButton("Modifier");

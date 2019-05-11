@@ -21,6 +21,10 @@ public class Manager {
         return dao.getAllTrajets(matricule ,date1, date2);
     }
 
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        return dao.getAllTrajets(codePostal, nomLocalite ,date1, date2);
+    }
+
     public void removeTrajet(String request) throws SQLException{
         dao.removeTrajet(request);
     }

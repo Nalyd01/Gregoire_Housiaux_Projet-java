@@ -21,6 +21,10 @@ public class ApplicationController {
         return manager.getAllTrajets(matricule, date1, date2);
     }
 
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        return manager.getAllTrajets(codePostal, nomLocalite, date1, date2);
+    }
+
     public void removeTrajet(String request) throws SQLException{
         manager.removeTrajet(request);
     }
