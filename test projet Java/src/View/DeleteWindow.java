@@ -1,6 +1,6 @@
 package View;
 
-import Constroller.ApplicationController;
+import Controller.ApplicationController;
 import Tools.AllTrajetModel;
 import javax.swing.*;
 import java.awt.*;

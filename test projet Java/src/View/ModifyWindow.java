@@ -1,13 +1,11 @@
 package View;
 
-import Constroller.ApplicationController;
-import Tools.AllTrajetModel;
+import Controller.ApplicationController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class ModifyWindow extends ListingWindow {
     private ApplicationController controller;
