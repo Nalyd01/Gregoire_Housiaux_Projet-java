@@ -44,7 +44,7 @@ public class ApplicationController {
         return manager.getChauffeurMatricule(nom);
     }
 
-    public int getClient_id(String nom) throws SQLException {
-        return manager.getClient_id(nom);
+    public int getClientIdByName(String nom) throws SQLException {
+        return manager.getClientIdByName(nom);
     }
 }

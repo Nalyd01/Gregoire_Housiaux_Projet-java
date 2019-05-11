@@ -114,9 +114,8 @@ public class AppWindow extends JFrame {
     private class InsertListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
-            scroller = new JScrollPane(new InsertForm());
+            scroller = new JScrollPane(new TrajetForm());
             frameContainer.removeAll();
-            frameContainer.add(new InsertForm(),BorderLayout.CENTER);
             frameContainer.add(scroller, BorderLayout.CENTER);
             frameContainer.repaint();
             AppWindow.this.setVisible(true);

@@ -1,15 +1,14 @@
-<<<<<<< HEAD:test projet Java/src/Tools/Trajet.java
 package Tools;
 
 import java.sql.Timestamp;
 import Exception.*;
-=======
+
 import java.sql.Timestamp;
 
->>>>>>> 398494ad22a3c693d2e4099c4b6b4d6509b7d0a6:test projet Java/src/Trajet.java
+
 
 public class Trajet {
-    private Integer identifiant, nbKm, nbPassagers, matricule, codePostal, client_id, numberOfDigits;
+    private int identifiant, nbKm, nbPassagers, matricule, codePostal, client_id, numberOfDigits;
     private Boolean aEuPanne, aEuEmbouteillage;
     private String nom;
     private Timestamp heureArrivee, heureDepart;

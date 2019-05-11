@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Exception.*;
 import Tools.*;
 
+
 public class DBAcces implements DataAccess {
     private Connection connection;
     private String sql;
@@ -62,11 +63,11 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList getChauffeurs() throws SQLException{
-        récupData("SELECT nom FROM chauffeur");
+        récupData("SELECT matricule, nom FROM chauffeur");
 
         chauffeurs = new ArrayList();
         while(data.next()){
-            chauffeurs.add(data.getString("nom"));
+            chauffeurs.add("Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom"));
         }
         return chauffeurs;
     }
@@ -77,20 +78,18 @@ public class DBAcces implements DataAccess {
 
         localites = new ArrayList();
         while(data.next()){
-            localites.add(data.getInt("codePostal"));
-            localites.add(data.getString("nom"));
+            localites.add(data.getInt("codePostal") + " " + data.getString("nom"));
         }
         return localites;
     }
 
     @Override
     public ArrayList getClient() throws SQLException{
-        récupData("SELECT nom, prenom FROM client");
+        récupData("SELECT nom, prenom, identifiant FROM client");
 
         clients = new ArrayList();
         while(data.next()){
-            clients.add(data.getString("nom"));
-            clients.add(data.getString("prenom"));
+            clients.add("n°: " + data.getInt("identifiant") + " "+ data.getString("nom")+ " " + data.getString("prenom"));
         }
         return clients;
     }
@@ -98,28 +97,28 @@ public class DBAcces implements DataAccess {
     @Override
     public void insertTrajet(Trajet newTrajet) throws SQLException {
         connection = SingletonConnection.getInstance();
-        sql = "INSERT INTO trajet VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        sql = "INSERT INTO trajet VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         statement = connection.prepareStatement(sql);
         statement.setInt(1, newTrajet.getIdentifiant());
         statement.setInt(2, newTrajet.getNbKm());
         statement.setInt(3, newTrajet.getNbPassagers());
-        statement.setInt(4, newTrajet.getMatricule());
-        statement.setInt(5, newTrajet.getCodePostal());
-        statement.setString(6, newTrajet.getNom());
-        statement.setInt(7, newTrajet.getClient_id());
-        statement.setNull(8, Types.BOOLEAN);
-        statement.setBoolean(9, newTrajet.getaEuEmbouteillage());
+        statement.setNull(4, Types.BOOLEAN);
+        statement.setBoolean(5, newTrajet.getaEuEmbouteillage());
+        statement.setInt(6, newTrajet.getMatricule());
+        statement.setInt(7, newTrajet.getCodePostal());
+        statement.setString(8, newTrajet.getNom());
+        statement.setInt(9, newTrajet.getClient_id());
         statement.setTimestamp(10, newTrajet.getHeureArrivee());
         statement.setTimestamp(11, newTrajet.getHeureDepart());
 
         statement.executeUpdate();
 
         // Colonnes facultatives
-        if (aEuPanne != null) {
+        if (newTrajet.getaEuPanne() != null) {
             sql = "UPDATE trajet SET panne = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "'";
             statement = connection.prepareStatement(sql);
-            statement.setBoolean(1, aEuPanne);
+            statement.setBoolean(1, newTrajet.getaEuPanne());
             statement.executeUpdate();
         }
     }
@@ -132,7 +131,7 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public int getClient_id(String nom) throws SQLException {
+    public int getClientIdByName(String nom) throws SQLException {
         sql = "SELECT identifiant FROM client WHERE nom = '" + nom + "'";
         récupData(sql);
         return data.getInt("identifiant");

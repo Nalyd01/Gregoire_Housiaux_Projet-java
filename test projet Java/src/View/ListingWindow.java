@@ -14,7 +14,7 @@ import Tools.AllTrajetModel;
 public class ListingWindow extends JFrame {
     private ApplicationController controller;
     private Container frameContainer;
-    private MainPanel panel;
+    private JPanel panel;
     private JTable table;
     private JScrollPane scrollPane;
 
@@ -23,7 +23,7 @@ public class ListingWindow extends JFrame {
         setBounds(100,100,1000,400);
 
         controller = new ApplicationController();
-        panel = new MainPanel();
+        panel = new JPanel();
         frameContainer = this.getContentPane();
         frameContainer.setLayout(new BorderLayout());
         frameContainer.add(panel,BorderLayout.CENTER);
@@ -35,7 +35,7 @@ public class ListingWindow extends JFrame {
         setBounds(100,100,1000,400);
 
         controller = new ApplicationController();
-        panel = new MainPanel();
+        panel = new JPanel();
         frameContainer = this.getContentPane();
         frameContainer.setLayout(new BorderLayout());
         frameContainer.add(panel,BorderLayout.CENTER);

@@ -20,5 +20,5 @@ public interface DataAccess {
 
     int getChauffeurMatricule(String nom) throws SQLException;
 
-    int getClient_id(String nom) throws SQLException;
+    int getClientIdByName(String nom) throws SQLException;
 }

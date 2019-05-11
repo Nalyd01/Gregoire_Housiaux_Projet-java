@@ -44,7 +44,7 @@ public class Manager {
         return dao.getChauffeurMatricule(nom);
     }
 
-    public int getClient_id(String nom) throws SQLException {
-        return dao.getClient_id(nom);
+    public int getClientIdByName(String nom) throws SQLException {
+        return dao.getClientIdByName(nom);
     }
 }
