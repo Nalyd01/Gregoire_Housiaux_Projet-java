@@ -40,11 +40,5 @@ public class ApplicationController {
         manager.insertTrajet(newTrajet);
     }
 
-    public int getChauffeurMatricule(String nom) throws SQLException {
-        return manager.getChauffeurMatricule(nom);
-    }
 
-    public int getClientIdByName(String nom) throws SQLException {
-        return manager.getClientIdByName(nom);
-    }
 }

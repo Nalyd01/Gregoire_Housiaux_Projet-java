@@ -140,7 +140,7 @@ public class AppWindow extends JFrame {
 
         public void actionPerformed(ActionEvent event) {
             frameContainer.removeAll();
-            frameContainer.add(new Research3(), BorderLayout.CENTER);
+            frameContainer.add(new Research3Panel(), BorderLayout.NORTH);
             frameContainer.repaint();
             AppWindow.this.setVisible(true);
         }

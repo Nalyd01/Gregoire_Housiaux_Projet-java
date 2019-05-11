@@ -40,11 +40,4 @@ public class Manager {
         dao.insertTrajet(newTrajet);
     }
 
-    public int getChauffeurMatricule(String nom) throws SQLException {
-        return dao.getChauffeurMatricule(nom);
-    }
-
-    public int getClientIdByName(String nom) throws SQLException {
-        return dao.getClientIdByName(nom);
-    }
 }

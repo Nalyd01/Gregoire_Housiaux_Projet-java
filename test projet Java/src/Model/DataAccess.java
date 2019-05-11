@@ -18,7 +18,4 @@ public interface DataAccess {
 
     void insertTrajet(Trajet newTrajet) throws SQLException;
 
-    int getChauffeurMatricule(String nom) throws SQLException;
-
-    int getClientIdByName(String nom) throws SQLException;
 }

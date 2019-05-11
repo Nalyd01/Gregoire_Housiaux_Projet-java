@@ -123,20 +123,6 @@ public class DBAcces implements DataAccess {
         }
     }
 
-    @Override
-    public int getChauffeurMatricule(String nom) throws SQLException {
-        sql = "SELECT matricule FROM chauffeur where nom = '" + nom + "'";
-        récupData(sql);
-        return data.getInt("matricule");
-    }
-
-    @Override
-    public int getClientIdByName(String nom) throws SQLException {
-        sql = "SELECT identifiant FROM client WHERE nom = '" + nom + "'";
-        récupData(sql);
-        return data.getInt("identifiant");
-    }
-
     public void récupData(String sql) throws SQLException{
         connection = SingletonConnection.getInstance();
         statement = connection.prepareStatement(sql);
