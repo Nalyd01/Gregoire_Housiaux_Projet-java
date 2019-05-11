@@ -1,6 +1,7 @@
 package Tools;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import Exception.*;
 import Model.DBAcces;
@@ -16,8 +17,8 @@ public class Manager {
         return dao.getAllTrajets();
     }
 
-    public ArrayList<Trajet> getAllTrajets(String nomChauffeur, String départ, String fin) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
-        return dao.getAllTrajets(nomChauffeur,départ,fin);
+    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        return dao.getAllTrajets(matricule ,date1, date2);
     }
 
     public void removeTrajet(String request) throws SQLException{

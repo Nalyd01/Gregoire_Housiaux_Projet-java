@@ -1,16 +1,12 @@
 package View;
 
 import Constroller.ApplicationController;
-import View.ListingWindow;
-
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.util.Date;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -41,8 +37,6 @@ public class Research3Panel extends JPanel {
             comboBoxChauffeurs.setEditable(false);
             this.add(comboBoxChauffeurs);
 
-                ComboBoxChauffeursListener listenerBox = new ComboBoxChauffeursListener();
-                comboBoxChauffeurs.addItemListener(listenerBox);
         }
         catch(SQLException exception){
             JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -59,8 +53,6 @@ public class Research3Panel extends JPanel {
             pointDépart.setEditor(editor);
             this.add(pointDépart);
 
-                JSpinnerDébutListener listenerDébut = new JSpinnerDébutListener();
-                pointDépart.addChangeListener(listenerDébut);
 
 
         dateFin = new JLabel("Temps de fin : ");
@@ -74,8 +66,6 @@ public class Research3Panel extends JPanel {
             pointFin.setEditor(editor);
             this.add(pointFin);
 
-                JSpinnerFinListener listenerFin = new JSpinnerFinListener();
-                pointFin.addChangeListener(listenerFin);
 
         researchButton = new JButton("Rechercher");
         this.add(researchButton);
@@ -84,31 +74,12 @@ public class Research3Panel extends JPanel {
         researchButton.addActionListener(listener);
     }
 
-    private class ComboBoxChauffeursListener implements ItemListener{
-
-        public void itemStateChanged(ItemEvent event){
-            selectChauffeur = comboBoxChauffeurs.getSelectedItem().toString();
-        }
-    }
-
-    private class JSpinnerDébutListener implements ChangeListener {
-
-        public void stateChanged(ChangeEvent event){
-            dateD = pointDépart.getValue().toString();
-        }
-    }
-
-    private class JSpinnerFinListener implements ChangeListener{
-
-        public void stateChanged(ChangeEvent event){
-            dateF = pointDépart.getValue().toString();
-        }
-    }
 
     private class ResearchListener implements ActionListener {
 
-        public void actionPerformed(ActionEvent event){
-            new ListingWindow(selectChauffeur, dateD, dateF);
+        public void actionPerformed(ActionEvent event) {
+
+            new ListingWindow(comboBoxChauffeurs.getSelectedItem().toString(), new Timestamp( ((Date)pointDépart.getValue()).getTime()),  new Timestamp( ((Date)pointFin.getValue()).getTime()));
         }
     }
 }
