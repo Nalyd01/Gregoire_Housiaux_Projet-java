@@ -20,4 +20,5 @@ public interface DataAccess {
 
     void insertTrajet(Trajet newTrajet) throws SQLException;
 
+    void récupData(String sql) throws SQLException;
 }

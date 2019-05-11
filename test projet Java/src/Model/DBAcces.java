@@ -14,7 +14,10 @@ public class DBAcces implements DataAccess {
     private ArrayList<Trajet> allTrajets;
     private PreparedStatement statement;
     private ResultSet data;
-    private ArrayList chauffeurs, localites, clients;
+    private ArrayList chauffeurs, localites, clients, zones;
+    private int[] nbTrajetsParZone;
+    private int i;
+    private String nomZone;
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {

@@ -49,4 +49,5 @@ public class Manager {
         dao.insertTrajet(newTrajet);
     }
 
+
 }
