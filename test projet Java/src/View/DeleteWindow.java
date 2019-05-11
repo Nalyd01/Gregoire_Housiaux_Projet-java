@@ -2,7 +2,6 @@ package View;
 
 import Constroller.ApplicationController;
 import Tools.AllTrajetModel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +10,6 @@ import java.sql.SQLException;
 
 public class DeleteWindow extends ListingWindow {
     private ApplicationController controller;
-    private AllTrajetModel model;
     private JButton deleteButt;
 
     public DeleteWindow(){

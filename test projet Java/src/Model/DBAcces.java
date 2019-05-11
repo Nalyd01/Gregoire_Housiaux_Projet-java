@@ -43,7 +43,6 @@ public class DBAcces implements DataAccess {
             statement.setTimestamp(1, date1);
             statement.setTimestamp(2, date2);
             statement.setInt(3,matricule);
-            System.out.println(statement);
 
         data = statement.executeQuery();
 

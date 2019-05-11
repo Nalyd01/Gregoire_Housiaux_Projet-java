@@ -51,6 +51,9 @@ public class AppWindow extends JFrame {
                 changeTrip = new JMenuItem("Modifier un trajet");
                 change.add(changeTrip);
 
+                ModifyListener modifyListener = new ModifyListener();
+                changeTrip.addActionListener(modifyListener);
+
             suppression = new JMenu("Suppression");
             menuBar.add(suppression);
 
@@ -114,11 +117,17 @@ public class AppWindow extends JFrame {
     private class InsertListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
-            scroller = new JScrollPane(new TrajetForm());
+            scroller = new JScrollPane(new TajectFormPanel());
             frameContainer.removeAll();
             frameContainer.add(scroller, BorderLayout.CENTER);
             frameContainer.repaint();
             AppWindow.this.setVisible(true);
+        }
+    }
+
+    private class ModifyListener implements  ActionListener{
+        public void actionPerformed(ActionEvent event){
+            new ModifyWindow();
         }
     }
 

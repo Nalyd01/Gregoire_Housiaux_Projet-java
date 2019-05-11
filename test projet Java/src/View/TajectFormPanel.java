@@ -13,7 +13,7 @@ import Tools.*;
 import Constroller.ApplicationController;
 
 
-public class TrajetForm extends JPanel {
+public class TajectFormPanel extends JPanel {
     private JLabel idLabel, kmLabel, nbPassagersLabel, chauffeurLabel, localiteLabel, clientLabel, panneLabel, embouteillageLabel, hArriveeLabel, hDepartLabel;
     private JTextField idText, kmText, nbPassagersText;
     private JComboBox comboBoxChauffeurs, comboBoxLocalites, comboBoxClients;
@@ -27,7 +27,7 @@ public class TrajetForm extends JPanel {
     private JButton insert;
     private Trajet newTrajet;
 
-    public TrajetForm(){
+    public TajectFormPanel(){
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         controller = new ApplicationController();
 
