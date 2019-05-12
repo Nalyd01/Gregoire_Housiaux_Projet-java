@@ -16,16 +16,16 @@ public class ModifyWindow extends ListingWindow {
 
         modifyButt = new JButton("Modifier");
         this.add(modifyButt, BorderLayout.SOUTH);
+        getTable().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         ModifyButtonListener deleteButtonListener = new ModifyButtonListener();
         modifyButt.addActionListener(deleteButtonListener);
 
     }
 
-    private class ModifyButtonListener implements ActionListener {
+    private class ModifyButtonListener implements ActionListener{
 
         public void actionPerformed(ActionEvent event){
-
             int selectedRow = getTable().getSelectedRow();
             String id = String.valueOf(getTable().getValueAt(selectedRow,0));
             String nbKm = String.valueOf(getTable().getValueAt(selectedRow, 1));
