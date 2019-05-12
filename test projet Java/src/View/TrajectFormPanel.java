@@ -200,12 +200,14 @@ public class TrajectFormPanel extends JPanel {
 
                 if(kmText.getText().isEmpty()){
                     errorEmptyField("Vous devez remplir le nombre de km parcourus");
+                    kmLabel.setForeground(Color.RED);
                 } else{
                     nbKm = Integer.parseInt(kmText.getText());
                 }
 
                 if(nbPassagersText.getText().isEmpty()){
                     errorEmptyField("Vous devez remplir le nombre de passagers");
+                    nbPassagersLabel.setForeground(Color.RED);
                 } else{
                     nbPassagers = Integer.parseInt(kmText.getText());
                 }

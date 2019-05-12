@@ -2,6 +2,7 @@ package View;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -131,7 +132,7 @@ public class ListingWindow extends JFrame {
         largeurColonnes();
         centrerTable();
 
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         scrollPane = new JScrollPane(table);
 
@@ -183,14 +184,18 @@ public class ListingWindow extends JFrame {
     public void deleteTrajet() {
         controller = new ApplicationController();
 
-        int selectLine = getTable().getSelectedRow();
-        String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
-        try{
-            controller.removeTrajet(request);
-            ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
-        }
-        catch(SQLException exception){
-            JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
+        int selectLine = table.getSelectedRow();
+        while(selectLine != -1){
+            int modelRow = table.convertRowIndexToModel(selectLine);
+            String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
+            selectLine = getTable().getSelectedRow();
+            try{
+                controller.removeTrajet(request);
+                ((AllTrajetModel)getTable().getModel()).removeRow(modelRow);
+            }
+            catch(SQLException exception){
+                JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 

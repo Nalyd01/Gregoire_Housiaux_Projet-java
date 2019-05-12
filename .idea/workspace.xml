@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,29 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="235" column="16" lean-forward="true" selection-start-line="235" selection-start-column="16" selection-end-line="235" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/DBAcces.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="116" column="55" selection-start-line="116" selection-start-column="55" selection-end-line="116" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state>
+              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
               <folding>
                 <element signature="e#759#760#0" expanded="true" />
                 <element signature="e#784#785#0" expanded="true" />
@@ -53,19 +33,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="402">
+              <caret line="122" column="36" lean-forward="true" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="286">
+              <caret line="192" column="76" selection-start-line="192" selection-start-column="76" selection-end-line="192" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -93,7 +73,6 @@
         <option value="$PROJECT_DIR$/test projet Java/src/View/TajectFormPanel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/Trajet.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/Manager.java" />
@@ -102,9 +81,10 @@
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
       </list>
     </option>
   </component>
@@ -183,7 +163,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557678381036" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557682113107" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test projet Java" />
   </component>
   <component name="RunDashboard">
@@ -227,7 +207,7 @@
       <workItem from="1557563788334" duration="92000" />
       <workItem from="1557563936678" duration="1861000" />
       <workItem from="1557571334011" duration="23125000" />
-      <workItem from="1557647598371" duration="20270000" />
+      <workItem from="1557647598371" duration="22092000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -271,11 +251,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557675545797</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="affichage message erreur si champs non remplis dans le formulaire">
+      <created>1557678436512</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557678436512</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45491000" />
+    <option name="totallyTimeSpent" value="47313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
@@ -322,7 +309,8 @@
     <MESSAGE value="commencement recherche 2" />
     <MESSAGE value="commencement recherche 2 + affichage listing modif" />
     <MESSAGE value="modif affichage insert + dataAccess modif" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif affichage insert + dataAccess modif" />
+    <MESSAGE value="affichage message erreur si champs non remplis dans le formulaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="affichage message erreur si champs non remplis dans le formulaire" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Main.java">
@@ -402,10 +390,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
-          <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+        <state relative-caret-position="337">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="203" column="23" lean-forward="true" selection-start-line="203" selection-start-column="23" selection-end-line="203" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -416,17 +411,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
           <folding>
             <element signature="e#759#760#0" expanded="true" />
             <element signature="e#784#785#0" expanded="true" />
@@ -434,17 +422,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="402">
+          <caret line="122" column="36" lean-forward="true" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="235" column="16" lean-forward="true" selection-start-line="235" selection-start-column="16" selection-end-line="235" selection-end-column="16" />
+        <state relative-caret-position="286">
+          <caret line="192" column="76" selection-start-line="192" selection-start-column="76" selection-end-line="192" selection-end-column="76" />
         </state>
       </provider>
     </entry>
