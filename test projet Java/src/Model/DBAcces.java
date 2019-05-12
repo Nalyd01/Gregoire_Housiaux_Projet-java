@@ -36,6 +36,7 @@ public class DBAcces implements DataAccess {
         return allTrajets;
     }
 
+    @Override
     public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
@@ -56,7 +57,8 @@ public class DBAcces implements DataAccess {
         return allTrajets;
     }
 
-    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+    @Override
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
         sql = "SELECT * FROM trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND codePostal = ? AND nom = ?;";
@@ -79,14 +81,14 @@ public class DBAcces implements DataAccess {
 
 
     @Override
-    public void removeTrajet(String request) throws SQLException{
+    public void removeTrajet(String request) throws SQLException {
         connection = SingletonConnection.getInstance();
         statement = connection.prepareStatement(request);
         statement.executeUpdate(request);
     }
 
     @Override
-    public ArrayList getChauffeurs() throws SQLException{
+    public ArrayList getChauffeurs() throws SQLException {
         récupData("SELECT matricule, nom FROM chauffeur");
 
         chauffeurs = new ArrayList();
@@ -96,20 +98,22 @@ public class DBAcces implements DataAccess {
         return chauffeurs;
     }
 
-    public String idChauffeur(int matricule) throws SQLException{
+    @Override
+    public String idChauffeur(int matricule) throws SQLException {
         récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "'");
         data.next();
         return "Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom");
     }
 
-    public String idClient(int client_id) throws SQLException{
+    @Override
+    public String idClient(int client_id) throws SQLException {
         récupData("SELECT nom, prenom, identifiant FROM client WHERE identifiant = '" + client_id + "'");
         data.next();
         return "n°: " + data.getInt("identifiant") + " "+ data.getString("nom")+ " " + data.getString("prenom");
     }
 
     @Override
-    public ArrayList getLocalite() throws SQLException{
+    public ArrayList getLocalite() throws SQLException {
         récupData("SELECT codePostal, nom FROM localite");
 
         localites = new ArrayList();
@@ -120,8 +124,8 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public ArrayList getClient() throws SQLException{
-        récupData("SELECT nom, prenom, identifiant FROM client");
+    public ArrayList getClient() throws SQLException {
+        récupData("SELECT nom, prenom, identifiant FROM client ORDER BY identifiant");
 
         clients = new ArrayList();
         while(data.next()){
@@ -131,7 +135,7 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public String getIdTrajet() throws SQLException{
+    public String getIdTrajet() throws SQLException {
         récupData("SELECT MAX(identifiant) FROM trajet");
         data.next();
         return String.valueOf(data.getInt(1)+1);
@@ -166,7 +170,8 @@ public class DBAcces implements DataAccess {
         }
     }
 
-    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException{
+    @Override
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
         récupData("SELECT matricule FROM trajet");
         allZones = getAllZones();
         while(data.next()){
@@ -176,6 +181,7 @@ public class DBAcces implements DataAccess {
         return allZones;
     }
 
+    @Override
     public HashMap<String, Integer> getAllZones() throws SQLException {
         récupData("SELECT identifiant, nom FROM zone");
         allZones = new HashMap<>();
@@ -185,6 +191,7 @@ public class DBAcces implements DataAccess {
         return allZones;
     }
 
+    @Override
     public String getZoneChauffeur(int matricule) throws SQLException {
         récupData("SELECT zone_id FROM chauffeur WHERE matricule = '" + matricule + "'");
         data.next();
@@ -192,12 +199,13 @@ public class DBAcces implements DataAccess {
         return zone;
     }
 
-    public String nomZone(int zone_id) throws SQLException{
+    @Override
+    public String nomZone(int zone_id) throws SQLException {
         récupData("SELECT nom FROM zone WHERE identifiant = '" + zone_id + "'");
         return data.getString("nom");
     }
 
-    public void récupData(String sql) throws SQLException{
+    public void récupData(String sql) throws SQLException {
         connection = SingletonConnection.getInstance();
         statement = connection.prepareStatement(sql);
         data = statement.executeQuery();

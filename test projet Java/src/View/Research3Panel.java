@@ -33,7 +33,6 @@ public class Research3Panel extends JPanel {
 
         try{
             list = controller.getChauffeurs();
-            Collections.sort(list);
             comboBoxChauffeurs = new JComboBox(list.toArray());
             comboBoxChauffeurs.setEditable(false);
             this.add(comboBoxChauffeurs);
@@ -66,6 +65,8 @@ public class Research3Panel extends JPanel {
         editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy HH:mm:ss");
         pointFin.setEditor(editor);
         this.add(pointFin);
+
+        this.add(Box.createRigidArea(new Dimension(10,10)));
 
         researchButton = new JButton("Rechercher");
         this.add(researchButton);

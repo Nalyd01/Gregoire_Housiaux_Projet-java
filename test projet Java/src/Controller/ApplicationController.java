@@ -12,7 +12,7 @@ public class ApplicationController {
     private Manager manager;
 
     public ApplicationController(){
-        manager = new Manager();
+        this.manager = new Manager();
     }
 
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {

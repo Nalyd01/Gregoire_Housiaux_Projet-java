@@ -59,17 +59,14 @@ public class TrajectFormPanel extends JPanel {
 
         try {
             list = controller.getChauffeurs() ;
-            Collections.sort(list);
             comboBoxChauffeurs = new JComboBox(list.toArray());
             comboBoxChauffeurs.setEditable(false);
 
             list = controller.getLocalite();
-            Collections.sort(list);
             comboBoxLocalites = new JComboBox(list.toArray());
             comboBoxLocalites.setEditable(false);
 
             list = controller.getClient();
-            Collections.sort(list);
             comboBoxClients = new JComboBox(list.toArray());
             comboBoxClients.setEditable(false);
 
@@ -92,6 +89,8 @@ public class TrajectFormPanel extends JPanel {
         }
         this.add(idText);
 
+        espace();
+
         kmLabel = new JLabel("Nombre de km parcourus : ");
         kmLabel.setToolTipText("A partir du point de départ jusqu'à l'arrivée");
         this.add(kmLabel);
@@ -99,26 +98,36 @@ public class TrajectFormPanel extends JPanel {
         kmText = new JTextField();
         this.add(kmText);
 
+        espace();
+
         nbPassagersLabel = new JLabel("Nombre de passagers : ");
         this.add(nbPassagersLabel);
 
         nbPassagersText = new JTextField();
         this.add(nbPassagersText);
 
+        espace();
+
         chauffeurLabel = new JLabel("Nom du chauffeur : ");
         this.add(chauffeurLabel);
 
         this.add(comboBoxChauffeurs);
+
+        espace();
 
         localiteLabel = new JLabel("Nom de la localité : ");
         this.add(localiteLabel);
 
         this.add(comboBoxLocalites);
 
+        espace();
+
         clientLabel = new JLabel("Nom et prénom du client : ");
         this.add(clientLabel);
 
         this.add(comboBoxClients);
+
+        espace();
 
         panneLabel = new JLabel("Est-ce qu'il y a eu une panne : ");
         panneLabel.setToolTipText("Cette ligne est facultative");
@@ -128,6 +137,9 @@ public class TrajectFormPanel extends JPanel {
         this.add(panne);
         notPanne = new JRadioButton("non", true);
         this.add(notPanne);
+
+        espace();
+
         jRadioButtonGroupPanne = new ButtonGroup();
         jRadioButtonGroupPanne.add(panne);
         jRadioButtonGroupPanne.add(notPanne);
@@ -139,6 +151,9 @@ public class TrajectFormPanel extends JPanel {
         this.add(embouteillage);
         notEmbouteillage = new JRadioButton("non",true);
         this.add(notEmbouteillage);
+
+        espace();
+
         jRadioButtonGroupEmbouteillage = new ButtonGroup();
         jRadioButtonGroupEmbouteillage.add(embouteillage);
         jRadioButtonGroupEmbouteillage.add(notEmbouteillage);
@@ -153,6 +168,8 @@ public class TrajectFormPanel extends JPanel {
         pointDépart.setEditor(editor);
         this.add(pointDépart);
 
+        espace();
+
         hArriveeLabel = new JLabel("Date et heure d'arrivée du trajet : ");
         this.add(hArriveeLabel);
 
@@ -164,11 +181,12 @@ public class TrajectFormPanel extends JPanel {
         this.add(pointFin);
         pointDépart.setValue(pointFin.getValue());
 
+        espace();
+
         insert = new JButton("Insérer le trajet dans la base de données");
         this.add(insert);
         insert.addActionListener(new InsertListener());
     }
-
 
     private class InsertListener implements ActionListener {
 
@@ -218,6 +236,10 @@ public class TrajectFormPanel extends JPanel {
                 comboBox.setSelectedIndex(i);
             }
         }
+    }
+
+    public void espace(){
+        this.add(Box.createRigidArea(new Dimension(10,10)));
     }
 
 }

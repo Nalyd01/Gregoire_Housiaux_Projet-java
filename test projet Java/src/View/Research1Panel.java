@@ -3,6 +3,7 @@ package View;
 import Controller.ApplicationController;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -31,7 +32,6 @@ public class Research1Panel extends JPanel {
 
         try{
             listLocalites = controller.getLocalite();
-            Collections.sort(listLocalites);
             comboBoxLocalites = new JComboBox(listLocalites.toArray());
             comboBoxLocalites.setEditable(false);
             this.add(comboBoxLocalites);
@@ -60,6 +60,8 @@ public class Research1Panel extends JPanel {
         editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy HH:mm:ss");
         pointFin.setEditor(editor);
         this.add(pointFin);
+
+        this.add(Box.createRigidArea(new Dimension(10,10)));
 
         research = new JButton("Rechercher");
         this.add(research);
