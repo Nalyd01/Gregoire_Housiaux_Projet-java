@@ -22,7 +22,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(){
         super("Listing des trajets");
-        setBounds(100,100,1000,500);
+        setBounds(100,100,1635,500);
 
         controller = new ApplicationController();
         panel = new JPanel();
@@ -34,7 +34,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(String chauffeur, Timestamp date1, Timestamp date2){
         super("Listing des clients d'un chauffeur entre 2 dates");
-        setBounds(100,100,1000,400);
+        setBounds(100,100,1635,400);
 
         controller = new ApplicationController();
         panel = new JPanel();
@@ -47,7 +47,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(Timestamp date1, Timestamp date2, String localites){
         super("Lisiting des clients d'une localités entre 2 dates");
-        setBounds(100,100,1200,400);
+        setBounds(100,100,1635,400);
 
         controller = new ApplicationController();
         panel = new JPanel();
@@ -187,11 +187,10 @@ public class ListingWindow extends JFrame {
         int selectLine = table.getSelectedRow();
         while(selectLine != -1){
             int modelRow = table.convertRowIndexToModel(selectLine);
-            String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
-            selectLine = getTable().getSelectedRow();
             try{
-                controller.removeTrajet(request);
+                controller.removeTrajet((int)getTable().getModel().getValueAt(selectLine,0));
                 ((AllTrajetModel)getTable().getModel()).removeRow(modelRow);
+                selectLine = getTable().getSelectedRow();
             }
             catch(SQLException exception){
                 JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);

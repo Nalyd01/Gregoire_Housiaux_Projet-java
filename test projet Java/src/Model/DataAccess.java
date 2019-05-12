@@ -12,10 +12,11 @@ import Tools.*;
 public interface DataAccess {
     ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
-    void removeTrajet(int idTrajet) throws SQLException;
+    ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
     ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
+    void removeTrajet(int idTrajet) throws SQLException;
 
     ArrayList getChauffeurs() throws SQLException;
 
@@ -33,9 +34,9 @@ public interface DataAccess {
 
     ResultSet récupData(String sql) throws SQLException;
 
-    HashMap<String, Integer> getAllZones() throws SQLException;
+    ArrayList<String> getAllZones() throws SQLException;
 
     String getZoneChauffeur(int matricule) throws SQLException;
 
-    String nomZone(int zone_id) throws SQLException;
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException;
 }

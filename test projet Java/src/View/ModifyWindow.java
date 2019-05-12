@@ -1,20 +1,14 @@
 package View;
 
-
-import Controller.ApplicationController;
-import Tools.AllTrajetModel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 
 public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
-    private ApplicationController controller;
     private JScrollPane scroller;
 
     public ModifyWindow(AppWindow appWindow){
@@ -51,8 +45,6 @@ public class ModifyWindow extends ListingWindow {
             appWindow.setVisible(true);
 
             deleteTrajet();
-                controller.removeTrajet((int)getTable().getModel().getValueAt(selectLine,0));
-
             ModifyWindow.this.dispose();
         }
     }
