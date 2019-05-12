@@ -2,7 +2,6 @@ package View;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -22,7 +21,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(){
         super("Listing des trajets");
-        setBounds(100,100,1635,500);
+        setBounds(100,100,1000,500);
 
         controller = new ApplicationController();
         panel = new JPanel();
