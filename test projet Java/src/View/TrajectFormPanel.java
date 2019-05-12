@@ -27,6 +27,10 @@ public class TrajectFormPanel extends JPanel {
     private JButton insert;
     private Trajet newTrajet;
     private AppWindow appWindow;
+    private int idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, idCLient;
+    private String localité, strIdClient;
+    private Boolean aPanne, aEmbouteillage;
+    private Timestamp heureDépart, heureFin;
 
     public TrajectFormPanel(String id, String nbKm,String nbPassager, boolean aEuPanne, boolean aEuEmbouteillage, String matricule, String codePostal, String nomLocalité, String idCLient, AppWindow appWindow){
         this(appWindow);
@@ -59,17 +63,14 @@ public class TrajectFormPanel extends JPanel {
 
         try {
             list = controller.getChauffeurs() ;
-            Collections.sort(list);
             comboBoxChauffeurs = new JComboBox(list.toArray());
             comboBoxChauffeurs.setEditable(false);
 
             list = controller.getLocalite();
-            Collections.sort(list);
             comboBoxLocalites = new JComboBox(list.toArray());
             comboBoxLocalites.setEditable(false);
 
             list = controller.getClient();
-            Collections.sort(list);
             comboBoxClients = new JComboBox(list.toArray());
             comboBoxClients.setEditable(false);
 
@@ -92,6 +93,8 @@ public class TrajectFormPanel extends JPanel {
         }
         this.add(idText);
 
+        espace();
+
         kmLabel = new JLabel("Nombre de km parcourus : ");
         kmLabel.setToolTipText("A partir du point de départ jusqu'à l'arrivée");
         this.add(kmLabel);
@@ -99,26 +102,36 @@ public class TrajectFormPanel extends JPanel {
         kmText = new JTextField();
         this.add(kmText);
 
+        espace();
+
         nbPassagersLabel = new JLabel("Nombre de passagers : ");
         this.add(nbPassagersLabel);
 
         nbPassagersText = new JTextField();
         this.add(nbPassagersText);
 
+        espace();
+
         chauffeurLabel = new JLabel("Nom du chauffeur : ");
         this.add(chauffeurLabel);
 
         this.add(comboBoxChauffeurs);
+
+        espace();
 
         localiteLabel = new JLabel("Nom de la localité : ");
         this.add(localiteLabel);
 
         this.add(comboBoxLocalites);
 
+        espace();
+
         clientLabel = new JLabel("Nom et prénom du client : ");
         this.add(clientLabel);
 
         this.add(comboBoxClients);
+
+        espace();
 
         panneLabel = new JLabel("Est-ce qu'il y a eu une panne : ");
         panneLabel.setToolTipText("Cette ligne est facultative");
@@ -126,8 +139,11 @@ public class TrajectFormPanel extends JPanel {
 
         panne = new JRadioButton("oui");
         this.add(panne);
-        notPanne = new JRadioButton("non", true);
+        notPanne = new JRadioButton("non");
         this.add(notPanne);
+
+        espace();
+
         jRadioButtonGroupPanne = new ButtonGroup();
         jRadioButtonGroupPanne.add(panne);
         jRadioButtonGroupPanne.add(notPanne);
@@ -139,6 +155,9 @@ public class TrajectFormPanel extends JPanel {
         this.add(embouteillage);
         notEmbouteillage = new JRadioButton("non",true);
         this.add(notEmbouteillage);
+
+        espace();
+
         jRadioButtonGroupEmbouteillage = new ButtonGroup();
         jRadioButtonGroupEmbouteillage.add(embouteillage);
         jRadioButtonGroupEmbouteillage.add(notEmbouteillage);
@@ -153,6 +172,8 @@ public class TrajectFormPanel extends JPanel {
         pointDépart.setEditor(editor);
         this.add(pointDépart);
 
+        espace();
+
         hArriveeLabel = new JLabel("Date et heure d'arrivée du trajet : ");
         this.add(hArriveeLabel);
 
@@ -164,31 +185,51 @@ public class TrajectFormPanel extends JPanel {
         this.add(pointFin);
         pointDépart.setValue(pointFin.getValue());
 
+        espace();
+
         insert = new JButton("Insérer le trajet dans la base de données");
         this.add(insert);
         insert.addActionListener(new InsertListener());
     }
 
-
     private class InsertListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
             try {
-                int idTrajet = Integer.parseInt(idText.getText());
-                int nbkm = Integer.parseInt(kmText.getText());
-                int nbPassager = Integer.parseInt(nbPassagersText.getText());
-                int idChauffeur = Integer.parseInt(comboBoxChauffeurs.getSelectedItem().toString().substring(15, comboBoxChauffeurs.getSelectedItem().toString().indexOf(" ", 16)));
-                int codePostal = Integer.parseInt(comboBoxLocalites.getSelectedItem().toString().substring(0, comboBoxLocalites.getSelectedItem().toString().indexOf(" ")));
-                String localité = comboBoxLocalites.getSelectedItem().toString().substring(comboBoxLocalites.getSelectedItem().toString().indexOf(" ")+1);
-                String strIdClient = comboBoxClients.getSelectedItem().toString().substring(4);
-                strIdClient = strIdClient.substring(0, strIdClient.indexOf(" "));
-                int idCLient = Integer.parseInt(strIdClient);
-                Boolean aPanne = panne.isSelected();
-                boolean aEmbouteillage = embouteillage.isSelected();
-                Timestamp heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
-                Timestamp heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
+                idTrajet = Integer.parseInt(idText.getText());
 
-                newTrajet = new Trajet(idTrajet, nbkm,nbPassager, idChauffeur, codePostal, localité, idCLient, aPanne, aEmbouteillage, heureFin, heureDépart);
+                if(kmText.getText().isEmpty()){
+                    errorEmptyField("Vous devez remplir le nombre de km parcourus");
+                    kmLabel.setForeground(Color.RED);
+                } else{
+                    nbKm = Integer.parseInt(kmText.getText());
+                }
+
+                if(nbPassagersText.getText().isEmpty()){
+                    errorEmptyField("Vous devez remplir le nombre de passagers");
+                    nbPassagersLabel.setForeground(Color.RED);
+                } else{
+                    nbPassagers = Integer.parseInt(kmText.getText());
+                }
+
+                idChauffeur = Integer.parseInt(comboBoxChauffeurs.getSelectedItem().toString().substring(15, comboBoxChauffeurs.getSelectedItem().toString().indexOf(" ", 16)));
+
+                codePostal = Integer.parseInt(comboBoxLocalites.getSelectedItem().toString().substring(0, comboBoxLocalites.getSelectedItem().toString().indexOf(" ")));
+
+                localité = comboBoxLocalites.getSelectedItem().toString().substring(comboBoxLocalites.getSelectedItem().toString().indexOf(" ")+1);
+
+                strIdClient = comboBoxClients.getSelectedItem().toString().substring(4);
+                strIdClient = strIdClient.substring(0, strIdClient.indexOf(" "));
+                idCLient = Integer.parseInt(strIdClient);
+
+                aPanne = panne.isSelected();
+
+                aEmbouteillage = embouteillage.isSelected();
+
+                heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
+                heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
+
+                newTrajet = new Trajet(idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, localité, idCLient, aPanne, aEmbouteillage, heureFin, heureDépart);
 
                 controller.insertTrajet(newTrajet);
 
@@ -216,6 +257,14 @@ public class TrajectFormPanel extends JPanel {
                 comboBox.setSelectedIndex(i);
             }
         }
+    }
+
+    public void espace(){
+        this.add(Box.createRigidArea(new Dimension(10,10)));
+    }
+
+    public void errorEmptyField(String message){
+        JOptionPane.showMessageDialog(null, message, "Erreur dans le formulaire", JOptionPane.ERROR_MESSAGE);
     }
 
 }

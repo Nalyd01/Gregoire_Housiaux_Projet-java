@@ -50,8 +50,19 @@ public class ModifyWindow extends ListingWindow {
             appWindow.getFrameContainer().repaint();
             appWindow.setVisible(true);
 
-            deleteTrajet();
+<<<<<<< HEAD
+            controller = new ApplicationController();
+            int selectLine = getTable().getSelectedRow();
+            try{
                 controller.removeTrajet((int)getTable().getModel().getValueAt(selectLine,0));
+                ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
+            }
+            catch(SQLException exception){
+                JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
+            }
+=======
+            deleteTrajet();
+>>>>>>> 5c032a87215f66709178b84d0b6807c4254cb241
 
             ModifyWindow.this.dispose();
         }

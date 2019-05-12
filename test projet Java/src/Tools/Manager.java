@@ -7,12 +7,13 @@ import java.util.HashMap;
 
 import Exception.*;
 import Model.DBAcces;
+import Model.DataAccess;
 
 public class Manager {
-    private DBAcces dao;
+    private DataAccess dao;
 
     public Manager(){
-        dao = new DBAcces();
+        this.dao = new DBAcces();
     }
 
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
