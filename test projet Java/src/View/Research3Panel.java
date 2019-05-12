@@ -2,6 +2,8 @@ package View;
 
 import Controller.ApplicationController;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -64,7 +66,6 @@ public class Research3Panel extends JPanel {
         editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy HH:mm:ss");
         pointFin.setEditor(editor);
         this.add(pointFin);
-
 
         researchButton = new JButton("Rechercher");
         this.add(researchButton);

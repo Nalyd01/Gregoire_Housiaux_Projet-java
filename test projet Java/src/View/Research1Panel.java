@@ -35,8 +35,7 @@ public class Research1Panel extends JPanel {
             comboBoxLocalites = new JComboBox(listLocalites.toArray());
             comboBoxLocalites.setEditable(false);
             this.add(comboBoxLocalites);
-        }
-        catch(SQLException exception){
+        } catch(SQLException exception){
             JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
         }
 

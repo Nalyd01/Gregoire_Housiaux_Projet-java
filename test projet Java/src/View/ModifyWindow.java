@@ -48,9 +48,8 @@ public class ModifyWindow extends ListingWindow {
 
             controller = new ApplicationController();
             int selectLine = getTable().getSelectedRow();
-            String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
             try{
-                controller.removeTrajet(request);
+                controller.removeTrajet((int)getTable().getModel().getValueAt(selectLine,0));
                 ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
             }
             catch(SQLException exception){

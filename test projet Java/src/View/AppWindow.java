@@ -88,6 +88,7 @@ public class AppWindow extends JFrame {
 
                 ResearchListener researchListener = new ResearchListener();
                 research1.addActionListener(researchListener);
+                research2.addActionListener(researchListener);
                 research3.addActionListener(researchListener);
 
             businessTask = new JMenu("Tâche métier");
@@ -152,16 +153,15 @@ public class AppWindow extends JFrame {
             frameContainer.removeAll();
             if(event.getSource() == research1){
                 frameContainer.add(new Research1Panel(), BorderLayout.NORTH);
-                frameContainer.repaint();
             }
             if(event.getSource() == research2){
-                frameContainer.add(new Research2Panel(), BorderLayout.NORTH);
-                frameContainer.repaint();
+                scroller = new JScrollPane(new Research2Panel());
+                frameContainer.add(scroller, BorderLayout.CENTER);
             }
             if(event.getSource() == research3){
                 frameContainer.add(new Research3Panel(), BorderLayout.NORTH);
-                frameContainer.repaint();
             }
+            frameContainer.repaint();
             AppWindow.this.setVisible(true);
         }
     }

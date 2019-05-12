@@ -1,6 +1,10 @@
 package Tools;
 
+import Controller.ApplicationController;
+
+import javax.swing.*;
 import javax.swing.table.*;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -10,13 +14,15 @@ public class AllTrajetModel extends AbstractTableModel {
     private ArrayList<Trajet> contents;
     private String hArriveeFormatted, hDepartFormatted;
     private DateFormat newFormat;
+    private ApplicationController controller;
 
     public AllTrajetModel(ArrayList<Trajet> trajets) {
+        controller = new ApplicationController();
         columnNames = new ArrayList<>();
         columnNames.add("Identifiant du trajet");
         columnNames.add("Nombre de kilomètres");
         columnNames.add("Nombre de passagers");
-        columnNames.add("Matricule du chauffeur");
+        columnNames.add("Identifiant du chauffeur");
         columnNames.add("Code postal de la localité de départ");
         columnNames.add("Nom de la localité de départ");
         columnNames.add("Identifiant du client");
@@ -39,10 +45,22 @@ public class AllTrajetModel extends AbstractTableModel {
             case 0 : return trajet.getIdentifiant();
             case 1 : return trajet.getNbKm();
             case 2 : return trajet.getNbPassagers();
-            case 3 : return trajet.getMatricule();
+            case 3 : {
+                try{
+                    return controller.idChauffeur(trajet.getMatricule());
+                } catch (SQLException sqlException){
+                    JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+                }
+            }
             case 4 : return trajet.getCodePostal();
             case 5 : return trajet.getNom();
-            case 6 : return trajet.getClient_id();
+            case 6 : {
+                try{
+                    return controller.idClient(trajet.getClient_id());
+                } catch (SQLException sqlException){
+                    JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+                }
+            }
             case 7 : if(trajet.getaEuPanne() != null){
                 if(trajet.getaEuPanne()){
                     return "Oui";
@@ -79,13 +97,13 @@ public class AllTrajetModel extends AbstractTableModel {
                 break;
             case 2 : c = Integer.class;
                 break;
-            case 3 : c = Integer.class;
+            case 3 : c = String.class;
                 break;
             case 4 : c = Integer.class;
                 break;
             case 5 : c = String.class;
                 break;
-            case 6 : c = Integer.class;
+            case 6 : c = String.class;
                 break;
             case 7 : c = String.class;
                 break;

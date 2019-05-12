@@ -46,7 +46,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(Timestamp date1, Timestamp date2, String localites){
         super("Lisiting des clients d'une localités entre 2 dates");
-        setBounds(100,100,1000,400);
+        setBounds(100,100,1200,400);
 
         controller = new ApplicationController();
         panel = new JPanel();
@@ -156,10 +156,26 @@ public class ListingWindow extends JFrame {
     public void largeurColonnes(){
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         for(int i = 0; i < table.getColumnCount(); i++){
-            if(i == 9 || i == 10){
-                table.getColumnModel().getColumn(i).setPreferredWidth(150);
+            if(i < 3){
+                table.getColumnModel().getColumn(i).setPreferredWidth(135);
             } else{
-                table.getColumnModel().getColumn(i).setPreferredWidth(100);
+                if( i == 3){
+                    table.getColumnModel().getColumn(i).setPreferredWidth(180);
+                } else{
+                    if(i < 6){
+                        table.getColumnModel().getColumn(i).setPreferredWidth(195);
+                    }  else{
+                        if(i == 6){
+                            table.getColumnModel().getColumn(i).setPreferredWidth(160);
+                        } else{
+                            if(i < 9){
+                                table.getColumnModel().getColumn(i).setPreferredWidth(90);
+                            } else{
+                                table.getColumnModel().getColumn(i).setPreferredWidth(150);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

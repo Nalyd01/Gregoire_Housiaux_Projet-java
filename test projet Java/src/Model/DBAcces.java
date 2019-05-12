@@ -2,6 +2,9 @@ package Model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import Exception.*;
 import Tools.*;
 
@@ -13,8 +16,9 @@ public class DBAcces implements DataAccess {
     private Boolean aEuPanne;
     private ArrayList<Trajet> allTrajets;
     private PreparedStatement statement;
-    private ResultSet data;
-    private ArrayList chauffeurs, localites, clients;
+    private ArrayList chauffeurs, localites, clients, allZones;
+    private HashMap<String, Integer> zoneNbChauffeur;
+
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
@@ -24,11 +28,11 @@ public class DBAcces implements DataAccess {
         statement = connection.prepareStatement(sql);
 
         // Récupération des données
-        data = statement.executeQuery();
+        ResultSet data = statement.executeQuery();
 
         allTrajets = new ArrayList<>();
         while(data.next()){
-            créaTrajets();
+            créaTrajets(data);
         }
         return allTrajets;
     }
@@ -44,11 +48,11 @@ public class DBAcces implements DataAccess {
         statement.setTimestamp(2, date2);
         statement.setInt(3,matricule);
 
-        data = statement.executeQuery();
+        ResultSet data = statement.executeQuery();
 
         allTrajets = new ArrayList<>();
         while(data.next()){
-            créaTrajets();
+            créaTrajets(data);
         }
         return allTrajets;
     }
@@ -65,26 +69,27 @@ public class DBAcces implements DataAccess {
         statement.setInt(3, codePostal);
         statement.setString(4, nomLocalite);
 
-        data = statement.executeQuery();
+        ResultSet data = statement.executeQuery();
 
         allTrajets = new ArrayList<>();
         while(data.next()){
-            créaTrajets();
+            créaTrajets(data);
         }
         return allTrajets;
     }
 
 
     @Override
-    public void removeTrajet(String request) throws SQLException{
+    public void removeTrajet(int idTrajet) throws SQLException{
+        String sql = "DELETE FROM trajet WHERE identifiant = " + idTrajet + ";";
         connection = SingletonConnection.getInstance();
-        statement = connection.prepareStatement(request);
-        statement.executeUpdate(request);
+        statement = connection.prepareStatement(sql);
+        statement.executeUpdate(sql);
     }
 
     @Override
     public ArrayList getChauffeurs() throws SQLException{
-        récupData("SELECT matricule, nom FROM chauffeur");
+        ResultSet data = récupData("SELECT matricule, nom FROM chauffeur");
 
         chauffeurs = new ArrayList();
         while(data.next()){
@@ -93,9 +98,21 @@ public class DBAcces implements DataAccess {
         return chauffeurs;
     }
 
+    public String idChauffeur(int matricule) throws SQLException{
+        ResultSet data = récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "'");
+        data.next();
+        return "Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom");
+    }
+
+    public String idClient(int client_id) throws SQLException{
+        ResultSet data = récupData("SELECT nom, prenom, identifiant FROM client WHERE identifiant = '" + client_id + "'");
+        data.next();
+        return "n°: " + data.getInt("identifiant") + " "+ data.getString("nom")+ " " + data.getString("prenom");
+    }
+
     @Override
     public ArrayList getLocalite() throws SQLException{
-        récupData("SELECT codePostal, nom FROM localite");
+        ResultSet data = récupData("SELECT codePostal, nom FROM localite");
 
         localites = new ArrayList();
         while(data.next()){
@@ -106,7 +123,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList getClient() throws SQLException{
-        récupData("SELECT nom, prenom, identifiant FROM client");
+        ResultSet data = récupData("SELECT nom, prenom, identifiant FROM client");
 
         clients = new ArrayList();
         while(data.next()){
@@ -117,7 +134,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public String getIdTrajet() throws SQLException{
-        récupData("SELECT MAX(identifiant) FROM trajet");
+        ResultSet data = récupData("SELECT MAX(identifiant) FROM trajet");
         data.next();
         return String.valueOf(data.getInt(1)+1);
     }
@@ -151,13 +168,49 @@ public class DBAcces implements DataAccess {
         }
     }
 
-    public void récupData(String sql) throws SQLException{
-        connection = SingletonConnection.getInstance();
-        statement = connection.prepareStatement(sql);
-        data = statement.executeQuery();
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException{
+        ResultSet data = récupData("SELECT matricule FROM trajet;");
+        zoneNbChauffeur = new HashMap<String, Integer>();
+        for (String zone : getAllZones()){
+            zoneNbChauffeur.put(zone, 0);
+        }
+        while(data.next()){
+            String zoneChauffeur = getZoneChauffeur(data.getInt("matricule"));
+            zoneNbChauffeur.put(zoneChauffeur,zoneNbChauffeur.get(zoneChauffeur)+1);
+        }
+        return zoneNbChauffeur;
     }
 
-    public void créaTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<String> getAllZones() throws SQLException {
+        ResultSet data = récupData("SELECT identifiant, nom FROM zone");
+        allZones = new ArrayList<String>();
+        while (data.next()){
+            allZones.add("Zone n°" + data.getInt("identifiant") + " " + data.getString("nom"));
+        }
+        return allZones;
+    }
+
+    public String getZoneChauffeur(int matricule) throws SQLException {
+        ResultSet data = récupData("SELECT zone_id FROM chauffeur WHERE matricule = '" + matricule + "'");
+        if(!data.next()){
+            return null;
+        }
+        int zoneId = data.getInt("zone_id");
+        data = récupData("SELECT identifiant, nom FROM zone WHERE identifiant = '" + zoneId + "';");
+        if(data.next()) {
+            return "Zone n°" + data.getInt("identifiant") + " " + data.getString("nom");
+        }else{
+            return  null;
+        }
+    }
+
+    public ResultSet récupData(String sql) throws SQLException{
+        connection = SingletonConnection.getInstance();
+        statement = connection.prepareStatement(sql);
+        return statement.executeQuery();
+    }
+
+    public void créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         aEuPanne = data.getBoolean("panne");
         if(data.wasNull()){
             aEuPanne = false;

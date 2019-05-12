@@ -211,10 +211,8 @@ public class TrajectFormPanel extends JPanel {
     }
 
     public void setComboBoxSelection(JComboBox comboBox, String str){
-        String itemComboBox;
         for(int i = 0; i < comboBox.getItemCount(); i++){
-            itemComboBox = (String)comboBox.getItemAt(i);
-            if (itemComboBox.contains(" " + str + " ")){
+            if (comboBox.getItemAt(i).equals(str)){
                 comboBox.setSelectedIndex(i);
             }
         }
