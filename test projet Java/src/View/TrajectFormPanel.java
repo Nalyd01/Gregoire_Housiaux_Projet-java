@@ -203,7 +203,7 @@ public class TrajectFormPanel extends JPanel {
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
             }catch (TimeException timeException){
-                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure a la date d'arrivée" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure a la date d'arrivé et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
             }catch(Exception e){
                 e.printStackTrace();
             }

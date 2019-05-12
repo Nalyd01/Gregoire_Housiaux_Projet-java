@@ -154,6 +154,10 @@ public class AppWindow extends JFrame {
                 frameContainer.add(new Research1Panel(), BorderLayout.NORTH);
                 frameContainer.repaint();
             }
+            if(event.getSource() == research2){
+                frameContainer.add(new Research2Panel(), BorderLayout.NORTH);
+                frameContainer.repaint();
+            }
             if(event.getSource() == research3){
                 frameContainer.add(new Research3Panel(), BorderLayout.NORTH);
                 frameContainer.repaint();

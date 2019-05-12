@@ -133,9 +133,17 @@ public class Trajet {
     }
 
     public void setHeureArrivee(Timestamp heureArrivee) throws TimeException {
-        if(heureArrivee.after(heureDepart)){
+        if(heureArrivee.after(heureDepart) && heureArrivee.getTime()-heureDepart.getTime() <  86366673){//86 000 000 mili correspond a 24h
             this.heureArrivee = heureArrivee;
         } else {
+            throw new TimeException();
+        }
+    }
+
+    public void setHeureDepart(Timestamp heureDepart) throws TimeException{
+        if(heureDepart.before(heureArrivee) && heureArrivee.getTime()-heureDepart.getTime() <  86366673){//86 000 000 mili correspond a 24h
+            this.heureDepart = heureDepart;
+        }else{
             throw new TimeException();
         }
     }
