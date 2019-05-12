@@ -180,4 +180,18 @@ public class ListingWindow extends JFrame {
         }
     }
 
+    public void deleteTrajet() {
+        controller = new ApplicationController();
+
+        int selectLine = getTable().getSelectedRow();
+        String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
+        try{
+            controller.removeTrajet(request);
+            ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
+        }
+        catch(SQLException exception){
+            JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
 }

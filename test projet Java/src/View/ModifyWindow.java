@@ -15,8 +15,11 @@ public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
     private ApplicationController controller;
+    private JScrollPane scroller;
+
     public ModifyWindow(AppWindow appWindow){
         this.appWindow = appWindow;
+
         modifyButt = new JButton("Modifier");
         this.add(modifyButt, BorderLayout.SOUTH);
 
@@ -40,25 +43,16 @@ public class ModifyWindow extends ListingWindow {
             boolean panne = ((getTable().getValueAt(selectedRow,7)).equals("Non") ? false : true);
             boolean embouteillage = ((getTable().getValueAt(selectedRow,8)).equals("Non") ? false : true);
 
-            JScrollPane scroller = new JScrollPane(new TrajectFormPanel(id,nbKm, nbPassager, panne, embouteillage, matricule, codePostal, nomLocalite, idClient, appWindow));
+            scroller = new JScrollPane(new TrajectFormPanel(id,nbKm, nbPassager, panne, embouteillage, matricule, codePostal, nomLocalite, idClient, appWindow));
+
             appWindow.getFrameContainer().removeAll();
             appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
             appWindow.getFrameContainer().repaint();
             appWindow.setVisible(true);
 
-            controller = new ApplicationController();
-            int selectLine = getTable().getSelectedRow();
-            String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
-            try{
-                controller.removeTrajet(request);
-                ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
-            }
-            catch(SQLException exception){
-                JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
-            }
+            deleteTrajet();
 
             ModifyWindow.this.dispose();
-
         }
     }
 }

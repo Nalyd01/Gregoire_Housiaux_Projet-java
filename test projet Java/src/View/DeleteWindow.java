@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 public class DeleteWindow extends ListingWindow {
-    private ApplicationController controller;
     private JButton deleteButt;
 
     public DeleteWindow(){
@@ -23,17 +22,7 @@ public class DeleteWindow extends ListingWindow {
     private class DeleteButtonListener implements ActionListener{
 
         public void actionPerformed(ActionEvent event){
-            controller = new ApplicationController();
-
-            int selectLine = getTable().getSelectedRow();
-            String request = "DELETE FROM trajet WHERE identifiant = " + getTable().getModel().getValueAt(selectLine,0)+";";
-            try{
-                controller.removeTrajet(request);
-                ((AllTrajetModel)getTable().getModel()).removeRow(selectLine);
-            }
-            catch(SQLException exception){
-                JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
-            }
+            deleteTrajet();
         }
     }
 }
