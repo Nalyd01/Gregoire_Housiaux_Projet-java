@@ -3,6 +3,8 @@ package Controller;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import Exception.*;
 import Tools.*;
 
@@ -47,6 +49,18 @@ public class ApplicationController {
 
     public void insertTrajet(Trajet newTrajet) throws SQLException {
         manager.insertTrajet(newTrajet);
+    }
+
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
+        return manager.getNbTrajetsParZones();
+    }
+
+    public String idChauffeur(int matricule) throws SQLException {
+        return manager.idChauffeur(matricule);
+    }
+
+    public String idClient(int client_id) throws SQLException {
+        return manager.idClient(client_id);
     }
 
 

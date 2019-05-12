@@ -3,6 +3,8 @@ package Tools;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import Exception.*;
 import Model.DBAcces;
 
@@ -49,5 +51,15 @@ public class Manager {
         dao.insertTrajet(newTrajet);
     }
 
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
+        return dao.getNbTrajetsParZones();
+    }
 
+    public String idChauffeur(int matricule) throws SQLException {
+        return dao.idChauffeur(matricule);
+    }
+
+    public String idClient(int client_id) throws SQLException {
+        return dao.idClient(client_id);
+    }
 }

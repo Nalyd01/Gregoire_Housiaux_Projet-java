@@ -2,6 +2,8 @@ package Model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import Exception.*;
 import Tools.*;
 
@@ -14,10 +16,8 @@ public class DBAcces implements DataAccess {
     private ArrayList<Trajet> allTrajets;
     private PreparedStatement statement;
     private ResultSet data;
-    private ArrayList chauffeurs, localites, clients, zones;
-    private int[] nbTrajetsParZone;
-    private int i;
-    private String nomZone;
+    private ArrayList chauffeurs, localites, clients;
+    private HashMap<String, Integer> allZones;
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
@@ -96,6 +96,18 @@ public class DBAcces implements DataAccess {
         return chauffeurs;
     }
 
+    public String idChauffeur(int matricule) throws SQLException{
+        récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "'");
+        data.next();
+        return "Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom");
+    }
+
+    public String idClient(int client_id) throws SQLException{
+        récupData("SELECT nom, prenom, identifiant FROM client WHERE identifiant = '" + client_id + "'");
+        data.next();
+        return "n°: " + data.getInt("identifiant") + " "+ data.getString("nom")+ " " + data.getString("prenom");
+    }
+
     @Override
     public ArrayList getLocalite() throws SQLException{
         récupData("SELECT codePostal, nom FROM localite");
@@ -152,6 +164,37 @@ public class DBAcces implements DataAccess {
             statement.setBoolean(1, newTrajet.getaEuPanne());
             statement.executeUpdate();
         }
+    }
+
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException{
+        récupData("SELECT matricule FROM trajet");
+        allZones = getAllZones();
+        while(data.next()){
+            String zoneChauffeur = getZoneChauffeur(data.getInt("matricule"));
+            allZones.put(zoneChauffeur,allZones.get(zoneChauffeur)+1);
+        }
+        return allZones;
+    }
+
+    public HashMap<String, Integer> getAllZones() throws SQLException {
+        récupData("SELECT identifiant, nom FROM zone");
+        allZones = new HashMap<>();
+        while (data.next()){
+            allZones.put(data.getInt("identifiant") + " " + data.getString("nom"),0);
+        }
+        return allZones;
+    }
+
+    public String getZoneChauffeur(int matricule) throws SQLException {
+        récupData("SELECT zone_id FROM chauffeur WHERE matricule = '" + matricule + "'");
+        data.next();
+        String zone = data.getInt("zone_id") + " " + nomZone(data.getInt("zone_id"));
+        return zone;
+    }
+
+    public String nomZone(int zone_id) throws SQLException{
+        récupData("SELECT nom FROM zone WHERE identifiant = '" + zone_id + "'");
+        return data.getString("nom");
     }
 
     public void récupData(String sql) throws SQLException{
