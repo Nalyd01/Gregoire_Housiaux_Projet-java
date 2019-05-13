@@ -3,6 +3,7 @@ package View;
 import Controller.ApplicationController;
 import Tools.Trajet;
 import javax.swing.*;
+import java.awt.*;
 import java.sql.SQLException;
 
 public class OnGoingTrajectPanel extends JPanel {
@@ -34,5 +35,8 @@ public class OnGoingTrajectPanel extends JPanel {
         progressBar.setMinimum(0);
         progressBar.setMaximum((int)(trajet.getHeureArrivee().getTime()- trajet.getHeureDepart().getTime()));
         progressBar.setValue((int) (System.currentTimeMillis() - trajet.getHeureDepart().getTime()));
+        double pourcentage = (double) progressBar.getValue() / progressBar.getMaximum();
+        progressBar.setBackground(new Color((int)((1-pourcentage)*255), (int)(pourcentage*255),0));
+        progressBar.setForeground(Color.LIGHT_GRAY);
     }
 }
