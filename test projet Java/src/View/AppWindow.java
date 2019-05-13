@@ -176,7 +176,7 @@ public class AppWindow extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                System.out.println( TacheMetier.getCost(new Trajet(2, 20, 2, 123456, 3333, "5", 02, false, false, new Timestamp(System.currentTimeMillis()+18000000), new Timestamp(System.currentTimeMillis()))));
+                new TacheMetierWindow(AppWindow.this);
             }catch (Exception err){
                 err.printStackTrace();
             }

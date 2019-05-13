@@ -111,7 +111,6 @@ public class DBAcces implements DataAccess {
     public String idChauffeur(int matricule) throws SQLException {
         ResultSet data = récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "'");
         data.next();
-        System.out.println(".");
         return "Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom");
     }
 
@@ -220,7 +219,6 @@ public class DBAcces implements DataAccess {
 
     public ResultSet récupData(String sql) throws SQLException{
         connection = SingletonConnection.getInstance();
-        System.out.println(".");
         statement = connection.prepareStatement(sql);
         return statement.executeQuery();
     }
