@@ -27,6 +27,10 @@ public class ApplicationController {
         return manager.getAllTrajets(codePostal, nomLocalite, date1, date2);
     }
 
+    public Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+        return manager.getTrajet(idTrajet);
+    }
+
     public void removeTrajet(int idTrajet) throws SQLException{
         manager.removeTrajet(idTrajet);
     }

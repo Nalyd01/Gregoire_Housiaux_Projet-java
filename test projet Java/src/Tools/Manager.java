@@ -28,6 +28,10 @@ public class Manager {
         return dao.getAllTrajets(codePostal, nomLocalite ,date1, date2);
     }
 
+    public Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+        return  dao.getTrajet(idTrajet);
+    }
+
     public void removeTrajet(int idTrajet) throws SQLException {
         dao.removeTrajet(idTrajet);
     }

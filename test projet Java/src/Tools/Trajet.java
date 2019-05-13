@@ -3,22 +3,20 @@ package Tools;
 import java.sql.Timestamp;
 import Exception.*;
 
-import java.sql.Timestamp;
-
 public class Trajet {
     private int identifiant, nbKm, nbPassagers, matricule, codePostal, client_id, numberOfDigits;
     private Boolean aEuPanne, aEuEmbouteillage;
-    private String nom;
+    private String nomLocalite;
     private Timestamp heureArrivee, heureDepart;
 
-    public Trajet(int identifiant, int nbKm, int nbPassagers, int matricule, int codePostal, String nom, int client_id,
+    public Trajet(int identifiant, int nbKm, int nbPassagers, int matricule, int codePostal, String nomLocalite, int client_id,
                   Boolean aEuPanne, boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, CodePostalException, IdException, TimeException {
         setIdentifiant(identifiant);
         setNbKm(nbKm);
         setNbPassagers(nbPassagers);
         setMatricule(matricule);
         setCodePostal(codePostal);
-        setNom(nom);
+        setNomLocalite(nomLocalite);
         setClient_id(client_id);
         setaEuPanne(aEuPanne);
         setaEuEmbouteillage(aEuEmbouteillage);
@@ -58,8 +56,8 @@ public class Trajet {
         return aEuEmbouteillage;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNomLocalite() {
+        return nomLocalite;
     }
 
     public Timestamp getHeureArrivee() {
@@ -128,8 +126,8 @@ public class Trajet {
         this.aEuEmbouteillage = aEuEmbouteillage;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNomLocalite(String nomLocalite) {
+        this.nomLocalite = nomLocalite;
     }
 
     public void setHeureArrivee(Timestamp heureArrivee) throws TimeException {

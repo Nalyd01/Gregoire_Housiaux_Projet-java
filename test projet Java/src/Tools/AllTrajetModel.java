@@ -53,7 +53,7 @@ public class AllTrajetModel extends AbstractTableModel {
                 }
             }
             case 4 : return trajet.getCodePostal();
-            case 5 : return trajet.getNom();
+            case 5 : return trajet.getNomLocalite();
             case 6 : {
                 try{
                     return controller.idClient(trajet.getClient_id());

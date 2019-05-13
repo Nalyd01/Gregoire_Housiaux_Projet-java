@@ -16,6 +16,8 @@ public interface DataAccess {
 
     ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
+    Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
+
     void removeTrajet(int idTrajet) throws SQLException;
 
     ArrayList getChauffeurs() throws SQLException;

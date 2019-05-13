@@ -62,7 +62,6 @@ public class TacheMetier {
             }
             else {
                 nbKm[indexHour] = (double) (dateArrivé.getTimeInMillis()-dateDépart.getTimeInMillis()) / (double) (trajet.getHeureArrivee().getTime()-trajet.getHeureDepart().getTime()) * trajet.getNbKm();
-                System.out.println("date de départ " + dateDépart.get(Calendar.HOUR)+ " date de comparaison " + dateArrivé.get(Calendar.HOUR) +":" + dateArrivé.get(Calendar.MINUTE));
                 break;
             }
             indexHour++;
