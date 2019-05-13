@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Exception/TimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Exception/TimeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +19,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="259" column="32" lean-forward="true" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+            <state relative-caret-position="354">
+              <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,11 +74,11 @@
         <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Model/DBAcces.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/TimeException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" />
       </list>
     </option>
   </component>
@@ -148,7 +157,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557759063120" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557761085877" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -199,7 +208,7 @@
       <workItem from="1557695916940" duration="567000" />
       <workItem from="1557696524937" duration="288000" />
       <workItem from="1557735159787" duration="10200000" />
-      <workItem from="1557750861553" duration="4137000" />
+      <workItem from="1557750861553" duration="6781000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -271,17 +280,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557750724693</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="trajetform modif">
+      <created>1557759093441</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557759093441</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62505000" />
+    <option name="totallyTimeSpent" value="65149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23481782" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.4890388" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -290,7 +306,7 @@
       <window_info id="Structure" order="6" weight="0.24939272" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32669982" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32504147" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -326,7 +342,8 @@
     <MESSAGE value="test supp" />
     <MESSAGE value="modif recherche 2" />
     <MESSAGE value="finish recherches 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish recherches 2" />
+    <MESSAGE value="trajetform modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="trajetform modif" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Main.java">
@@ -455,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -478,8 +488,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="259" column="32" lean-forward="true" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+        <state relative-caret-position="354">
+          <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

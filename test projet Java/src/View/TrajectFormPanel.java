@@ -129,6 +129,7 @@ public class TrajectFormPanel extends JPanel {
         espace();
 
         clientLabel = new JLabel("Nom et prénom du client : ");
+        clientLabel.setToolTipText("Personne qui paie le trajet");
         this.add(clientLabel);
 
         this.add(comboBoxClients);

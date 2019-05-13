@@ -1,5 +1,8 @@
 package Tools;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class TacheMetier {
@@ -23,7 +26,6 @@ public class TacheMetier {
     public static final double PCS14_18 = 3.2;
     public static final double PCS18_22 = 2.75;
     public static final double PCS22_6 = 3.5;
-
 
     public static double getCost(Trajet trajet){
         Calendar dateDépart = Calendar.getInstance();
@@ -82,7 +84,10 @@ public class TacheMetier {
 
         cost += (trajet.getaEuEmbouteillage()? 3 : 0);
 
-        return cost;
+        BigDecimal costToFormat = new BigDecimal(cost).setScale(2, RoundingMode.HALF_UP);
+        double newCost = costToFormat.doubleValue();
+
+        return newCost;
     }
 
     public static int getIndex(int heure) {
