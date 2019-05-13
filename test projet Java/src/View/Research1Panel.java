@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 
 public class Research1Panel extends JPanel {

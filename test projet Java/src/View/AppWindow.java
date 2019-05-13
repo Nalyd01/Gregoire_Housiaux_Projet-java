@@ -161,8 +161,7 @@ public class AppWindow extends JFrame {
                 frameContainer.add(new Research1Panel(), BorderLayout.NORTH);
             }
             if(event.getSource() == research2){
-                scroller = new JScrollPane(new Research2Panel());
-                frameContainer.add(scroller, BorderLayout.CENTER);
+                frameContainer.add(new Research2Panel(), BorderLayout.NORTH);
             }
             if(event.getSource() == research3){
                 frameContainer.add(new Research3Panel(), BorderLayout.NORTH);

@@ -14,11 +14,10 @@ public class DBAcces implements DataAccess {
     private String sql;
     private Trajet trajet;
     private Boolean aEuPanne;
-    private ArrayList<Trajet> allTrajets;
+    private ArrayList<Trajet> allTrajets, allTrajetsZone;
     private PreparedStatement statement;
-    private ArrayList chauffeurs, localites, clients, allZones;
+    private ArrayList chauffeurs, localites, clients, allZones, chauffeursZone;
     private HashMap<String, Integer> zoneNbChauffeur;
-
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
@@ -27,14 +26,7 @@ public class DBAcces implements DataAccess {
         sql = "SELECT * FROM trajet";
         statement = connection.prepareStatement(sql);
 
-        // Récupération des données
-        ResultSet data = statement.executeQuery();
-
-        allTrajets = new ArrayList<>();
-        while(data.next()){
-            allTrajets.add(créaTrajets(data));
-        }
-        return allTrajets;
+        return allTrajetsList();
     }
 
     @Override
@@ -49,13 +41,7 @@ public class DBAcces implements DataAccess {
         statement.setTimestamp(2, date2);
         statement.setInt(3,matricule);
 
-        ResultSet data = statement.executeQuery();
-
-        allTrajets = new ArrayList<>();
-        while(data.next()){
-            allTrajets.add(créaTrajets(data));
-        }
-        return allTrajets;
+        return allTrajetsList();
     }
 
     @Override
@@ -71,13 +57,20 @@ public class DBAcces implements DataAccess {
         statement.setInt(3, codePostal);
         statement.setString(4, nomLocalite);
 
-        ResultSet data = statement.executeQuery();
+        return allTrajetsList();
+    }
 
-        allTrajets = new ArrayList<>();
-        while(data.next()){
-            allTrajets.add(créaTrajets(data));
+    @Override
+    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        connection = SingletonConnection.getInstance();
+
+        allTrajetsZone = new ArrayList<>();
+        for(int i = 0; i < matricule.size(); i++){
+            sql = "SELECT * FROM trajet WHERE matricule = '"+ matricule.get(i) +"'";
+            statement = connection.prepareStatement(sql);
+            allTrajetsZone.addAll(allTrajetsList());
         }
-        return allTrajets;
+        return allTrajetsZone;
     }
 
     @Override
@@ -99,7 +92,6 @@ public class DBAcces implements DataAccess {
     @Override
     public ArrayList getChauffeurs() throws SQLException {
         ResultSet data = récupData("SELECT matricule, nom FROM chauffeur");
-
         chauffeurs = new ArrayList();
         while(data.next()){
             chauffeurs.add("Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom"));
@@ -218,6 +210,16 @@ public class DBAcces implements DataAccess {
         }
     }
 
+    @Override
+    public ArrayList getChauffeursZone(int zone_id) throws SQLException{
+        ResultSet data = récupData("SELECT matricule FROM chauffeur WHERE zone_id = '" + zone_id + "'");
+        chauffeursZone = new ArrayList();
+        while (data.next()){
+            chauffeursZone.add(data.getInt("matricule"));
+        }
+        return chauffeursZone;
+    }
+
     public ResultSet récupData(String sql) throws SQLException{
         connection = SingletonConnection.getInstance();
         System.out.println(".");
@@ -237,6 +239,16 @@ public class DBAcces implements DataAccess {
                 , data.getTimestamp("heureDepart"));
 
         return trajet;
+    }
+
+    public ArrayList<Trajet> allTrajetsList() throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+        ResultSet data = statement.executeQuery();
+
+        allTrajets = new ArrayList<>();
+        while(data.next()){
+            allTrajets.add(créaTrajets(data));
+        }
+        return allTrajets;
     }
 
 }

@@ -48,6 +48,10 @@ public class Manager {
         return dao.getClient();
     }
 
+    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        return dao.getAllTrajets(matricule);
+    }
+
     public String getIdTrajet() throws SQLException {
         return dao.getIdTrajet();
     }
@@ -66,5 +70,9 @@ public class Manager {
 
     public String idClient(int client_id) throws SQLException {
         return dao.idClient(client_id);
+    }
+
+    public ArrayList getChauffeursZone(int zone_id) throws SQLException {
+        return dao.getChauffeursZone(zone_id);
     }
 }

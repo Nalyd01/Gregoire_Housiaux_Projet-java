@@ -21,41 +21,32 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(){
         super("Listing des trajets");
-        setBounds(100,100,1000,500);
-
-        controller = new ApplicationController();
-        panel = new JPanel();
-        frameContainer = this.getContentPane();
-        frameContainer.setLayout(new BorderLayout());
-        frameContainer.add(panel,BorderLayout.CENTER);
+        initListing();
         afficherListing();
     }
 
     public ListingWindow(String chauffeur, Timestamp date1, Timestamp date2){
         super("Listing des clients d'un chauffeur entre 2 dates");
-        setBounds(100,100,1635,400);
+        initListing();
 
-        controller = new ApplicationController();
-        panel = new JPanel();
-        frameContainer = this.getContentPane();
-        frameContainer.setLayout(new BorderLayout());
-        frameContainer.add(panel,BorderLayout.CENTER);
         int matriculeChauffeur = Integer.parseInt(chauffeur.substring(15, chauffeur.indexOf(" ", 16)));
         afficherListing(matriculeChauffeur, date1, date2);
     }
 
     public ListingWindow(Timestamp date1, Timestamp date2, String localites){
         super("Lisiting des clients d'une localités entre 2 dates");
-        setBounds(100,100,1635,400);
+        initListing();
 
-        controller = new ApplicationController();
-        panel = new JPanel();
-        frameContainer = this.getContentPane();
-        frameContainer.setLayout(new BorderLayout());
-        frameContainer.add(panel,BorderLayout.CENTER);
         int codePostal = Integer.parseInt(localites.substring(0,localites.indexOf(" ")));
         String nomLocalite = localites.substring(localites.indexOf(" ")+1);
         afficherListing(codePostal, nomLocalite, date1, date2);
+    }
+
+    public ListingWindow(ArrayList matricule){
+        super("Lisiting des clients d'une zone");
+        initListing();
+
+        afficherListing(matricule);
     }
 
     public void afficherListing(){
@@ -105,6 +96,28 @@ public class ListingWindow extends JFrame {
     public void afficherListing(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2){
         try{
             ArrayList<Trajet> trajets = controller.getAllTrajets(codePostal, nomLocalite, date1, date2);
+            créaTable(trajets);
+        }
+        catch (SQLException sqlException){
+            JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (ValeurException valeurException){
+            JOptionPane.showMessageDialog (null, valeurException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (CodePostalException codePostalException){
+            JOptionPane.showMessageDialog (null, codePostalException.getMessage(), "Erreur sur le code postal", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (IdException idException){
+            JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (TimeException timeException){
+            JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void afficherListing(ArrayList matricule){
+        try{
+            ArrayList<Trajet> trajets = controller.getAllTrajets(matricule);
             créaTable(trajets);
         }
         catch (SQLException sqlException){
@@ -194,6 +207,16 @@ public class ListingWindow extends JFrame {
                 JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
             }
         }
+    }
+
+    public void initListing(){
+        setBounds(100,100,1000,500);
+
+        controller = new ApplicationController();
+        panel = new JPanel();
+        frameContainer = this.getContentPane();
+        frameContainer.setLayout(new BorderLayout());
+        frameContainer.add(panel,BorderLayout.CENTER);
     }
 
 }
