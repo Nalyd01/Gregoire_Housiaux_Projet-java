@@ -47,7 +47,6 @@ public class TacheMetier {
             case 4 : cost += PPC22_6 + (PCS22_6 * (trajet.getNbPassagers()-1));
                 break;
         }
-        System.out.println("prix de prise en charge + nb client : " + cost);
 
         Calendar timeToCompare = ((Calendar) dateDépart.clone());
         timeToCompare.set(Calendar.MINUTE, 0);
@@ -75,17 +74,11 @@ public class TacheMetier {
             }
         }
 
-
         cost += nbKm[0] * PKm6_10;
-        System.out.println((" 6-10h km : " + nbKm[0] + "total : " + nbKm[0]*PKm6_10));
         cost += nbKm[1] * PKm10_14;
-        System.out.println((" 10-14h km : " + nbKm[1] + "total : " + nbKm[1]*PKm10_14));
         cost += nbKm[2] * PKm14_18;
-        System.out.println((" 14-18h km : " + nbKm[2] + "total : " + nbKm[2]*PKm14_18));
         cost += nbKm[3] * PKm18_22;
-        System.out.println((" 18-22h km : " + nbKm[3] + "total : " + nbKm[3]*PKm18_22));
         cost += nbKm[4] * PKm22_6;
-        System.out.println((" 22-6h km : " + nbKm[4] + "total : " + nbKm[4]*PKm22_6));
 
         cost += (trajet.getaEuEmbouteillage()? 3 : 0);
 

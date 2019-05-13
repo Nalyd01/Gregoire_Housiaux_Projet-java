@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.Format;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -85,6 +87,7 @@ public class TrajectFormPanel extends JPanel {
 
         idText = new JFormattedTextField();
         idText.setEditable(false);
+
         try{
             idText.setText(controller.getIdTrajet());
         } catch (SQLException sqlException) {
@@ -98,7 +101,7 @@ public class TrajectFormPanel extends JPanel {
         kmLabel.setToolTipText("A partir du point de départ jusqu'à l'arrivée");
         this.add(kmLabel);
 
-        kmText = new JTextField();
+        kmText = new JFormattedTextField();
         this.add(kmText);
 
         espace();
@@ -201,14 +204,24 @@ public class TrajectFormPanel extends JPanel {
                     errorEmptyField("Vous devez remplir le nombre de km parcourus");
                     kmLabel.setForeground(Color.RED);
                 } else{
-                    nbKm = Integer.parseInt(kmText.getText());
+                    try{
+                        Integer.parseInt(kmText.getText());
+                        nbKm = Integer.parseInt(kmText.getText());
+                    } catch(NumberFormatException exception){
+                        JOptionPane.showMessageDialog(null, "Le nombre de km doit être un nombre entier","Erreur dans le formulaire", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
 
                 if(nbPassagersText.getText().isEmpty()){
                     errorEmptyField("Vous devez remplir le nombre de passagers");
                     nbPassagersLabel.setForeground(Color.RED);
                 } else{
-                    nbPassagers = Integer.parseInt(nbPassagersText.getText());
+                    try{
+                        Integer.parseInt(nbPassagersText.getText());
+                        nbPassagers = Integer.parseInt(nbPassagersText.getText());
+                    } catch(NumberFormatException exception){
+                        JOptionPane.showMessageDialog(null, "Le nombre de passagers doit être un nombre entier","Erreur dans le formulaire", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
 
                 idChauffeur = Integer.parseInt(comboBoxChauffeurs.getSelectedItem().toString().substring(15, comboBoxChauffeurs.getSelectedItem().toString().indexOf(" ", 16)));
@@ -243,7 +256,7 @@ public class TrajectFormPanel extends JPanel {
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
             }catch (TimeException timeException){
-                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure a la date d'arrivé et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure a la date d'arrivée et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
             }catch(Exception e){
                 e.printStackTrace();
             }

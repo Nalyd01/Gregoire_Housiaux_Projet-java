@@ -37,7 +37,7 @@ public class TacheMetierWindow extends ListingWindow {
             try {
                 trajet = controller.getTrajet((int) getTable().getValueAt(selectedRow, 0));
                 prix = TacheMetier.getCost(trajet);
-                JOptionPane.showMessageDialog(null, "Le prix de ce trajet est de " + prix + "€" , "calcul du prix de ce trajet", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Le prix de ce trajet est de " + prix + "€" , "Calcul du prix de ce trajet", JOptionPane.INFORMATION_MESSAGE);
             }catch (Exception e){
                 e.printStackTrace();
             }

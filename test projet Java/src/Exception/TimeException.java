@@ -1,7 +1,5 @@
 package Exception;
 
-import javax.swing.*;
-
 public class TimeException extends Exception {
 
     public String getMessage(){
