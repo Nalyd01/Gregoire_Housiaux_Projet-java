@@ -9,6 +9,7 @@ import java.lang.*;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.List;
+import Exception.*;
 
 public class Research2Panel extends JPanel {
     private ApplicationController controller;
@@ -70,11 +71,28 @@ public class Research2Panel extends JPanel {
             zone_id = Integer.parseInt(boxZones.getSelectedItem().toString().substring(7,12));
             try{
                     matriculeChauffeurs = controller.getChauffeursZone(zone_id);
-                    new ListingWindow(matriculeChauffeurs);
-            } catch(SQLException exception){
-                JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+                    if(controller.getAllTrajets(matriculeChauffeurs).isEmpty()){
+                        JOptionPane.showMessageDialog (null, "Il n'y a pas de trajets dans cette zone...", "Erreur trajet", JOptionPane.ERROR_MESSAGE);
+                    } else{
+                        new ListingWindow(matriculeChauffeurs);
+                    }
+            } catch (SQLException sqlException){
+                JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (ValeurException valeurException){
+                JOptionPane.showMessageDialog (null, valeurException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (CodePostalException codePostalException){
+                JOptionPane.showMessageDialog (null, codePostalException.getMessage(), "Erreur sur le code postal", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (IdException idException){
+                JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (TimeException timeException){
+                JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
             }
 
         }
     }
+
 }
