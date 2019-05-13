@@ -208,7 +208,7 @@ public class TrajectFormPanel extends JPanel {
                     errorEmptyField("Vous devez remplir le nombre de passagers");
                     nbPassagersLabel.setForeground(Color.RED);
                 } else{
-                    nbPassagers = Integer.parseInt(kmText.getText());
+                    nbPassagers = Integer.parseInt(nbPassagersText.getText());
                 }
 
                 idChauffeur = Integer.parseInt(comboBoxChauffeurs.getSelectedItem().toString().substring(15, comboBoxChauffeurs.getSelectedItem().toString().indexOf(" ", 16)));
