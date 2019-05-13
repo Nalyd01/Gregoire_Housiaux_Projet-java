@@ -75,4 +75,8 @@ public class Manager {
     public ArrayList getChauffeursZone(int zone_id) throws SQLException {
         return dao.getChauffeursZone(zone_id);
     }
+
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+        return dao.getOnGoingTraject();
+    }
 }

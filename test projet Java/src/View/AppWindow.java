@@ -23,7 +23,7 @@ public class AppWindow extends JFrame {
         super("Gestion de société de taxis");
         setBounds(100,100,500,500);
 
-        panel = new WelcomePanel();
+        panel = new WelcomePanel(this);
         frameContainer = this.getContentPane();
         frameContainer.setLayout(new BorderLayout());
         frameContainer.add(panel,BorderLayout.CENTER);
@@ -116,7 +116,7 @@ public class AppWindow extends JFrame {
         @Override
         public void actionPerformed(ActionEvent event){
             frameContainer.removeAll();
-            frameContainer.add(new WelcomePanel(), BorderLayout.CENTER);
+            frameContainer.add(new WelcomePanel(AppWindow.this), BorderLayout.CENTER);
             frameContainer.repaint();
             AppWindow.this.setVisible(true);
         }

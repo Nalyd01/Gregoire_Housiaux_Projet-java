@@ -249,4 +249,18 @@ public class DBAcces implements DataAccess {
         return allTrajets;
     }
 
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+        allTrajets = new ArrayList<Trajet>();
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
+        while (data.next()){
+            try {
+                allTrajets.add(créaTrajets(data));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return  allTrajets;
+    }
+
 }

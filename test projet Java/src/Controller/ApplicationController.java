@@ -75,4 +75,8 @@ public class ApplicationController {
         return manager.getChauffeursZone(zone_id);
     }
 
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+        return manager.getOnGoingTraject();
+    }
+
 }
