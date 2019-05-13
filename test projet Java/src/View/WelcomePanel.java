@@ -51,7 +51,6 @@ public class WelcomePanel extends JPanel {
         try {
             onGoingTraject.removeAll();
             trajets = controller.getOnGoingTraject();
-            System.out.println("update : " + trajets.size());
             OnGoingTrajectPanel temp;
             for (Trajet trajet :  trajets){
                 temp = new OnGoingTrajectPanel(trajet);
