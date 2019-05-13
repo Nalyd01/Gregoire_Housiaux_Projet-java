@@ -1,11 +1,15 @@
 package View;
 
+import Tools.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Timestamp;
+
 
 public class AppWindow extends JFrame {
     private Container frameContainer;
@@ -96,6 +100,8 @@ public class AppWindow extends JFrame {
 
                 costTrip = new JMenuItem("Calcul du coût d'un trajet");
                 businessTask.add(costTrip);
+                TacheMetierListener tacheMetierListener = new TacheMetierListener();
+                costTrip.addActionListener(tacheMetierListener);
 
         this.addWindowListener( new WindowAdapter()
         { public void windowClosing( WindowEvent e)
@@ -163,6 +169,17 @@ public class AppWindow extends JFrame {
             }
             frameContainer.repaint();
             AppWindow.this.setVisible(true);
+        }
+    }
+
+    private class TacheMetierListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                System.out.println( TacheMetier.getCost(new Trajet(2, 20, 2, 123456, 3333, "5", 02, false, false, new Timestamp(System.currentTimeMillis()+18000000), new Timestamp(System.currentTimeMillis()))));
+            }catch (Exception err){
+                err.printStackTrace();
+            }
         }
     }
 
