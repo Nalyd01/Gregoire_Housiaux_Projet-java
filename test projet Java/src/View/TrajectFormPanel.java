@@ -32,26 +32,25 @@ public class TrajectFormPanel extends JPanel {
     private Boolean aPanne, aEmbouteillage;
     private Timestamp heureDépart, heureFin;
 
-    public TrajectFormPanel(String id, String nbKm,String nbPassager, boolean aEuPanne, boolean aEuEmbouteillage, String matricule, String codePostal, String nomLocalité, String idCLient, AppWindow appWindow){
+    public TrajectFormPanel(Trajet trajet, AppWindow appWindow){
         this(appWindow);
-        idText.setText(id);
+        idText.setText(String.valueOf( trajet.getIdentifiant()));
         idText.setEditable(false);
-        kmText.setText(nbKm);
-        nbPassagersText.setText(nbPassager);
-        if(aEuPanne){
-            panne.setSelected(true);
-        }else{
-            notPanne.setSelected(false);
-        }
-        if(aEuEmbouteillage){
-            embouteillage.setSelected(true);
-        }else{
-            notEmbouteillage.setSelected(false);
+        kmText.setText(String.valueOf( trajet.getNbKm()));
+        nbPassagersText.setText(String.valueOf( trajet.getNbPassagers()));
+        panne.setSelected(trajet.getaEuPanne());
+        embouteillage.setSelected(trajet.getaEuEmbouteillage());
+
+        try {
+            setComboBoxSelection(comboBoxChauffeurs, controller.idChauffeur(trajet.getMatricule()));
+            setComboBoxSelection(comboBoxLocalites, trajet.getCodePostal() + " " + trajet.getNomLocalite());
+            setComboBoxSelection(comboBoxClients, controller.idClient(trajet.getClient_id()));
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
-        setComboBoxSelection(comboBoxChauffeurs, matricule);
-        setComboBoxSelection(comboBoxLocalites, codePostal +" " + nomLocalité);
-        setComboBoxSelection(comboBoxClients, idCLient);
+        pointDépart.setValue(new Timestamp(trajet.getHeureDepart().getTime()));
+        pointFin.setValue(new Timestamp(trajet.getHeureArrivee().getTime()));
 
     }
 

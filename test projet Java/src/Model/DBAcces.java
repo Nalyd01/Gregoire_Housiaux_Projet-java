@@ -32,7 +32,7 @@ public class DBAcces implements DataAccess {
 
         allTrajets = new ArrayList<>();
         while(data.next()){
-            créaTrajets(data);
+            allTrajets.add(créaTrajets(data));
         }
         return allTrajets;
     }
@@ -53,7 +53,7 @@ public class DBAcces implements DataAccess {
 
         allTrajets = new ArrayList<>();
         while(data.next()){
-            créaTrajets(data);
+            allTrajets.add(créaTrajets(data));
         }
         return allTrajets;
     }
@@ -75,9 +75,16 @@ public class DBAcces implements DataAccess {
 
         allTrajets = new ArrayList<>();
         while(data.next()){
-            créaTrajets(data);
+            allTrajets.add(créaTrajets(data));
         }
         return allTrajets;
+    }
+
+    @Override
+    public Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+        ResultSet data = récupData("SELECT * FROM trajet WHERE identifiant = " + idTrajet + ";");
+        data.next();
+        return créaTrajets(data);
     }
 
 
@@ -104,6 +111,7 @@ public class DBAcces implements DataAccess {
     public String idChauffeur(int matricule) throws SQLException {
         ResultSet data = récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "'");
         data.next();
+        System.out.println(".");
         return "Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom");
     }
 
@@ -156,7 +164,7 @@ public class DBAcces implements DataAccess {
         statement.setBoolean(5, newTrajet.getaEuEmbouteillage());
         statement.setInt(6, newTrajet.getMatricule());
         statement.setInt(7, newTrajet.getCodePostal());
-        statement.setString(8, newTrajet.getNom());
+        statement.setString(8, newTrajet.getNomLocalite());
         statement.setInt(9, newTrajet.getClient_id());
         statement.setTimestamp(10, newTrajet.getHeureArrivee());
         statement.setTimestamp(11, newTrajet.getHeureDepart());
@@ -212,11 +220,12 @@ public class DBAcces implements DataAccess {
 
     public ResultSet récupData(String sql) throws SQLException{
         connection = SingletonConnection.getInstance();
+        System.out.println(".");
         statement = connection.prepareStatement(sql);
         return statement.executeQuery();
     }
 
-    public void créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         aEuPanne = data.getBoolean("panne");
         if(data.wasNull()){
             aEuPanne = false;
@@ -227,7 +236,7 @@ public class DBAcces implements DataAccess {
                 data.getInt("client_id"), aEuPanne, data.getBoolean("aEuEmbouteillage"), data.getTimestamp("heureArrivee")
                 , data.getTimestamp("heureDepart"));
 
-        allTrajets.add(trajet);
+        return trajet;
     }
 
 }

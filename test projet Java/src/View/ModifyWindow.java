@@ -1,43 +1,51 @@
 package View;
 
+import Controller.ApplicationController;
+import Tools.Trajet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
 
 
 public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
     private JScrollPane scroller;
+    private ApplicationController controller;
+    private Trajet trajet;
 
     public ModifyWindow(AppWindow appWindow){
         this.appWindow = appWindow;
+        controller = new ApplicationController();
 
         modifyButt = new JButton("Modifier");
         this.add(modifyButt, BorderLayout.SOUTH);
+        getTable().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         ModifyButtonListener deleteButtonListener = new ModifyButtonListener();
         modifyButt.addActionListener(deleteButtonListener);
 
     }
 
-    private class ModifyButtonListener implements ActionListener {
+    private class ModifyButtonListener implements ActionListener{
 
         public void actionPerformed(ActionEvent event){
-
             int selectedRow = getTable().getSelectedRow();
-            String id = String.valueOf(getTable().getValueAt(selectedRow,0));
-            String nbKm = String.valueOf(getTable().getValueAt(selectedRow, 1));
-            String nbPassager = String.valueOf(getTable().getValueAt(selectedRow,2));
-            String matricule = String.valueOf(getTable().getValueAt(selectedRow, 3));
-            String codePostal = String.valueOf(getTable().getValueAt(selectedRow, 4));
-            String nomLocalite = String.valueOf(getTable().getValueAt(selectedRow, 5));
-            String idClient = String.valueOf(getTable().getValueAt(selectedRow, 6));
-            boolean panne = ((getTable().getValueAt(selectedRow,7)).equals("Non") ? false : true);
-            boolean embouteillage = ((getTable().getValueAt(selectedRow,8)).equals("Non") ? false : true);
+            try {
+                trajet = controller.getTrajet((int) getTable().getValueAt(selectedRow, 0));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
 
-            scroller = new JScrollPane(new TrajectFormPanel(id,nbKm, nbPassager, panne, embouteillage, matricule, codePostal, nomLocalite, idClient, appWindow));
+            scroller = new JScrollPane(new TrajectFormPanel(trajet, appWindow));
 
             appWindow.getFrameContainer().removeAll();
             appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);

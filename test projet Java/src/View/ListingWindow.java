@@ -183,13 +183,12 @@ public class ListingWindow extends JFrame {
     public void deleteTrajet() {
         controller = new ApplicationController();
 
-        int selectLine = table.getSelectedRow();
-        while(selectLine != -1){
-            int modelRow = table.convertRowIndexToModel(selectLine);
+        int[] selectLines = getTable().getSelectedRows();
+        for(int i = 0; i < selectLines.length; i++){
+            int modelRow = table.convertRowIndexToModel(selectLines[i]-i);
             try{
-                controller.removeTrajet((int)getTable().getModel().getValueAt(selectLine,0));
+                controller.removeTrajet((int)getTable().getModel().getValueAt(selectLines[i]-i,0));
                 ((AllTrajetModel)getTable().getModel()).removeRow(modelRow);
-                selectLine = getTable().getSelectedRow();
             }
             catch(SQLException exception){
                 JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
