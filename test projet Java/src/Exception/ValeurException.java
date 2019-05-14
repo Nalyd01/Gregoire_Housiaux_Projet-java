@@ -8,6 +8,6 @@ public class ValeurException extends Exception {
     }
 
     public String getMessage(){
-        return "La valeur doit être supérieure à 0 !";
+        return "La valeur doit être supérieure à 0 ! Valeur entrér :" + wrongValue;
     }
 }

@@ -3,7 +3,7 @@ package Tools;
 
 import javax.swing.*;
 import View.WelcomePanel;
-
+import  View.AppWindow;
 import java.awt.*;
 
 public class TrajectUpdateThread extends Thread {

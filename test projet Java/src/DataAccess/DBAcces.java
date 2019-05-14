@@ -31,8 +31,9 @@ public class DBAcces implements DataAccess {
 
         sql = "SELECT * FROM trajet";
         statement = connection.prepareStatement(sql);
+        ResultSet data = statement.executeQuery();
 
-        return allTrajetsList();
+        return allTrajetsList(data);
     }
 
     @Override
@@ -42,12 +43,12 @@ public class DBAcces implements DataAccess {
         sql = "SELECT * FROM trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND matricule = ?;";
 
         statement = connection.prepareStatement(sql);
-
         statement.setTimestamp(1, date1);
         statement.setTimestamp(2, date2);
         statement.setInt(3,matricule);
+        ResultSet data = statement.executeQuery();
 
-        return allTrajetsList();
+        return allTrajetsList(data);
     }
 
     @Override
@@ -62,8 +63,9 @@ public class DBAcces implements DataAccess {
         statement.setTimestamp(2, date2);
         statement.setInt(3, codePostal);
         statement.setString(4, nomLocalite);
+        ResultSet data = statement.executeQuery();
 
-        return allTrajetsList();
+        return allTrajetsList(data);
     }
 
     @Override
@@ -74,7 +76,8 @@ public class DBAcces implements DataAccess {
         for(int i = 0; i < matricule.size(); i++){
             sql = "SELECT * FROM trajet WHERE matricule = '"+ matricule.get(i) +"';";
             statement = connection.prepareStatement(sql);
-            allTrajetsZone.addAll(allTrajetsList());
+            ResultSet data = statement.executeQuery();
+            allTrajetsZone.addAll(allTrajetsList(data));
         }
         return allTrajetsZone;
     }
@@ -254,9 +257,7 @@ public class DBAcces implements DataAccess {
         return trajet;
     }
 
-    public ArrayList<Trajet> allTrajetsList() throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
-        ResultSet data = statement.executeQuery();
-
+    public ArrayList<Trajet> allTrajetsList(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
         allTrajets = new ArrayList<>();
         while(data.next()){
             allTrajets.add(créaTrajets(data));
