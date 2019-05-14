@@ -1,26 +1,26 @@
 package View;
 
 import Controller.ApplicationController;
-import Tools.Trajet;
-
+import Model.Trajet;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 public class WelcomePanel extends JPanel {
     private JLabel line1, line2;
-    JPanel messageAcceuil, onGoingTraject;
-    JScrollPane scroller;
+    private JPanel messageAcceuil, onGoingTraject;
+    private JScrollPane scroller;
     private Font font;
-    ArrayList<Trajet> trajets;
-    ApplicationController controller;
-    AppWindow appWindow;
+    private ArrayList<Trajet> trajets;
+    private ApplicationController controller;
+    private AppWindow appWindow;
 
     public WelcomePanel(AppWindow appWindow) {
         this.appWindow = appWindow;
         messageAcceuil = new JPanel();
         messageAcceuil.setLayout(new BorderLayout());
         controller = new ApplicationController();
+
         line1 = new JLabel("Bienvenue sur notre application de gestion de taxis.");
         line2 = new JLabel("Par Grégoire Dylan et Housiaux Louis");
 

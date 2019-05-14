@@ -4,8 +4,9 @@ package View;
 import java.awt.*;
 
 public class TrajectUpdateThread extends Thread {
-    WelcomePanel welcomePanel;
-    AppWindow appWindow;
+    private WelcomePanel welcomePanel;
+    private AppWindow appWindow;
+
     public TrajectUpdateThread(WelcomePanel welcomePanel, AppWindow appWindow){
         this.welcomePanel = welcomePanel;
         this.appWindow = appWindow;
@@ -13,7 +14,7 @@ public class TrajectUpdateThread extends Thread {
 
     @Override
     public void run() {
-        while(containCmmponent(appWindow.getContentPane().getComponents(), welcomePanel)){
+        while(containComponent(appWindow.getContentPane().getComponents(), welcomePanel)){
             try {
                 welcomePanel.update();
                 Thread.sleep(5000);
@@ -24,7 +25,7 @@ public class TrajectUpdateThread extends Thread {
         }
     }
 
-    public boolean containCmmponent(Component[] components, Component component){
+    public boolean containComponent(Component[] components, Component component){
         for (Component temp : components){
             if (temp == component)
             {

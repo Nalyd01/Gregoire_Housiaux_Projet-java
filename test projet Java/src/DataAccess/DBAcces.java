@@ -1,12 +1,11 @@
-package Model;
+package DataAccess;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import Exception.*;
-import Tools.*;
+import Model.Trajet;
 
 
 public class DBAcces implements DataAccess {
@@ -185,6 +184,7 @@ public class DBAcces implements DataAccess {
         return zoneNbChauffeur;
     }
 
+    @Override
     public ArrayList<String> getAllZones() throws SQLException {
         ResultSet data = récupData("SELECT identifiant, nom FROM zone");
         allZones = new ArrayList<String>();
@@ -219,6 +219,21 @@ public class DBAcces implements DataAccess {
         return chauffeursZone;
     }
 
+    @Override
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+        allTrajets = new ArrayList<>();
+        ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
+        while (data.next()){
+            try {
+                allTrajets.add(créaTrajets(data));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return  allTrajets;
+    }
+
+    @Override
     public ResultSet récupData(String sql) throws SQLException{
         connection = SingletonConnection.getInstance();
         statement = connection.prepareStatement(sql);
@@ -249,18 +264,5 @@ public class DBAcces implements DataAccess {
         return allTrajets;
     }
 
-    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
-        allTrajets = new ArrayList<Trajet>();
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
-        while (data.next()){
-            try {
-                allTrajets.add(créaTrajets(data));
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        return  allTrajets;
-    }
 
 }

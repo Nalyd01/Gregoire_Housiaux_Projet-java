@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Exception.*;
-import Model.DBAcces;
-import Model.DataAccess;
-import Tools.Trajet;
+import DataAccess.DBAcces;
+import DataAccess.DataAccess;
+import Model.Trajet;
 
 public class Manager {
     private DataAccess dao;

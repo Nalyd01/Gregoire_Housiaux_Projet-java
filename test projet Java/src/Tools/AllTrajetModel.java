@@ -1,6 +1,7 @@
 package Tools;
 
 import Controller.ApplicationController;
+import Model.Trajet;
 
 import javax.swing.*;
 import javax.swing.table.*;

@@ -1,7 +1,6 @@
 package Business;
 
-import Tools.Trajet;
-
+import Model.Trajet;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Calendar;
@@ -31,12 +30,13 @@ public class TacheMetier {
     public static double getCost(Trajet trajet){
         Calendar dateDépart = Calendar.getInstance();
         dateDépart.setTimeInMillis(trajet.getHeureDepart().getTime());
+
         Calendar dateArrivé = Calendar.getInstance();
         dateArrivé.setTimeInMillis(trajet.getHeureArrivee().getTime());
 
         double  nbKm[] = new double[5]; // 0 -> 6-10h, 1 -> 10-14h, 2 -> 14-18h, 3 ->  18-22h, 4 -> 22-06h
         double cost = 0;
-        int indexHour = getIndex(dateDépart.get(Calendar.HOUR));
+        int indexHour = getIndex(dateDépart.get(Calendar.HOUR_OF_DAY));
 
         switch (indexHour){
             case 0 : cost += PPC6_10 + (PCS6_10 * (trajet.getNbPassagers()-1));
@@ -54,12 +54,12 @@ public class TacheMetier {
         Calendar timeToCompare = ((Calendar) dateDépart.clone());
         timeToCompare.set(Calendar.MINUTE, 0);
         timeToCompare.set(Calendar.SECOND, 0);
-        if(dateArrivé.get(Calendar.HOUR) >= 22){
+        if(dateArrivé.get(Calendar.HOUR_OF_DAY) >= 22){
             timeToCompare.set(Calendar.DAY_OF_YEAR, timeToCompare.get(Calendar.DAY_OF_YEAR)+1);
         }
 
         for (int i =0; i < 6 ; i++) {
-            timeToCompare.set(Calendar.HOUR, heuresPallier[indexHour]);
+            timeToCompare.set(Calendar.HOUR_OF_DAY, heuresPallier[indexHour]);
             if (dateArrivé.after(timeToCompare)) {
                 nbKm[indexHour] = (double)(timeToCompare.getTimeInMillis() - dateDépart.getTimeInMillis()) / (double)( trajet.getHeureArrivee().getTime()-trajet.getHeureDepart().getTime()) * trajet.getNbKm();
             }

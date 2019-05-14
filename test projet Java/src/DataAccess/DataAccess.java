@@ -1,4 +1,4 @@
-package Model;
+package DataAccess;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Exception.*;
-import Tools.*;
+import Model.Trajet;
 
 public interface DataAccess {
     ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException;

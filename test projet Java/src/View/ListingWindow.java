@@ -6,7 +6,8 @@ import java.awt.*;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import Tools.*;
+
+import Model.Trajet;
 
 import Controller.ApplicationController;
 import Exception.*;
