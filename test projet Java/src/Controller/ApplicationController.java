@@ -28,7 +28,7 @@ public class ApplicationController {
         return manager.getAllTrajets(codePostal, nomLocalite, date1, date2);
     }
 
-    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException, ListException {
         return manager.getAllTrajets(matricule);
     }
 
@@ -36,7 +36,7 @@ public class ApplicationController {
         return manager.getTrajet(idTrajet);
     }
 
-    public void removeTrajet(int idTrajet) throws SQLException{
+    public void removeTrajet(int idTrajet) throws SQLException, ValeurException{
         manager.removeTrajet(idTrajet);
     }
 
@@ -64,15 +64,15 @@ public class ApplicationController {
         return manager.getNbTrajetsParZones();
     }
 
-    public String idChauffeur(int matricule) throws SQLException {
+    public String idChauffeur(int matricule) throws SQLException, IdException {
         return manager.idChauffeur(matricule);
     }
 
-    public String idClient(int client_id) throws SQLException {
+    public String idClient(int client_id) throws SQLException, ValeurException {
         return manager.idClient(client_id);
     }
 
-    public ArrayList getChauffeursZone(int zone_id) throws SQLException {
+    public ArrayList getChauffeursZone(int zone_id) throws SQLException, IdException {
         return manager.getChauffeursZone(zone_id);
     }
 

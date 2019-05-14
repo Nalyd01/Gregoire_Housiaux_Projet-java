@@ -5,6 +5,7 @@ import Model.Trajet;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import Exception.*;
 
 public class OnGoingTrajectPanel extends JPanel {
     private JProgressBar progressBar;
@@ -28,8 +29,12 @@ public class OnGoingTrajectPanel extends JPanel {
 
             this.add(trajetText);
             this.add(progressBar);
-        }catch (SQLException e){
-            e.printStackTrace();
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (IdException idException){
+            JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
         }
     }
 

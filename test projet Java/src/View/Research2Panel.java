@@ -91,6 +91,9 @@ public class Research2Panel extends JPanel {
             catch (TimeException timeException){
                 JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
             }
+            catch (ListException listException){
+                JOptionPane.showMessageDialog (null, listException.getMessage(), "Erreur sur la liste", JOptionPane.ERROR_MESSAGE);
+            }
 
         }
     }

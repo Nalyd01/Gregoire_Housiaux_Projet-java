@@ -10,6 +10,8 @@ import Exception.*;
 import Model.Trajet;
 
 public interface DataAccess {
+    ResultSet récupData(String sql) throws SQLException;
+
     ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
     ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
@@ -35,8 +37,6 @@ public interface DataAccess {
     String getIdTrajet() throws SQLException;
 
     void insertTrajet(Trajet newTrajet) throws SQLException;
-
-    ResultSet récupData(String sql) throws SQLException;
 
     ArrayList<String> getAllZones() throws SQLException;
 

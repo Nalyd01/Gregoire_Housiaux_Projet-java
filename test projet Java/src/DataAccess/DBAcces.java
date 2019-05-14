@@ -19,6 +19,13 @@ public class DBAcces implements DataAccess {
     private HashMap<String, Integer> zoneNbChauffeur;
 
     @Override
+    public ResultSet récupData(String sql) throws SQLException{
+        connection = SingletonConnection.getInstance();
+        statement = connection.prepareStatement(sql);
+        return statement.executeQuery();
+    }
+
+    @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
@@ -171,20 +178,6 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
-        ResultSet data = récupData("SELECT matricule FROM trajet;");
-        zoneNbChauffeur = new HashMap<String, Integer>();
-        for (String zone : getAllZones()){
-            zoneNbChauffeur.put(zone, 0);
-        }
-        while(data.next()){
-            String zoneChauffeur = getZoneChauffeur(data.getInt("matricule"));
-            zoneNbChauffeur.put(zoneChauffeur,zoneNbChauffeur.get(zoneChauffeur)+1);
-        }
-        return zoneNbChauffeur;
-    }
-
-    @Override
     public ArrayList<String> getAllZones() throws SQLException {
         ResultSet data = récupData("SELECT identifiant, nom FROM zone");
         allZones = new ArrayList<String>();
@@ -220,6 +213,20 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
+    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
+        ResultSet data = récupData("SELECT matricule FROM trajet;");
+        zoneNbChauffeur = new HashMap<String, Integer>();
+        for (String zone : getAllZones()){
+            zoneNbChauffeur.put(zone, 0);
+        }
+        while(data.next()){
+            String zoneChauffeur = getZoneChauffeur(data.getInt("matricule"));
+            zoneNbChauffeur.put(zoneChauffeur,zoneNbChauffeur.get(zoneChauffeur)+1);
+        }
+        return zoneNbChauffeur;
+    }
+
+    @Override
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
         allTrajets = new ArrayList<>();
         ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
@@ -231,13 +238,6 @@ public class DBAcces implements DataAccess {
             }
         }
         return  allTrajets;
-    }
-
-    @Override
-    public ResultSet récupData(String sql) throws SQLException{
-        connection = SingletonConnection.getInstance();
-        statement = connection.prepareStatement(sql);
-        return statement.executeQuery();
     }
 
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
@@ -263,6 +263,5 @@ public class DBAcces implements DataAccess {
         }
         return allTrajets;
     }
-
 
 }

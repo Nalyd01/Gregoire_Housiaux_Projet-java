@@ -136,6 +136,9 @@ public class ListingWindow extends JFrame {
         catch (TimeException timeException){
             JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
         }
+        catch (ListException listException){
+            JOptionPane.showMessageDialog (null, listException.getMessage(), "Exception sur la liste", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void créaTable(ArrayList<Trajet> trajets){
@@ -206,6 +209,9 @@ public class ListingWindow extends JFrame {
             }
             catch(SQLException exception){
                 JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
+            }
+            catch(ValeurException exception){
+                JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
