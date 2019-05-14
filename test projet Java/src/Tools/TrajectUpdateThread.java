@@ -1,5 +1,8 @@
-package View;
+package Tools;
 
+
+import View.AppWindow;
+import View.WelcomePanel;
 
 import java.awt.*;
 
@@ -16,7 +19,7 @@ public class TrajectUpdateThread extends Thread {
         while(containCmmponent(appWindow.getContentPane().getComponents(), welcomePanel)){
             try {
                 welcomePanel.update();
-                Thread.sleep(5000);
+                Thread.sleep(1000);
             }catch (Exception e){
                 e.printStackTrace();
             }

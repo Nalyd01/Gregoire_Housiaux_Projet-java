@@ -1,6 +1,7 @@
 package View;
 
 import Controller.ApplicationController;
+import Tools.TrajectUpdateThread;
 import Tools.Trajet;
 
 import javax.swing.*;
