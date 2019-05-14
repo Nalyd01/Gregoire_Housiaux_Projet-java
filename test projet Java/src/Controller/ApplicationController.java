@@ -32,28 +32,28 @@ public class ApplicationController {
         return manager.getAllTrajets(matricule);
     }
 
-    public Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
-        return manager.getTrajet(idTrajet);
+    public Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+        return manager.getTrajetById(idTrajet);
     }
 
-    public void removeTrajet(int idTrajet) throws SQLException, ValeurException{
-        manager.removeTrajet(idTrajet);
+    public void removeTrajetById(int idTrajet) throws SQLException, ValeurException{
+        manager.removeTrajetById(idTrajet);
     }
 
-    public ArrayList getChauffeurs() throws SQLException{
-        return manager.getChauffeurs();
+    public ArrayList getAllChauffeurs() throws SQLException{
+        return manager.getAllChauffeurs();
     }
 
-    public ArrayList getLocalite() throws SQLException{
-        return manager.getLocalite();
+    public ArrayList getAllLocalites() throws SQLException{
+        return manager.getAllLocalites();
     }
 
-    public ArrayList getClient() throws SQLException {
-        return manager.getClient();
+    public ArrayList getAllClients() throws SQLException {
+        return manager.getAllClients();
     }
 
-    public String getIdTrajet() throws SQLException {
-        return manager.getIdTrajet();
+    public String getNextIdTrajet() throws SQLException {
+        return manager.getNextIdTrajet();
     }
 
     public void insertTrajet(Trajet newTrajet) throws SQLException {
@@ -64,16 +64,16 @@ public class ApplicationController {
         return manager.getNbTrajetsParZones();
     }
 
-    public String idChauffeur(int matricule) throws SQLException, IdException {
-        return manager.idChauffeur(matricule);
+    public String chauffeurById(int matricule) throws SQLException, IdException {
+        return manager.chauffeurById(matricule);
     }
 
-    public String idClient(int client_id) throws SQLException, ValeurException {
-        return manager.idClient(client_id);
+    public String clientById(int client_id) throws SQLException, ValeurException {
+        return manager.clientById(client_id);
     }
 
-    public ArrayList getChauffeursZone(int zone_id) throws SQLException, IdException {
-        return manager.getChauffeursZone(zone_id);
+    public ArrayList getChauffeursByZone(int zone_id) throws SQLException, IdException {
+        return manager.getChauffeursByZone(zone_id);
     }
 
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException{

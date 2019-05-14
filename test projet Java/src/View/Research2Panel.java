@@ -70,7 +70,7 @@ public class Research2Panel extends JPanel {
         public void actionPerformed(ActionEvent event){
             zone_id = Integer.parseInt(boxZones.getSelectedItem().toString().substring(7,12));
             try{
-                    matriculeChauffeurs = controller.getChauffeursZone(zone_id);
+                    matriculeChauffeurs = controller.getChauffeursByZone(zone_id);
                     if(controller.getAllTrajets(matriculeChauffeurs).isEmpty()){
                         JOptionPane.showMessageDialog (null, "Il n'y a pas de trajets dans cette zone...", "Erreur trajet", JOptionPane.ERROR_MESSAGE);
                     } else{

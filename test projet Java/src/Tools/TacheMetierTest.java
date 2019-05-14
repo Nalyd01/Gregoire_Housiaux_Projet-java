@@ -1,15 +1,16 @@
 package Tools;
 
 
+import Model.Trajet;
 import org.junit.Assert;
 import Business.TacheMetier;
-
 import java.sql.Timestamp;
 import java.util.Calendar;
 
 public class TacheMetierTest {
     private Trajet trajet;
     Calendar dateDepart;
+
     @org.junit.Before
     public void setUp() throws Exception {
         int heureDépart =4;

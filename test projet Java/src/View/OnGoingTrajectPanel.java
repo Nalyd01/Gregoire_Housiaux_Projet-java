@@ -28,7 +28,7 @@ public class OnGoingTrajectPanel extends JPanel {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         try {
-            trajetText = new JLabel(controller.idChauffeur(trajet.getMatricule()));
+            trajetText = new JLabel(controller.chauffeurById(trajet.getMatricule()));
             trajetText.setHorizontalAlignment(SwingConstants.CENTER);
             progressBar.setString(trajet.getHeureDepart().toString()  + " --> " + trajet.getHeureArrivee().toString());
             progressBar.setStringPainted(true);

@@ -32,7 +32,7 @@ public class Research3Panel extends JPanel {
         controller = new ApplicationController();
 
         try{
-            list = controller.getChauffeurs();
+            list = controller.getAllChauffeurs();
             comboBoxChauffeurs = new JComboBox(list.toArray());
             comboBoxChauffeurs.setEditable(false);
             this.add(comboBoxChauffeurs);

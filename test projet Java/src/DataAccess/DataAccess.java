@@ -20,21 +20,21 @@ public interface DataAccess {
 
     ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
-    Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
+    Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
-    void removeTrajet(int idTrajet) throws SQLException;
+    void removeTrajetById(int idTrajet) throws SQLException;
 
-    ArrayList getChauffeurs() throws SQLException;
+    ArrayList getAllChauffeurs() throws SQLException;
 
-    String idChauffeur(int matricule) throws SQLException;
+    String chauffeurById(int matricule) throws SQLException;
 
-    String idClient(int client_id) throws SQLException;
+    String clientById(int client_id) throws SQLException;
 
-    ArrayList getLocalite() throws SQLException;
+    ArrayList getAllLocalites() throws SQLException;
 
-    ArrayList getClient() throws SQLException;
+    ArrayList getAllClients() throws SQLException;
 
-    String getIdTrajet() throws SQLException;
+    String getNextIdTrajet() throws SQLException;
 
     void insertTrajet(Trajet newTrajet) throws SQLException;
 
@@ -42,7 +42,7 @@ public interface DataAccess {
 
     String getZoneChauffeur(int matricule) throws SQLException;
 
-    ArrayList getChauffeursZone(int zone_id) throws SQLException;
+    ArrayList getChauffeursByZone(int zone_id) throws SQLException;
 
     HashMap<String, Integer> getNbTrajetsParZones() throws SQLException;
 
