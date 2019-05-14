@@ -4,8 +4,8 @@
     <list default="true" id="037b006e-e354-42f5-8600-8d1257067a1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/OnGoingTrajectPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/OnGoingTrajectPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/WelcomePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/WelcomePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/WelcomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/WelcomePanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/WelcomePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="272">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -204,8 +204,8 @@
         <option value="$PROJECT_DIR$/src/Model/DBAcces.java" />
         <option value="$PROJECT_DIR$/src/View/TrajectUpdateThread.java" />
         <option value="$PROJECT_DIR$/src/View/AppWindow.java" />
-        <option value="$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java" />
         <option value="$PROJECT_DIR$/src/View/WelcomePanel.java" />
+        <option value="$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java" />
       </list>
     </option>
   </component>
@@ -352,12 +352,12 @@
       <workItem from="1557736733024" duration="374000" />
       <workItem from="1557759817755" duration="1013000" />
       <workItem from="1557763697800" duration="8606000" />
-      <workItem from="1557772364346" duration="3049000" />
+      <workItem from="1557772364346" duration="4652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140343000" />
+    <option name="totallyTimeSpent" value="141946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -507,16 +507,10 @@
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/WelcomePanel.java</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java</url>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/WelcomePanel.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="68" />
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -831,16 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/AppWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1972">
@@ -853,8 +837,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/WelcomePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="272">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
