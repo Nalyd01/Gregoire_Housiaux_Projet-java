@@ -1,7 +1,13 @@
 package View;
 
 import Controller.ApplicationController;
+<<<<<<< HEAD
+import Tools.TrajectUpdateThread;
+import Tools.Trajet;
+
+=======
 import Model.Trajet;
+>>>>>>> da6c91886305ff9ce407713addf7cd63d46942e8
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

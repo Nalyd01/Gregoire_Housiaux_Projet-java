@@ -1,12 +1,11 @@
-package Model;
+package DataAccess;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import Exception.*;
-import Tools.*;
+import Model.Trajet;
 
 
 public class DBAcces implements DataAccess {
@@ -18,6 +17,13 @@ public class DBAcces implements DataAccess {
     private PreparedStatement statement;
     private ArrayList chauffeurs, localites, clients, allZones, chauffeursZone;
     private HashMap<String, Integer> zoneNbChauffeur;
+
+    @Override
+    public ResultSet récupData(String sql) throws SQLException{
+        connection = SingletonConnection.getInstance();
+        statement = connection.prepareStatement(sql);
+        return statement.executeQuery();
+    }
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
@@ -66,7 +72,7 @@ public class DBAcces implements DataAccess {
 
         allTrajetsZone = new ArrayList<>();
         for(int i = 0; i < matricule.size(); i++){
-            sql = "SELECT * FROM trajet WHERE matricule = '"+ matricule.get(i) +"'";
+            sql = "SELECT * FROM trajet WHERE matricule = '"+ matricule.get(i) +"';";
             statement = connection.prepareStatement(sql);
             allTrajetsZone.addAll(allTrajetsList());
         }
@@ -91,7 +97,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList getChauffeurs() throws SQLException {
-        ResultSet data = récupData("SELECT matricule, nom FROM chauffeur");
+        ResultSet data = récupData("SELECT matricule, nom FROM chauffeur;");
         chauffeurs = new ArrayList();
         while(data.next()){
             chauffeurs.add("Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom"));
@@ -101,21 +107,21 @@ public class DBAcces implements DataAccess {
 
     @Override
     public String idChauffeur(int matricule) throws SQLException {
-        ResultSet data = récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "'");
+        ResultSet data = récupData("SELECT matricule, nom FROM chauffeur WHERE matricule = '" + matricule + "';");
         data.next();
         return "Matricule n° : " + data.getInt("matricule") + " " +data.getString("nom");
     }
 
     @Override
     public String idClient(int client_id) throws SQLException {
-        ResultSet data = récupData("SELECT nom, prenom, identifiant FROM client WHERE identifiant = '" + client_id + "'");
+        ResultSet data = récupData("SELECT nom, prenom, identifiant FROM client WHERE identifiant = '" + client_id + "';");
         data.next();
         return "n°: " + data.getInt("identifiant") + " "+ data.getString("nom")+ " " + data.getString("prenom");
     }
 
     @Override
     public ArrayList getLocalite() throws SQLException {
-        ResultSet data = récupData("SELECT codePostal, nom FROM localite");
+        ResultSet data = récupData("SELECT codePostal, nom FROM localite;");
 
         localites = new ArrayList();
         while(data.next()){
@@ -126,7 +132,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList getClient() throws SQLException {
-        ResultSet data = récupData("SELECT nom, prenom, identifiant FROM client");
+        ResultSet data = récupData("SELECT nom, prenom, identifiant FROM client;");
 
         clients = new ArrayList();
         while(data.next()){
@@ -137,7 +143,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public String getIdTrajet() throws SQLException {
-        ResultSet data = récupData("SELECT MAX(identifiant) FROM trajet");
+        ResultSet data = récupData("SELECT MAX(identifiant) FROM trajet;");
         data.next();
         return String.valueOf(data.getInt(1)+1);
     }
@@ -164,11 +170,46 @@ public class DBAcces implements DataAccess {
 
         // Colonnes facultatives
         if (newTrajet.getaEuPanne() != null) {
-            sql = "UPDATE trajet SET panne = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "'";
+            sql = "UPDATE trajet SET panne = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "';";
             statement = connection.prepareStatement(sql);
             statement.setBoolean(1, newTrajet.getaEuPanne());
             statement.executeUpdate();
         }
+    }
+
+    @Override
+    public ArrayList<String> getAllZones() throws SQLException {
+        ResultSet data = récupData("SELECT identifiant, nom FROM zone;");
+        allZones = new ArrayList<String>();
+        while (data.next()){
+            allZones.add("Zone n°" + data.getInt("identifiant") + " " + data.getString("nom"));
+        }
+        return allZones;
+    }
+
+    @Override
+    public String getZoneChauffeur(int matricule) throws SQLException {
+        ResultSet data = récupData("SELECT zone_id FROM chauffeur WHERE matricule = '" + matricule + "';");
+        if(!data.next()){
+            return null;
+        }
+        int zoneId = data.getInt("zone_id");
+        data = récupData("SELECT identifiant, nom FROM zone WHERE identifiant = '" + zoneId + "';");
+        if(data.next()) {
+            return "Zone n°" + data.getInt("identifiant") + " " + data.getString("nom");
+        }else{
+            return  null;
+        }
+    }
+
+    @Override
+    public ArrayList getChauffeursZone(int zone_id) throws SQLException{
+        ResultSet data = récupData("SELECT matricule FROM chauffeur WHERE zone_id = '" + zone_id + "';");
+        chauffeursZone = new ArrayList();
+        while (data.next()){
+            chauffeursZone.add(data.getInt("matricule"));
+        }
+        return chauffeursZone;
     }
 
     @Override
@@ -185,44 +226,18 @@ public class DBAcces implements DataAccess {
         return zoneNbChauffeur;
     }
 
-    public ArrayList<String> getAllZones() throws SQLException {
-        ResultSet data = récupData("SELECT identifiant, nom FROM zone");
-        allZones = new ArrayList<String>();
-        while (data.next()){
-            allZones.add("Zone n°" + data.getInt("identifiant") + " " + data.getString("nom"));
-        }
-        return allZones;
-    }
-
     @Override
-    public String getZoneChauffeur(int matricule) throws SQLException {
-        ResultSet data = récupData("SELECT zone_id FROM chauffeur WHERE matricule = '" + matricule + "'");
-        if(!data.next()){
-            return null;
-        }
-        int zoneId = data.getInt("zone_id");
-        data = récupData("SELECT identifiant, nom FROM zone WHERE identifiant = '" + zoneId + "';");
-        if(data.next()) {
-            return "Zone n°" + data.getInt("identifiant") + " " + data.getString("nom");
-        }else{
-            return  null;
-        }
-    }
-
-    @Override
-    public ArrayList getChauffeursZone(int zone_id) throws SQLException{
-        ResultSet data = récupData("SELECT matricule FROM chauffeur WHERE zone_id = '" + zone_id + "'");
-        chauffeursZone = new ArrayList();
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+        allTrajets = new ArrayList<>();
+        ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
         while (data.next()){
-            chauffeursZone.add(data.getInt("matricule"));
+            try {
+                allTrajets.add(créaTrajets(data));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
-        return chauffeursZone;
-    }
-
-    public ResultSet récupData(String sql) throws SQLException{
-        connection = SingletonConnection.getInstance();
-        statement = connection.prepareStatement(sql);
-        return statement.executeQuery();
+        return  allTrajets;
     }
 
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
@@ -247,20 +262,6 @@ public class DBAcces implements DataAccess {
             allTrajets.add(créaTrajets(data));
         }
         return allTrajets;
-    }
-
-    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
-        allTrajets = new ArrayList<Trajet>();
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
-        while (data.next()){
-            try {
-                allTrajets.add(créaTrajets(data));
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        return  allTrajets;
     }
 
 }

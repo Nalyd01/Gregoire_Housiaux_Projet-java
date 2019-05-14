@@ -1,4 +1,4 @@
-package Tools;
+package Model;
 
 import java.sql.Timestamp;
 import Exception.*;
@@ -20,7 +20,7 @@ public class Trajet {
         setClient_id(client_id);
         setaEuPanne(aEuPanne);
         setaEuEmbouteillage(aEuEmbouteillage);
-        this.heureDepart = heureDepart;
+        setHeureDepart(heureDepart);
         setHeureArrivee(heureArrivee);
     }
 
@@ -138,12 +138,8 @@ public class Trajet {
         }
     }
 
-    public void setHeureDepart(Timestamp heureDepart) throws TimeException{
-        if(heureDepart.before(heureArrivee) && heureArrivee.getTime()-heureDepart.getTime() <  86366673){//86 000 000 mili correspond a 24h
-            this.heureDepart = heureDepart;
-        }else{
-            throw new TimeException();
-        }
+    public void setHeureDepart(Timestamp heureDepart){
+        this.heureDepart = heureDepart;
     }
 
 }

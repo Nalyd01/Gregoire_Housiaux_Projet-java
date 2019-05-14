@@ -1,18 +1,12 @@
 package View;
 
 import Controller.ApplicationController;
-import Tools.Trajet;
+import Model.Trajet;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.FieldPosition;
-import java.text.ParsePosition;
 
 
 public class ModifyWindow extends ListingWindow {
@@ -42,7 +36,7 @@ public class ModifyWindow extends ListingWindow {
             try {
                 trajet = controller.getTrajet((int) getTable().getValueAt(selectedRow, 0));
             }catch (Exception e){
-                e.printStackTrace();
+                JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }
 
             scroller = new JScrollPane(new TrajectFormPanel(trajet, appWindow));

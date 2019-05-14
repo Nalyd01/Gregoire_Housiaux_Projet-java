@@ -1,9 +1,13 @@
 package Tools;
 
 
-import javax.swing.*;
+<<<<<<< HEAD:test projet Java/src/Tools/TrajectUpdateThread.java
+import View.AppWindow;
 import View.WelcomePanel;
 
+=======
+import javax.swing.*;
+>>>>>>> da6c91886305ff9ce407713addf7cd63d46942e8:test projet Java/src/View/TrajectUpdateThread.java
 import java.awt.*;
 
 public class TrajectUpdateThread extends Thread {

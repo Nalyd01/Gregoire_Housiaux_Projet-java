@@ -2,8 +2,7 @@ package View;
 
 import Controller.ApplicationController;
 import Business.TacheMetier;
-import Tools.Trajet;
-
+import Model.Trajet;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +11,6 @@ import java.awt.event.ActionListener;
 public class TacheMetierWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
-    private JScrollPane scroller;
     private ApplicationController controller;
     private Trajet trajet;
     private double prix;
@@ -39,7 +37,7 @@ public class TacheMetierWindow extends ListingWindow {
                 prix = TacheMetier.getCost(trajet);
                 JOptionPane.showMessageDialog(null, "Le prix de ce trajet est de " + prix + "€" , "Calcul du prix de ce trajet", JOptionPane.INFORMATION_MESSAGE);
             }catch (Exception e){
-                e.printStackTrace();
+                JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }
 
 

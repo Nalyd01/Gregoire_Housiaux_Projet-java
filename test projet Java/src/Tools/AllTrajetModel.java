@@ -1,7 +1,8 @@
 package Tools;
 
 import Controller.ApplicationController;
-
+import Model.Trajet;
+import Exception.*;
 import javax.swing.*;
 import javax.swing.table.*;
 import java.sql.SQLException;
@@ -48,8 +49,12 @@ public class AllTrajetModel extends AbstractTableModel {
             case 3 : {
                 try{
                     return controller.idChauffeur(trajet.getMatricule());
-                } catch (SQLException sqlException){
+                }
+                catch (SQLException sqlException){
                     JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+                }
+                catch (IdException idException){
+                    JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur l'identifiant", JOptionPane.ERROR_MESSAGE);
                 }
             }
             case 4 : return trajet.getCodePostal();
@@ -57,8 +62,12 @@ public class AllTrajetModel extends AbstractTableModel {
             case 6 : {
                 try{
                     return controller.idClient(trajet.getClient_id());
-                } catch (SQLException sqlException){
+                }
+                catch (SQLException sqlException){
                     JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+                }
+                catch (ValeurException valeurException){
+                    JOptionPane.showMessageDialog (null, valeurException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
                 }
             }
             case 7 : if(trajet.getaEuPanne() != null){

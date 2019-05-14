@@ -1,17 +1,18 @@
 package View;
 
 import Controller.ApplicationController;
-import Tools.Trajet;
+import Model.Trajet;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import Exception.*;
 
 public class OnGoingTrajectPanel extends JPanel {
-
-    JProgressBar progressBar;
-    JLabel trajetText;
-    ApplicationController controller;
-    Trajet trajet;
+    private JProgressBar progressBar;
+    private JLabel trajetText;
+    private ApplicationController controller;
+    private Trajet trajet;
+    private double pourcentage;
 
     public OnGoingTrajectPanel(Trajet trajet){
         this.trajet = trajet;
@@ -19,15 +20,21 @@ public class OnGoingTrajectPanel extends JPanel {
         progressBar = new JProgressBar();
         this.setVisible(true);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         try {
             trajetText = new JLabel(controller.idChauffeur(trajet.getMatricule()));
             trajetText.setHorizontalAlignment(SwingConstants.CENTER);
             progressBar.setString(trajet.getHeureDepart().toString()  + " --> " + trajet.getHeureArrivee().toString());
             progressBar.setStringPainted(true);
+
             this.add(trajetText);
             this.add(progressBar);
-        }catch (SQLException e){
-            e.printStackTrace();
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (IdException idException){
+            JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -35,7 +42,7 @@ public class OnGoingTrajectPanel extends JPanel {
         progressBar.setMinimum(0);
         progressBar.setMaximum((int)(trajet.getHeureArrivee().getTime()- trajet.getHeureDepart().getTime()));
         progressBar.setValue((int) (System.currentTimeMillis() - trajet.getHeureDepart().getTime()));
-        double pourcentage = (double) progressBar.getValue() / progressBar.getMaximum();
+        pourcentage = (double) progressBar.getValue() / progressBar.getMaximum();
         progressBar.setBackground(new Color((int)((1-pourcentage)*255), (int)(pourcentage*255),0));
         progressBar.setForeground(Color.LIGHT_GRAY);
     }

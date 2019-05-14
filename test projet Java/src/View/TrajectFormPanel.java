@@ -6,13 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.Format;
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 
-import Tools.*;
+import Model.Trajet;
 import Controller.ApplicationController;
 
 public class TrajectFormPanel extends JPanel {
