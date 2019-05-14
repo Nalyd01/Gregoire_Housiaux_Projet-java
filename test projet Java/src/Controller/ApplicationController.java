@@ -72,7 +72,7 @@ public class ApplicationController {
         return manager.clientById(client_id);
     }
 
-    public ArrayList getChauffeursByZone(int zone_id) throws SQLException, IdException {
+    public ArrayList getChauffeursByZone(int zone_id) throws SQLException, ValeurException {
         return manager.getChauffeursByZone(zone_id);
     }
 

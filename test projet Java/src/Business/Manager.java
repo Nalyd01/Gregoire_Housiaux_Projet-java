@@ -102,10 +102,9 @@ public class Manager {
         return dao.clientById(client_id);
     }
 
-    public ArrayList getChauffeursByZone(int zone_id) throws SQLException, IdException {
-        numberOfDigits = String.valueOf(zone_id).length();
-        if(numberOfDigits != 6){
-            throw new IdException(zone_id);
+    public ArrayList getChauffeursByZone(int zone_id) throws SQLException, ValeurException {
+        if(zone_id <= 0){
+            throw new ValeurException(zone_id);
         }
         return dao.getChauffeursByZone(zone_id);
     }

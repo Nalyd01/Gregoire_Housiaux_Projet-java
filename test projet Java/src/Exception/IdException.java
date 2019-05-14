@@ -8,6 +8,6 @@ public class IdException extends Exception {
     }
 
     public String getMessage(){
-        return "La valeur entrée (" + wrongValue + ") doit être composée de 6 chiffres.";
+        return "La valeur entrée (" + wrongValue + ") doit être composée de 6 chiffres pour le reste.";
     }
 }
