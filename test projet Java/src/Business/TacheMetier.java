@@ -1,19 +1,20 @@
-package Tools;
+package Business;
+
+import Tools.Trajet;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class TacheMetier {
 
-    public static int[] heuresPallier = new int[] {10,14,18,22, 6};
+    public static int[] heuresPallier = new int[] {10, 14, 18, 22, 6};
 
     public static final double PKm6_10 = 2.5; // PKm = Prix au Km
     public static final double PKm10_14 = 2;
     public static final double PKm14_18 = 2.8;
     public static final double PKm18_22 = 2.2;
-    public static final double PKm22_6 = 2.3;
+    public static final double PKm22_6 = 3;
 
     public static final double PPC6_10 = 2.4; //PPC = Prix de Prise en Charge
     public static final double PPC10_14 = 1.8;

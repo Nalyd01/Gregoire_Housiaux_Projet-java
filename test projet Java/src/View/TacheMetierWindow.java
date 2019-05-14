@@ -1,7 +1,7 @@
 package View;
 
 import Controller.ApplicationController;
-import Tools.TacheMetier;
+import Business.TacheMetier;
 import Tools.Trajet;
 
 import javax.swing.*;

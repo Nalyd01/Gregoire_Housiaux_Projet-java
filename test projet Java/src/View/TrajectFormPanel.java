@@ -152,11 +152,12 @@ public class TrajectFormPanel extends JPanel {
         jRadioButtonGroupPanne.add(notPanne);
 
         embouteillageLabel = new JLabel("Est-ce qu'il y a eu un embouteillage : ");
+        embouteillageLabel.setToolTipText("Cette ligne est facultative");
         this.add(embouteillageLabel);
 
         embouteillage = new JRadioButton("oui");
         this.add(embouteillage);
-        notEmbouteillage = new JRadioButton("non",true);
+        notEmbouteillage = new JRadioButton("non");
         this.add(notEmbouteillage);
 
         espace();

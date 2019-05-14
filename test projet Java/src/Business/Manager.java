@@ -1,4 +1,4 @@
-package Tools;
+package Business;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -8,6 +8,7 @@ import java.util.HashMap;
 import Exception.*;
 import Model.DBAcces;
 import Model.DataAccess;
+import Tools.Trajet;
 
 public class Manager {
     private DataAccess dao;

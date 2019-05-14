@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
+    <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="tache metier décimal au cost">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Business/TacheMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,20 +25,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+            <state relative-caret-position="28">
+              <caret line="154" selection-start-line="154" selection-end-line="155" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/TacheMetier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+            <state relative-caret-position="200">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/DBAcces.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="225" column="5" lean-forward="true" selection-start-line="225" selection-start-column="5" selection-end-line="225" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/OnGoingTrajectPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectUpdateThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -74,18 +122,19 @@
         <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Model/DBAcces.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/TimeException.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
+    <option name="y" value="-11" />
     <option name="width" value="980" />
-    <option name="height" value="1091" />
+    <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -109,6 +158,13 @@
               <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
               <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Business" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
@@ -157,7 +213,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557761085877" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557832640451" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -208,7 +264,11 @@
       <workItem from="1557695916940" duration="567000" />
       <workItem from="1557696524937" duration="288000" />
       <workItem from="1557735159787" duration="10200000" />
-      <workItem from="1557750861553" duration="6781000" />
+      <workItem from="1557750861553" duration="6802000" />
+      <workItem from="1557774560397" duration="170000" />
+      <workItem from="1557775965045" duration="157000" />
+      <workItem from="1557823433562" duration="2176000" />
+      <workItem from="1557826936751" duration="3095000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -287,17 +347,23 @@
       <option name="project" value="LOCAL" />
       <updated>1557759093441</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="tache metier décimal au cost">
+      <created>1557762620544</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1557762620544</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65149000" />
+    <option name="totallyTimeSpent" value="70768000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
+    <frame x="-10" y="0" width="980" height="1090" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4890388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.41797754" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -306,7 +372,7 @@
       <window_info id="Structure" order="6" weight="0.24939272" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32504147" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32666665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -343,7 +409,8 @@
     <MESSAGE value="modif recherche 2" />
     <MESSAGE value="finish recherches 2" />
     <MESSAGE value="trajetform modif" />
-    <option name="LAST_COMMIT_MESSAGE" value="trajetform modif" />
+    <MESSAGE value="tache metier décimal au cost" />
+    <option name="LAST_COMMIT_MESSAGE" value="tache metier décimal au cost" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Main.java">
@@ -355,24 +422,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TajectFormPanel.java" />
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java.orig" />
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/Trajet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2875">
           <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -424,41 +477,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/DBAcces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-479">
-          <caret line="174" column="42" selection-start-line="174" selection-start-column="42" selection-end-line="174" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/AppWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -472,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/TimeException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -486,17 +501,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/SingletonConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+        <state relative-caret-position="100">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetier.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+        <state relative-caret-position="136">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/OnGoingTrajectPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectUpdateThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/AppWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="131" column="44" lean-forward="true" selection-start-line="131" selection-start-column="44" selection-end-line="131" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/Trajet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/DBAcces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="225" column="5" lean-forward="true" selection-start-line="225" selection-start-column="5" selection-end-line="225" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="154" selection-start-line="154" selection-end-line="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/TacheMetier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
