@@ -21,6 +21,8 @@ public class OnGoingTrajectPanel extends JPanel {
         UIManager.put("ProgressBar.selectionForeground", Color.RED);
         UIManager.put("ProgressBar.selectionBackground", Color.WHITE);
 
+        this.add(Box.createRigidArea(new Dimension(10,10)));
+
         progressBar = new JProgressBar();
         this.setVisible(true);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
