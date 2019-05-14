@@ -1,7 +1,9 @@
-package View;
+package Tools;
 
 
 import javax.swing.*;
+import View.WelcomePanel;
+
 import java.awt.*;
 
 public class TrajectUpdateThread extends Thread {
@@ -18,7 +20,7 @@ public class TrajectUpdateThread extends Thread {
         while(containComponent(appWindow.getContentPane().getComponents(), welcomePanel)){
             try {
                 welcomePanel.update();
-                Thread.sleep(5000);
+                Thread.sleep(1000);
             }catch (Exception e){
                 JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }

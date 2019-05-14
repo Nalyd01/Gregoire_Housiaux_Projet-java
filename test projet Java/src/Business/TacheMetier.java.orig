@@ -55,8 +55,12 @@ public class TacheMetier {
         Calendar timeToCompare = ((Calendar) dateDépart.clone());
         timeToCompare.set(Calendar.MINUTE, 0);
         timeToCompare.set(Calendar.SECOND, 0);
+<<<<<<< HEAD
 
         if(dateDépart.get(Calendar.HOUR_OF_DAY) >= 22){
+=======
+        if(dateArrivé.get(Calendar.HOUR_OF_DAY) >= 22){
+>>>>>>> da6c91886305ff9ce407713addf7cd63d46942e8
             timeToCompare.set(Calendar.DAY_OF_YEAR, timeToCompare.get(Calendar.DAY_OF_YEAR)+1);
         }
 
