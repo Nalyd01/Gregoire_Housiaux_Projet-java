@@ -33,7 +33,7 @@ public class TacheMetierWindow extends ListingWindow {
         public void actionPerformed(ActionEvent event){
             int selectedRow = getTable().getSelectedRow();
             try {
-                trajet = controller.getTrajet((int) getTable().getValueAt(selectedRow, 0));
+                trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
                 prix = TacheMetier.getCost(trajet);
                 JOptionPane.showMessageDialog(null, "Le prix de ce trajet est de " + prix + "€" , "Calcul du prix de ce trajet", JOptionPane.INFORMATION_MESSAGE);
             }catch (Exception e){

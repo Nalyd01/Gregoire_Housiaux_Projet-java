@@ -30,7 +30,7 @@ public class Research1Panel extends JPanel {
         this.add(localiteLabel);
 
         try{
-            listLocalites = controller.getLocalite();
+            listLocalites = controller.getAllLocalites();
             comboBoxLocalites = new JComboBox(listLocalites.toArray());
             comboBoxLocalites.setEditable(false);
             this.add(comboBoxLocalites);

@@ -2,7 +2,7 @@ package Tools;
 
 
 import javax.swing.*;
-import View.WelcomePanel;
+import View.*;
 import  View.AppWindow;
 import java.awt.*;
 

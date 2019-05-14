@@ -49,34 +49,34 @@ public class Manager {
         return dao.getAllTrajets(matricule);
     }
 
-    public Trajet getTrajet(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+    public Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
         if(idTrajet <= 0){
             throw new ValeurException(idTrajet);
         }
-        return  dao.getTrajet(idTrajet);
+        return  dao.getTrajetById(idTrajet);
     }
 
-    public void removeTrajet(int idTrajet) throws SQLException, ValeurException {
+    public void removeTrajetById(int idTrajet) throws SQLException, ValeurException {
         if(idTrajet <= 0){
             throw new ValeurException(idTrajet);
         }
-        dao.removeTrajet(idTrajet);
+        dao.removeTrajetById(idTrajet);
     }
 
-    public ArrayList getChauffeurs() throws SQLException {
-        return dao.getChauffeurs();
+    public ArrayList getAllChauffeurs() throws SQLException {
+        return dao.getAllChauffeurs();
     }
 
-    public ArrayList getLocalite() throws SQLException {
-        return dao.getLocalite();
+    public ArrayList getAllLocalites() throws SQLException {
+        return dao.getAllLocalites();
     }
 
-    public ArrayList getClient() throws SQLException {
-        return dao.getClient();
+    public ArrayList getAllClients() throws SQLException {
+        return dao.getAllClients();
     }
 
-    public String getIdTrajet() throws SQLException {
-        return dao.getIdTrajet();
+    public String getNextIdTrajet() throws SQLException {
+        return dao.getNextIdTrajet();
     }
 
     public void insertTrajet(Trajet newTrajet) throws SQLException {
@@ -87,27 +87,27 @@ public class Manager {
         return dao.getNbTrajetsParZones();
     }
 
-    public String idChauffeur(int matricule) throws SQLException, IdException {
+    public String chauffeurById(int matricule) throws SQLException, IdException {
         numberOfDigits = String.valueOf(matricule).length();
         if(numberOfDigits != 6){
             throw new IdException(matricule);
         }
-        return dao.idChauffeur(matricule);
+        return dao.chauffeurById(matricule);
     }
 
-    public String idClient(int client_id) throws SQLException, ValeurException {
+    public String clientById(int client_id) throws SQLException, ValeurException {
         if(client_id <= 0){
             throw new ValeurException(client_id);
         }
-        return dao.idClient(client_id);
+        return dao.clientById(client_id);
     }
 
-    public ArrayList getChauffeursZone(int zone_id) throws SQLException, IdException {
+    public ArrayList getChauffeursByZone(int zone_id) throws SQLException, IdException {
         numberOfDigits = String.valueOf(zone_id).length();
         if(numberOfDigits != 6){
             throw new IdException(zone_id);
         }
-        return dao.getChauffeursZone(zone_id);
+        return dao.getChauffeursByZone(zone_id);
     }
 
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException{

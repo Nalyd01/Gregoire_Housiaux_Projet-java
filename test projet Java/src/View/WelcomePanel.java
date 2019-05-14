@@ -3,6 +3,8 @@ package View;
 import Controller.ApplicationController;
 import Tools.TrajectUpdateThread;
 import Model.Trajet;
+import Tools.TrajectUpdateThread;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

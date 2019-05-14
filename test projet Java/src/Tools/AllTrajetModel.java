@@ -48,7 +48,7 @@ public class AllTrajetModel extends AbstractTableModel {
             case 2 : return trajet.getNbPassagers();
             case 3 : {
                 try{
-                    return controller.idChauffeur(trajet.getMatricule());
+                    return controller.chauffeurById(trajet.getMatricule());
                 }
                 catch (SQLException sqlException){
                     JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -61,7 +61,7 @@ public class AllTrajetModel extends AbstractTableModel {
             case 5 : return trajet.getNomLocalite();
             case 6 : {
                 try{
-                    return controller.idClient(trajet.getClient_id());
+                    return controller.clientById(trajet.getClient_id());
                 }
                 catch (SQLException sqlException){
                     JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);

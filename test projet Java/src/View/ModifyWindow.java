@@ -34,7 +34,7 @@ public class ModifyWindow extends ListingWindow {
         public void actionPerformed(ActionEvent event){
             int selectedRow = getTable().getSelectedRow();
             try {
-                trajet = controller.getTrajet((int) getTable().getValueAt(selectedRow, 0));
+                trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
             }catch (Exception e){
                 JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }

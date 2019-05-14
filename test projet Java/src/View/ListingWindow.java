@@ -204,7 +204,7 @@ public class ListingWindow extends JFrame {
         for(int i = 0; i < selectLines.length; i++){
             int modelRow = table.convertRowIndexToModel(selectLines[i]-i);
             try{
-                controller.removeTrajet((int)getTable().getModel().getValueAt(selectLines[i]-i,0));
+                controller.removeTrajetById((int)getTable().getModel().getValueAt(selectLines[i]-i,0));
                 ((AllTrajetModel)getTable().getModel()).removeRow(modelRow);
             }
             catch(SQLException exception){

@@ -41,11 +41,11 @@ public class TrajectFormPanel extends JPanel {
         embouteillage.setSelected(trajet.getaEuEmbouteillage());
 
         try {
-            setComboBoxSelection(comboBoxChauffeurs, controller.idChauffeur(trajet.getMatricule()));
+            setComboBoxSelection(comboBoxChauffeurs, controller.chauffeurById(trajet.getMatricule()));
             setComboBoxSelection(comboBoxLocalites, trajet.getCodePostal() + " " + trajet.getNomLocalite());
-            setComboBoxSelection(comboBoxClients, controller.idClient(trajet.getClient_id()));
+            setComboBoxSelection(comboBoxClients, controller.clientById(trajet.getClient_id()));
         }catch (Exception e){
-            e.printStackTrace();
+            JOptionPane.showMessageDialog (null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
         }
 
         pointDépart.setValue(new Timestamp(trajet.getHeureDepart().getTime()));
@@ -60,15 +60,15 @@ public class TrajectFormPanel extends JPanel {
         controller = new ApplicationController();
 
         try {
-            list = controller.getChauffeurs() ;
+            list = controller.getAllChauffeurs() ;
             comboBoxChauffeurs = new JComboBox(list.toArray());
             comboBoxChauffeurs.setEditable(false);
 
-            list = controller.getLocalite();
+            list = controller.getAllLocalites();
             comboBoxLocalites = new JComboBox(list.toArray());
             comboBoxLocalites.setEditable(false);
 
-            list = controller.getClient();
+            list = controller.getAllClients();
             comboBoxClients = new JComboBox(list.toArray());
             comboBoxClients.setEditable(false);
 
@@ -86,7 +86,7 @@ public class TrajectFormPanel extends JPanel {
         idText.setEditable(false);
 
         try{
-            idText.setText(controller.getIdTrajet());
+            idText.setText(controller.getNextIdTrajet());
         } catch (SQLException sqlException) {
             JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
         }
