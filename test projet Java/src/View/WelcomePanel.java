@@ -60,7 +60,7 @@ public class WelcomePanel extends JPanel {
             this.repaint();
             this.revalidate();
         }catch (Exception e){
-            e.printStackTrace();
+            JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
         }
     }
 

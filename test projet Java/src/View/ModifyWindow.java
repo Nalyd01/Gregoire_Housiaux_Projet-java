@@ -36,7 +36,7 @@ public class ModifyWindow extends ListingWindow {
             try {
                 trajet = controller.getTrajet((int) getTable().getValueAt(selectedRow, 0));
             }catch (Exception e){
-                e.printStackTrace();
+                JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }
 
             scroller = new JScrollPane(new TrajectFormPanel(trajet, appWindow));

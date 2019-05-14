@@ -1,6 +1,7 @@
 package View;
 
 
+import javax.swing.*;
 import java.awt.*;
 
 public class TrajectUpdateThread extends Thread {
@@ -19,7 +20,7 @@ public class TrajectUpdateThread extends Thread {
                 welcomePanel.update();
                 Thread.sleep(5000);
             }catch (Exception e){
-                e.printStackTrace();
+                JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             }
 
         }
