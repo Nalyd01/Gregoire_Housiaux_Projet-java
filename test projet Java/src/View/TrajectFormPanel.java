@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import Exception.ValeurException;
 
 import Model.Trajet;
 import Controller.ApplicationController;
@@ -75,7 +76,7 @@ public class TrajectFormPanel extends JPanel {
         } catch (SQLException exception) {
             JOptionPane.showMessageDialog(null, exception.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
         }catch (Exception e){
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
         }
 
         idLabel = new JLabel("Identifiant du trajet : ");
@@ -255,7 +256,9 @@ public class TrajectFormPanel extends JPanel {
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
             }catch (TimeException timeException){
-                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure a la date d'arrivée et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "L'heure de départ dois être être antérieure à la date d'arrivée et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
+            }catch (ValeurException exception){
+                JOptionPane.showMessageDialog(null, exception.getMessage(), "Le nombre doit être positif", JOptionPane.ERROR_MESSAGE);
             }catch(Exception e){
                 e.printStackTrace();
             }

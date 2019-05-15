@@ -35,7 +35,7 @@ public class ListingWindow extends JFrame {
     }
 
     public ListingWindow(Timestamp date1, Timestamp date2, String localites){
-        super("Lisiting des clients d'une localités entre 2 dates");
+        super("Listing des clients d'une localités entre 2 dates");
         initListing();
 
         int codePostal = Integer.parseInt(localites.substring(0,localites.indexOf(" ")));
@@ -53,7 +53,7 @@ public class ListingWindow extends JFrame {
     public void afficherListing(){
         try{
             ArrayList<Trajet> trajets = controller.getAllTrajets();
-            créaTable(trajets);
+            testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
             JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -75,7 +75,7 @@ public class ListingWindow extends JFrame {
     public void afficherListing(int matriculeChauffeur, Timestamp date1, Timestamp date2){
         try{
             ArrayList<Trajet> trajets = controller.getAllTrajets(matriculeChauffeur, date1, date2);
-            créaTable(trajets);
+            testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
             JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -97,7 +97,7 @@ public class ListingWindow extends JFrame {
     public void afficherListing(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2){
         try{
             ArrayList<Trajet> trajets = controller.getAllTrajets(codePostal, nomLocalite, date1, date2);
-            créaTable(trajets);
+            testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
             JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -119,7 +119,7 @@ public class ListingWindow extends JFrame {
     public void afficherListing(ArrayList matricule){
         try{
             ArrayList<Trajet> trajets = controller.getAllTrajets(matricule);
-            créaTable(trajets);
+            testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
             JOptionPane.showMessageDialog (null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -201,6 +201,11 @@ public class ListingWindow extends JFrame {
         controller = new ApplicationController();
 
         int[] selectLines = getTable().getSelectedRows();
+
+        if(selectLines.length == 0){
+            JOptionPane.showMessageDialog (null, "Vous devez sélectionner au moins une ligne", "Erreur pour la suppression", JOptionPane.ERROR_MESSAGE);
+        }
+
         for(int i = 0; i < selectLines.length; i++){
             int modelRow = table.convertRowIndexToModel(selectLines[i]-i);
             try{
@@ -224,6 +229,14 @@ public class ListingWindow extends JFrame {
         frameContainer = this.getContentPane();
         frameContainer.setLayout(new BorderLayout());
         frameContainer.add(panel,BorderLayout.CENTER);
+    }
+
+    public void testAffichageListing(ArrayList trajets){
+        if(trajets.isEmpty()){
+            JOptionPane.showMessageDialog (null, "Aucune correspondance trouvée", "Erreur dans le listing", JOptionPane.ERROR_MESSAGE);
+        } else{
+            créaTable(trajets);
+        }
     }
 
 }

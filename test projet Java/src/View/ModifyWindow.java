@@ -33,21 +33,25 @@ public class ModifyWindow extends ListingWindow {
 
         public void actionPerformed(ActionEvent event){
             int selectedRow = getTable().getSelectedRow();
-            try {
-                trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
-            }catch (Exception e){
-                JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+
+            if(selectedRow == -1){
+                JOptionPane.showMessageDialog (null, "Vous devez sélectionner une ligne", "Erreur pour la modification", JOptionPane.ERROR_MESSAGE);
+            } else{
+                try {
+                    trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
+                }catch (Exception e){
+                    JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+                }
+                scroller = new JScrollPane(new TrajectFormPanel(trajet, appWindow));
+
+                appWindow.getFrameContainer().removeAll();
+                appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
+                appWindow.getFrameContainer().repaint();
+                appWindow.setVisible(true);
+
+                deleteTrajet();
+                ModifyWindow.this.dispose();
             }
-
-            scroller = new JScrollPane(new TrajectFormPanel(trajet, appWindow));
-
-            appWindow.getFrameContainer().removeAll();
-            appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
-            appWindow.getFrameContainer().repaint();
-            appWindow.setVisible(true);
-
-            deleteTrajet();
-            ModifyWindow.this.dispose();
         }
     }
 }
