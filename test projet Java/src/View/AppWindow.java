@@ -132,7 +132,7 @@ public class AppWindow extends JFrame {
     private class ModifyListener implements  ActionListener{
         @Override
         public void actionPerformed(ActionEvent event){
-            new ModifyWindow(AppWindow.this);
+            ModifyWindow.getInstance();
         }
     }
 
@@ -146,7 +146,7 @@ public class AppWindow extends JFrame {
     private class DeleteListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event){
-            new DeleteWindow();
+            DeleteWindow.getInstance();
         }
     }
 
@@ -172,7 +172,7 @@ public class AppWindow extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                new TacheMetierWindow(AppWindow.this);
+                TacheMetierWindow.getInstance();
             }catch (Exception err){
                 err.printStackTrace();
             }

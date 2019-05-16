@@ -11,12 +11,13 @@ import java.awt.event.ActionListener;
 
 public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
-    private AppWindow appWindow;
     private JScrollPane scroller;
     private ApplicationController controller;
     private Trajet trajet;
+    private static ModifyWindow uniqueInstance;
+    private static AppWindow appWindow;
 
-    public ModifyWindow(AppWindow appWindow){
+    private ModifyWindow(AppWindow appWindow){
         this.appWindow = appWindow;
         controller = new ApplicationController();
 
@@ -27,6 +28,15 @@ public class ModifyWindow extends ListingWindow {
         ModifyButtonListener deleteButtonListener = new ModifyButtonListener();
         modifyButt.addActionListener(deleteButtonListener);
 
+    }
+
+    public static ModifyWindow getInstance(){
+        if(uniqueInstance == null){
+            uniqueInstance = new ModifyWindow(appWindow);
+        } else{
+            JOptionPane.showMessageDialog (null, "Vous ne pouvez ouvrir qu'une seule fenêtre de modification à la fois", "Erreur à l'ouverture", JOptionPane.INFORMATION_MESSAGE);
+        }
+        return uniqueInstance;
     }
 
     private class ModifyButtonListener implements ActionListener{
