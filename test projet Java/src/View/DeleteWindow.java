@@ -6,9 +6,8 @@ import java.awt.event.ActionListener;
 
 public class DeleteWindow extends ListingWindow {
     private JButton deleteButt;
-    private static DeleteWindow uniqueInstance;
 
-    private DeleteWindow(){
+    public DeleteWindow(){
         deleteButt = new JButton("Supprimer");
         this.add(deleteButt,BorderLayout.SOUTH);
 
@@ -16,19 +15,14 @@ public class DeleteWindow extends ListingWindow {
             deleteButt.addActionListener(deleteButtonListener);
     }
 
-    public static DeleteWindow getInstance(){
-        if(uniqueInstance == null){
-            uniqueInstance = new DeleteWindow();
-        } else {
-            JOptionPane.showMessageDialog (null, "Vous ne pouvez ouvrir qu'une seule fenêtre de suppression à la fois", "Erreur à l'ouverture", JOptionPane.INFORMATION_MESSAGE);
-        }
-        return uniqueInstance;
-    }
-
     private class DeleteButtonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent event){
-            deleteTrajet();
+            String[] options = {"Oui","Non"};
+            int confirmation = JOptionPane.showOptionDialog(null,"Confirmer la suppression","Confirmation",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[0]);
+            if(confirmation == JOptionPane.YES_OPTION){
+                deleteTrajet();
+            }
         }
     }
 }
