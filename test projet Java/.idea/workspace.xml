@@ -2,23 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="037b006e-e354-42f5-8600-8d1257067a1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Business/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/DBAcces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/DBAcces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/DataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/AllTrajetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/AllTrajetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/TacheMetierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/TacheMetierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/TrajectUpdateThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/TrajectUpdateThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/Business/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/Business/Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/Controller/ApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/Controller/ApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/DataAccess/DBAcces.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/DataAccess/DBAcces.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/DataAccess/DataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/DataAccess/DataAccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/Exception/IdException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/Exception/IdException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/Tools/AllTrajetModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/Tools/AllTrajetModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/Tools/TacheMetierTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/Tools/TacheMetierTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/DeleteWindow$DeleteButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/DeleteWindow$DeleteButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/DeleteWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/DeleteWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/ListingWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/ListingWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/ModifyWindow$ModifyButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/ModifyWindow$ModifyButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/OnGoingTrajectPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/OnGoingTrajectPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/Research1Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/Research1Panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/Research2Panel$ResearchListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/Research2Panel$ResearchListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/Research3Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/Research3Panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/TacheMetierWindow$ModifyButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/TacheMetierWindow$ModifyButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/TrajectFormPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/TrajectFormPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/WelcomePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/WelcomePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ListingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ListingWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ModifyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ModifyWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/OnGoingTrajectPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Research1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Research1Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Research2Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Research2Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Research3Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Research3Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TacheMetierWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TacheMetierWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TrajectFormPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/WelcomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/WelcomePanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +52,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DataAccess/DBAcces.java">
+        <entry file="file://$PROJECT_DIR$/src/View/ListingWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2921">
-              <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="603">
+              <caret line="219" column="30" selection-start-line="219" selection-start-column="30" selection-end-line="219" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/DeleteWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ModifyWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,7 +142,6 @@
         <option value="$PROJECT_DIR$/src/Exception/TimeException.java" />
         <option value="$PROJECT_DIR$/src/View/Research2Panel.java" />
         <option value="$PROJECT_DIR$/src/View/DeleteWindow.java" />
-        <option value="$PROJECT_DIR$/src/View/ListingWindow.java" />
         <option value="$PROJECT_DIR$/src/Tools/Trajet.java" />
         <option value="$PROJECT_DIR$/src/View/ModifyWindow.java" />
         <option value="$PROJECT_DIR$/src/Tools/AllTrajetModel.java" />
@@ -135,10 +164,11 @@
         <option value="$PROJECT_DIR$/src/Tools/TacheMetierTest.java" />
         <option value="$PROJECT_DIR$/src/View/WelcomePanel.java" />
         <option value="$PROJECT_DIR$/src/DataAccess/DBAcces.java" />
+        <option value="$PROJECT_DIR$/src/View/ListingWindow.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -152,7 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,6 +245,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,7 +256,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557873980659" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557874251348" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -329,7 +359,9 @@
       <workItem from="1557859085784" duration="9478000" />
       <workItem from="1557870468179" duration="516000" />
       <workItem from="1557871031232" duration="2250000" />
-      <workItem from="1557873520333" duration="460000" />
+      <workItem from="1557873520333" duration="1195000" />
+      <workItem from="1557874781382" duration="2191000" />
+      <workItem from="1557878669156" duration="186000" />
     </task>
     <servers />
   </component>
@@ -366,7 +398,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156561000" />
+    <option name="totallyTimeSpent" value="159673000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,9 +411,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4951246" visible="true" weight="0.34221748" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4951246" visible="true" weight="0.3496802" />
       <window_info id="Structure" order="1" sideWeight="0.5048754" side_tool="true" weight="0.34221748" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -389,7 +420,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5048754" side_tool="true" weight="0.34221748" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34994584" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33802816" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -554,28 +585,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DeleteWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/SingletonConnection.java" />
-    <entry file="file://$PROJECT_DIR$/src/View/ModifyWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/TacheMetierWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -601,30 +611,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Research2Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Research1Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ListingWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="212" column="12" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,20 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/CodePostalException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/IdException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Exception/ListException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -730,36 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/AppWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ApplicationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Business/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -813,8 +759,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataAccess/DBAcces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2921">
-          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+        <state relative-caret-position="113">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Business/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-733">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Research2Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/IdException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/CodePostalException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/AppWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ListingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="219" column="30" selection-start-line="219" selection-start-column="30" selection-end-line="219" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DeleteWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ModifyWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

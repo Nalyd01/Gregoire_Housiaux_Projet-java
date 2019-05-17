@@ -217,7 +217,7 @@ public class ListingWindow extends JFrame {
     }
 
     public void initListing(){
-        setBounds(100,100,1000,500);
+        setBounds(100,100,1650,500);
 
         controller = new ApplicationController();
         panel = new JPanel();
