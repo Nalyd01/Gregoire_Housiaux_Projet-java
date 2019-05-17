@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 import java.util.Calendar;
 
 
-public class TacheMetier {
+public class TripCost {
 
     public static int[] heuresPallier = new int[] {10, 14, 18, 22, 6};
 

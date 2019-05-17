@@ -3,7 +3,6 @@ package View;
 import Controller.ApplicationController;
 import Tools.TrajectUpdateThread;
 import Model.Trajet;
-import Tools.TrajectUpdateThread;
 
 import javax.swing.*;
 import java.awt.*;
@@ -54,9 +53,9 @@ public class WelcomePanel extends JPanel {
         try {
             onGoingTraject.removeAll();
             trajets = controller.getOnGoingTraject();
-            OnGoingTrajectPanel temp;
+            OnGoingTripPanel temp;
             for (Trajet trajet :  trajets){
-                temp = new OnGoingTrajectPanel(trajet);
+                temp = new OnGoingTripPanel(trajet);
                 temp.update();
                 onGoingTraject.add(temp);
             }

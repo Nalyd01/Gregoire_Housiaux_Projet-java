@@ -199,24 +199,28 @@ public class ListingWindow extends JFrame {
 
     public void deleteTrajet() {
         controller = new ApplicationController();
+        String[] options = {"oui", "non"};
 
         int[] selectLines = getTable().getSelectedRows();
 
         if(selectLines.length == 0){
             JOptionPane.showMessageDialog (null, "Vous devez sélectionner au moins une ligne", "Erreur pour la suppression", JOptionPane.ERROR_MESSAGE);
-        }
-
-        for(int i = 0; i < selectLines.length; i++){
-            int modelRow = table.convertRowIndexToModel(selectLines[i]-i);
-            try{
-                controller.removeTrajetById((int)getTable().getModel().getValueAt(selectLines[i]-i,0));
-                ((AllTrajetModel)getTable().getModel()).removeRow(modelRow);
-            }
-            catch(SQLException exception){
-                JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
-            }
-            catch(ValeurException exception){
-                JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+        } else{
+            int n = JOptionPane.showOptionDialog(null,"Confirmer la suppression","Confirmation",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[0]);
+            if(n == JOptionPane.YES_OPTION){
+                for(int i = 0; i < selectLines.length; i++){
+                    int modelRow = table.convertRowIndexToModel(selectLines[i]-i);
+                    try{
+                        controller.removeTrajetById((int)getTable().getModel().getValueAt(selectLines[i]-i,0));
+                        ((AllTrajetModel)getTable().getModel()).removeRow(modelRow);
+                    }
+                    catch(SQLException exception){
+                        JOptionPane.showMessageDialog (null, exception.getMessage(), "Exception SQL", JOptionPane.ERROR_MESSAGE);
+                    }
+                    catch(ValeurException exception){
+                        JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
             }
         }
     }
