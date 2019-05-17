@@ -12,7 +12,7 @@ public class DBAcces implements DataAccess {
     private Connection connection;
     private String sql;
     private Trajet trajet;
-    private Boolean aEuPanne, aEuEmbouteillage;
+    private Boolean aEuPanne;
     private ArrayList<Trajet> allTrajets, allTrajetsZone;
     private PreparedStatement statement;
     private ArrayList chauffeurs, localites, clients, allZones, chauffeursZone;
@@ -154,18 +154,22 @@ public class DBAcces implements DataAccess {
     @Override
     public void insertTrajet(Trajet newTrajet) throws SQLException {
         connection = SingletonConnection.getInstance();
-        sql = "INSERT INTO trajet (identifiant,nbKm,nbPassagers,matricule,codePostal,nom,client_id,heureArrivee,heureDepart) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        sql = "INSERT INTO trajet VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         statement = connection.prepareStatement(sql);
         statement.setInt(1, newTrajet.getIdentifiant());
         statement.setInt(2, newTrajet.getNbKm());
         statement.setInt(3, newTrajet.getNbPassagers());
-        statement.setInt(4, newTrajet.getMatricule());
-        statement.setInt(5, newTrajet.getCodePostal());
-        statement.setString(6, newTrajet.getNomLocalite());
-        statement.setInt(7, newTrajet.getClient_id());
-        statement.setTimestamp(8, newTrajet.getHeureArrivee());
-        statement.setTimestamp(9, newTrajet.getHeureDepart());
+        statement.setNull(4, Types.BOOLEAN);
+        statement.setBoolean(5, newTrajet.getaEuEmbouteillage());
+        statement.setInt(6, newTrajet.getMatricule());
+        statement.setInt(7, newTrajet.getCodePostal());
+        statement.setString(8, newTrajet.getNomLocalite());
+        statement.setInt(9, newTrajet.getClient_id());
+        statement.setTimestamp(10, newTrajet.getHeureArrivee());
+        statement.setTimestamp(11, newTrajet.getHeureDepart());
+
+        statement.executeUpdate();
 
         // Colonnes facultatives
         if (newTrajet.getaEuPanne() != null) {
@@ -173,20 +177,7 @@ public class DBAcces implements DataAccess {
             statement = connection.prepareStatement(sql);
             statement.setBoolean(1, newTrajet.getaEuPanne());
             statement.executeUpdate();
-        } else{
-            statement.setNull(1, Types.BOOLEAN);
         }
-
-        if (newTrajet.getaEuEmbouteillage() != null) {
-            sql = "UPDATE trajet SET aEuEmbouteillage = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "';";
-            statement = connection.prepareStatement(sql);
-            statement.setBoolean(1, newTrajet.getaEuEmbouteillage());
-            statement.executeUpdate();
-        } else{
-            statement.setNull(1, Types.BOOLEAN);
-        }
-
-        statement.executeUpdate();
     }
 
     @Override
@@ -227,7 +218,7 @@ public class DBAcces implements DataAccess {
     @Override
     public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
         ResultSet data = récupData("SELECT matricule FROM trajet;");
-        zoneNbChauffeur = new HashMap<>();
+        zoneNbChauffeur = new HashMap<String, Integer>();
         for (String zone : getAllZones()){
             zoneNbChauffeur.put(zone, 0);
         }
@@ -255,16 +246,12 @@ public class DBAcces implements DataAccess {
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         aEuPanne = data.getBoolean("panne");
         if(data.wasNull()){
-            aEuPanne = null;
-        }
-        aEuEmbouteillage = data.getBoolean("aEuEmbouteillage");
-        if(data.wasNull()){
-            aEuEmbouteillage = null;
+            aEuPanne = false;
         }
 
         trajet = new Trajet(data.getInt("identifiant"), data.getInt("nbKm"), data.getInt("nbPassagers"),
                 data.getInt("matricule"), data.getInt("codePostal"), data.getString("nom"),
-                data.getInt("client_id"), aEuPanne, aEuEmbouteillage, data.getTimestamp("heureArrivee")
+                data.getInt("client_id"), aEuPanne, data.getBoolean("aEuEmbouteillage"), data.getTimestamp("heureArrivee")
                 , data.getTimestamp("heureDepart"));
 
         return trajet;

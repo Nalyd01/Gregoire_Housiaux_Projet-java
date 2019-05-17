@@ -104,6 +104,7 @@ public class AppWindow extends JFrame {
         { System.exit(0); }
         } );
 
+
         setVisible(true);
     }
 
@@ -131,7 +132,7 @@ public class AppWindow extends JFrame {
     private class ModifyListener implements  ActionListener{
         @Override
         public void actionPerformed(ActionEvent event){
-            new ModifyWindow(AppWindow.this);
+            ModifyWindow.getInstance();
         }
     }
 
@@ -145,7 +146,7 @@ public class AppWindow extends JFrame {
     private class DeleteListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event){
-            new DeleteWindow();
+            DeleteWindow.getInstance();
         }
     }
 
@@ -171,9 +172,9 @@ public class AppWindow extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                new TacheMetierWindow(AppWindow.this);
-            }catch (Exception error){
-                JOptionPane.showMessageDialog (null, error.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+                TacheMetierWindow.getInstance();
+            }catch (Exception err){
+                err.printStackTrace();
             }
         }
     }
