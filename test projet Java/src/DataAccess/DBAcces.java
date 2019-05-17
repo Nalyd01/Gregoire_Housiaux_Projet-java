@@ -27,12 +27,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
-        connection = SingletonConnection.getInstance();
-
-        sql = "SELECT * FROM trajet";
-        statement = connection.prepareStatement(sql);
-        ResultSet data = statement.executeQuery();
-
+        ResultSet data = récupData("SELECT * FROM trajet");
         return allTrajetsList(data);
     }
 
@@ -218,7 +213,7 @@ public class DBAcces implements DataAccess {
     @Override
     public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
         ResultSet data = récupData("SELECT matricule FROM trajet;");
-        zoneNbChauffeur = new HashMap<String, Integer>();
+        zoneNbChauffeur = new HashMap<>();
         for (String zone : getAllZones()){
             zoneNbChauffeur.put(zone, 0);
         }
