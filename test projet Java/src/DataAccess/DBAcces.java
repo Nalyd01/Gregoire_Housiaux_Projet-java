@@ -154,7 +154,7 @@ public class DBAcces implements DataAccess {
     @Override
     public void insertTrajet(Trajet newTrajet) throws SQLException {
         connection = SingletonConnection.getInstance();
-        sql = "INSERT INTO trajet VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        sql = "INSERT INTO trajet (identifiant,nbKm,nbPassagers,matricule,codePostal,nom,client_id,heureArrivee,heureDepart) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         statement = connection.prepareStatement(sql);
         statement.setInt(1, newTrajet.getIdentifiant());
@@ -164,10 +164,8 @@ public class DBAcces implements DataAccess {
         statement.setInt(5, newTrajet.getCodePostal());
         statement.setString(6, newTrajet.getNomLocalite());
         statement.setInt(7, newTrajet.getClient_id());
-        statement.setBoolean(8, newTrajet.getaEuPanne());
-        statement.setBoolean(9, newTrajet.getaEuEmbouteillage());
-        statement.setTimestamp(10, newTrajet.getHeureArrivee());
-        statement.setTimestamp(11, newTrajet.getHeureDepart());
+        statement.setTimestamp(8, newTrajet.getHeureArrivee());
+        statement.setTimestamp(9, newTrajet.getHeureDepart());
 
         // Colonnes facultatives
         if (newTrajet.getaEuPanne() != null) {
@@ -175,7 +173,19 @@ public class DBAcces implements DataAccess {
             statement = connection.prepareStatement(sql);
             statement.setBoolean(1, newTrajet.getaEuPanne());
             statement.executeUpdate();
+        } else{
+            statement.setNull(1, Types.BOOLEAN);
         }
+
+        if (newTrajet.getaEuEmbouteillage() != null) {
+            sql = "UPDATE trajet SET aEuEmbouteillage = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "';";
+            statement = connection.prepareStatement(sql);
+            statement.setBoolean(1, newTrajet.getaEuEmbouteillage());
+            statement.executeUpdate();
+        } else{
+            statement.setNull(1, Types.BOOLEAN);
+        }
+
         statement.executeUpdate();
     }
 
