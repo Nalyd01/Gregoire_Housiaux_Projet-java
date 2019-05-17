@@ -7,10 +7,6 @@ import java.sql.SQLException;
 public class SingletonConnection {
     private static Connection uniqueConnection;
 
-    private SingletonConnection(Connection uniqueConnection){
-        this.uniqueConnection = uniqueConnection;
-    }
-
     public static Connection getInstance()throws SQLException{
         if(uniqueConnection == null){
                 uniqueConnection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/java_projet?serverTimezone=Europe/Paris","root","password");
