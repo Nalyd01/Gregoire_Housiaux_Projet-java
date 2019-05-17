@@ -2,7 +2,6 @@ package View;
 
 import Controller.ApplicationController;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +9,6 @@ import java.util.Date;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Research3Panel extends JPanel {
     private JLabel chauffeur, dateDébut, dateFin;
@@ -77,9 +75,8 @@ public class Research3Panel extends JPanel {
 
 
     private class ResearchListener implements ActionListener {
-
+        @Override
         public void actionPerformed(ActionEvent event) {
-
             new ListingWindow(comboBoxChauffeurs.getSelectedItem().toString(), new Timestamp( ((Date)pointDépart.getValue()).getTime()),  new Timestamp( ((Date)pointFin.getValue()).getTime()));
         }
     }

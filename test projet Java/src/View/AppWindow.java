@@ -83,7 +83,7 @@ public class AppWindow extends JFrame {
                 research.add(research2);
                 research.addSeparator();
 
-                research3 = new JMenuItem("Listing des clients d’un chauffeur à une certaine date");
+                research3 = new JMenuItem("Listing des clients d’un chauffeur entre 2 dates");
                 research.add(research3);
 
                 ResearchListener researchListener = new ResearchListener();

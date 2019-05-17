@@ -70,9 +70,8 @@ public class Research1Panel extends JPanel {
     }
 
     private class ResearchListener implements ActionListener {
-
+        @Override
         public void actionPerformed(ActionEvent event) {
-
             new ListingWindow(new Timestamp( ((Date)pointDépart.getValue()).getTime()),  new Timestamp( ((Date)pointFin.getValue()).getTime()), comboBoxLocalites.getSelectedItem().toString());
         }
     }
