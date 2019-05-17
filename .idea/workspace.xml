@@ -2,15 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="Empêcher ouverture de plusieurs fenêtres">
+      <change afterPath="$PROJECT_DIR$/.idea/Projet-java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AllTrajetModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow$AccueilListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow$DeleteListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow$InsertListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow$ListingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow$ResearchListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/AppWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/ApplicationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/CodePostalException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/DBAcces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/DataAccess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/DeleteWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/DeleteWindow$DeleteButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/DeleteWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/IdException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/InsertForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/ListingWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/META-INF/Desktop.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/MainPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Manager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/PanelInscriptionForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3Panel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3Panel$ComboBoxChauffeursListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3Panel$JSpinnerDébutListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3Panel$JSpinnerFinListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3Panel$ResearchListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Research3Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/SingletonConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/TimeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/Trajet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/Desktop/ValeurException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Business/Manager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Business/TacheMetier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Controller/ApplicationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/DataAccess/DBAcces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/DataAccess/DataAccess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/DataAccess/SingletonConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Exception/CodePostalException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Exception/IdException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Exception/ListException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Exception/TimeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Exception/ValeurException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/META-INF/test projet Java.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Model/Trajet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Tools/AllTrajetModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Tools/TacheMetierTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/Tools/TrajectUpdateThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$AccueilListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$DeleteListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$InsertListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$ListingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$ModifyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$ResearchListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow$TacheMetierListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/AppWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/DeleteWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/DeleteWindow$DeleteButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/DeleteWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/ListingWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/ModifyWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/ModifyWindow$ModifyButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/ModifyWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/OnGoingTrajectPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research1Panel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research1Panel$ResearchListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research1Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research2Panel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research2Panel$ResearchListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research2Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research3Panel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research3Panel$ResearchListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/Research3Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/TacheMetierWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/TacheMetierWindow$ModifyButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/TacheMetierWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/TrajectFormPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/TrajectFormPanel$InsertListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/TrajectFormPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/out/production/test projet Java/View/WelcomePanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/AppWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+            <state relative-caret-position="289">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="242" column="35" lean-forward="true" selection-start-line="242" selection-start-column="35" selection-end-line="242" selection-end-column="35" />
+            <state relative-caret-position="3910">
+              <caret line="242" selection-start-line="242" selection-end-line="242" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="268" column="8" selection-start-line="268" selection-start-column="8" selection-end-line="268" selection-end-column="8" />
+            <state>
+              <caret line="164" column="19" lean-forward="true" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,10 +142,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetierTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+            <state relative-caret-position="1224">
+              <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,15 +228,17 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="980" />
-    <option name="height" value="1091" />
+    <option name="x" value="-12" />
+    <option name="width" value="981" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,8 +310,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,7 +342,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Gregoire_Housiaux" />
+      <module name="Projet-java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -310,6 +408,8 @@
       <workItem from="1557946735379" duration="2132000" />
       <workItem from="1557996493097" duration="2667000" />
       <workItem from="1558018319133" duration="4597000" />
+      <workItem from="1558095347137" duration="266000" />
+      <workItem from="1558095649725" duration="1389000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -483,7 +583,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102699000" />
+    <option name="totallyTimeSpent" value="104354000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,11 +604,11 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.32955465" />
       <window_info id="Structure" order="5" weight="0.24858299" />
-      <window_info content_ui="combo" id="Project" order="6" weight="0.24291497" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24696356" />
       <window_info anchor="bottom" id="Inspection Results" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.3233831" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3233831" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -607,23 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="5" lean-forward="true" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetierTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -781,16 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1955">
@@ -803,8 +876,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -813,18 +886,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="242" column="35" lean-forward="true" selection-start-line="242" selection-start-column="35" selection-end-line="242" selection-end-column="35" />
+        <state relative-caret-position="3910">
+          <caret line="242" selection-start-line="242" selection-end-line="242" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TacheMetierTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="268" column="8" selection-start-line="268" selection-start-column="8" selection-end-line="268" selection-end-column="8" />
+        <state>
+          <caret line="164" column="19" lean-forward="true" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -883,7 +980,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Gregoire_Housiaux</last-edited>
+          <last-edited>Projet-java</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
