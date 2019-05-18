@@ -241,6 +241,15 @@ public class TrajectFormPanel extends JPanel {
                 heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
                 heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
 
+
+
+                if (controller.getAllTrajets(idChauffeur, heureDépart, heureFin).size() > 0) {
+                    throw  new ChauffeurExcpetion();
+                }
+                if(controller.getAllTrajets(heureDépart, heureFin, idCLient).size() > 0){
+                    throw new ClientException();
+                }
+
                 newTrajet = new Trajet(idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, localité, idCLient, aPanne, aEmbouteillage, heureFin, heureDépart);
 
                 if(controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty() && controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
@@ -268,11 +277,13 @@ public class TrajectFormPanel extends JPanel {
                 JOptionPane.showMessageDialog(null, exception.getMessage(), "Le nombre doit être positif", JOptionPane.ERROR_MESSAGE);
             }catch (CodePostalException codePostalException){
                 JOptionPane.showMessageDialog (null, codePostalException.getMessage(), "Erreur sur le code postal", JOptionPane.ERROR_MESSAGE);
-            }
-            catch (IdException idException){
+            }catch (IdException idException){
                 JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
-            }
-            catch(Exception e){
+            }catch (ChauffeurExcpetion chauffeurExcpetion){
+                JOptionPane.showMessageDialog(null, chauffeurExcpetion.getMessage(), "Chauffeur indisponible", JOptionPane.ERROR_MESSAGE);
+            }catch (ClientException clientException){
+                JOptionPane.showMessageDialog(null, clientException.getMessage(), "Client indisponible", JOptionPane.ERROR_MESSAGE);
+            }catch(Exception e){
                 e.printStackTrace();
             }
         }
