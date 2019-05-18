@@ -17,11 +17,11 @@ public class Manager {
         this.dao = new DBAcces();
     }
 
-    public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets() throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         return dao.getAllTrajets();
     }
 
-    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         numberOfDigits = String.valueOf(matricule).length();
         if(numberOfDigits != 6){
             throw new IdException(matricule);
@@ -32,9 +32,9 @@ public class Manager {
         return dao.getAllTrajets(matricule ,date1, date2);
     }
 
-    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         if(client_id <= 0){
-            throw new ValeurException(client_id);
+            throw new ValeurException();
         }
         if(date1.getTime() >= date2.getTime()){
             throw new TimeException();
@@ -42,7 +42,7 @@ public class Manager {
         return dao.getAllTrajets(date1,date2,client_id);
     }
 
-    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         if(codePostal < 1000 || codePostal > 9992){
             throw new CodePostalException(codePostal);
         }
@@ -52,23 +52,23 @@ public class Manager {
         return dao.getAllTrajets(codePostal, nomLocalite ,date1, date2);
     }
 
-    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException, ListException {
+    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException, ListException {
         if(matricule.isEmpty()){
             throw new ListException();
         }
         return dao.getAllTrajets(matricule);
     }
 
-    public Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+    public Trajet getTrajetById(int idTrajet) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException{
         if(idTrajet <= 0){
-            throw new ValeurException(idTrajet);
+            throw new ValeurException();
         }
         return  dao.getTrajetById(idTrajet);
     }
 
     public void removeTrajetById(int idTrajet) throws SQLException, ValeurException {
         if(idTrajet <= 0){
-            throw new ValeurException(idTrajet);
+            throw new ValeurException();
         }
         dao.removeTrajetById(idTrajet);
     }
@@ -107,14 +107,14 @@ public class Manager {
 
     public String clientById(int client_id) throws SQLException, ValeurException {
         if(client_id <= 0){
-            throw new ValeurException(client_id);
+            throw new ValeurException();
         }
         return dao.clientById(client_id);
     }
 
     public ArrayList getChauffeursByZone(int zone_id) throws SQLException, ValeurException {
         if(zone_id <= 0){
-            throw new ValeurException(zone_id);
+            throw new ValeurException();
         }
         return dao.getChauffeursByZone(zone_id);
     }

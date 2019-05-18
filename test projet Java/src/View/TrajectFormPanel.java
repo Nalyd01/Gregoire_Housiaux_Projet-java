@@ -243,7 +243,7 @@ public class TrajectFormPanel extends JPanel {
 
 
                 if (!controller.getAllTrajets(idChauffeur, heureDépart, heureFin).isEmpty()) {
-                    throw  new ChauffeurExcpetion();
+                    throw  new ChauffeurException();
                 }
                 if(!controller.getAllTrajets(heureDépart, heureFin, idCLient).isEmpty()){
                     throw new ClientException();
@@ -268,7 +268,7 @@ public class TrajectFormPanel extends JPanel {
                 appWindow.getContentPane().repaint();
                 appWindow.setVisible(true);
 
-            } catch (SQLException sqlException) {
+            }catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
             }catch (TimeException timeException){
                 JOptionPane.showMessageDialog(null, "L'heure de départ doit être être antérieure à la date d'arrivée et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
@@ -278,10 +278,12 @@ public class TrajectFormPanel extends JPanel {
                 JOptionPane.showMessageDialog (null, codePostalException.getMessage(), "Erreur sur le code postal", JOptionPane.ERROR_MESSAGE);
             }catch (IdException idException){
                 JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
-            }catch (ChauffeurExcpetion chauffeurExcpetion){
+            }catch (ChauffeurException chauffeurExcpetion){
                 JOptionPane.showMessageDialog(null, chauffeurExcpetion.getMessage(), "Chauffeur indisponible", JOptionPane.ERROR_MESSAGE);
             }catch (ClientException clientException){
                 JOptionPane.showMessageDialog(null, clientException.getMessage(), "Client indisponible", JOptionPane.ERROR_MESSAGE);
+            }catch (NbPassagersException nbPassagersException){
+                JOptionPane.showMessageDialog (null, nbPassagersException.getMessage(), "Erreur sur le nombre de passagers", JOptionPane.ERROR_MESSAGE);
             }catch(Exception e){
                 e.printStackTrace();
             }

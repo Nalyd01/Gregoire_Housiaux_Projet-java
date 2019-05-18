@@ -16,27 +16,27 @@ public class ApplicationController {
         this.manager = new Manager();
     }
 
-    public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets() throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         return manager.getAllTrajets();
     }
 
-    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         return manager.getAllTrajets(matricule, date1, date2);
     }
 
-    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         return manager.getAllTrajets(date1,date2,client_id);
     }
 
-    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         return manager.getAllTrajets(codePostal, nomLocalite, date1, date2);
     }
 
-    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException, ListException {
+    public ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException, ListException {
         return manager.getAllTrajets(matricule);
     }
 
-    public Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+    public Trajet getTrajetById(int idTrajet) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException{
         return manager.getTrajetById(idTrajet);
     }
 

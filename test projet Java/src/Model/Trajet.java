@@ -10,7 +10,7 @@ public class Trajet {
     private Timestamp heureArrivee, heureDepart;
 
     public Trajet(int identifiant, int nbKm, int nbPassagers, int matricule, int codePostal, String nomLocalite, int client_id,
-                  Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, CodePostalException, IdException, TimeException {
+                  Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
         setIdentifiant(identifiant);
         setNbKm(nbKm);
         setNbPassagers(nbPassagers);
@@ -71,7 +71,7 @@ public class Trajet {
 
     public void setIdentifiant(Integer identifiant) throws ValeurException {
         if(identifiant <= 0){
-            throw new ValeurException(identifiant);
+            throw new ValeurException();
         } else{
             this.identifiant = identifiant;
         }
@@ -79,15 +79,15 @@ public class Trajet {
 
     public void setNbKm(Integer nbKm) throws ValeurException {
         if(nbKm <= 0){
-            throw new ValeurException(nbKm);
+            throw new ValeurException();
         } else{
             this.nbKm = nbKm;
         }
     }
 
-    public void setNbPassagers(Integer nbPassagers) throws ValeurException {
-        if(nbPassagers <= 0){
-            throw new ValeurException(nbPassagers);
+    public void setNbPassagers(Integer nbPassagers) throws NbPassagersException {
+        if(nbPassagers <= 0 || nbPassagers >= 8){
+            throw new NbPassagersException();
         } else{
             this.nbPassagers = nbPassagers;
         }
@@ -112,7 +112,7 @@ public class Trajet {
 
     public void setClient_id(Integer client_id) throws ValeurException {
         if(client_id <= 0){
-            throw new ValeurException(client_id);
+            throw new ValeurException();
         } else{
             this.client_id = client_id;
         }

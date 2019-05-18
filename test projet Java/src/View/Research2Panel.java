@@ -94,6 +94,9 @@ public class Research2Panel extends JPanel {
             catch (ListException listException){
                 JOptionPane.showMessageDialog (null, listException.getMessage(), "Erreur sur la liste", JOptionPane.ERROR_MESSAGE);
             }
+            catch (NbPassagersException nbPassagersException){
+                JOptionPane.showMessageDialog (null, nbPassagersException.getMessage(), "Erreur sur le nombre de passagers", JOptionPane.ERROR_MESSAGE);
+            }
 
         }
     }

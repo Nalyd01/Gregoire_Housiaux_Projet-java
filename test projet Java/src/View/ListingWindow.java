@@ -79,6 +79,9 @@ public class ListingWindow extends JFrame {
         catch (TimeException timeException){
             JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
         }
+        catch (NbPassagersException nbPassagersException){
+            JOptionPane.showMessageDialog (null, nbPassagersException.getMessage(), "Erreur sur le nombre de passagers", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void afficherListing(int matriculeChauffeur, Timestamp date1, Timestamp date2){
@@ -101,6 +104,9 @@ public class ListingWindow extends JFrame {
         catch (TimeException timeException){
             JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
         }
+        catch (NbPassagersException nbPassagersException){
+            JOptionPane.showMessageDialog (null, nbPassagersException.getMessage(), "Erreur sur le nombre de passagers", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void afficherListing(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2){
@@ -122,6 +128,9 @@ public class ListingWindow extends JFrame {
         }
         catch (TimeException timeException){
             JOptionPane.showMessageDialog (null, timeException.getMessage(), "Erreur sur l'heure", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (NbPassagersException nbPassagersException){
+            JOptionPane.showMessageDialog (null, nbPassagersException.getMessage(), "Erreur sur le nombre de passagers", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -147,6 +156,9 @@ public class ListingWindow extends JFrame {
         }
         catch (ListException listException){
             JOptionPane.showMessageDialog (null, listException.getMessage(), "Exception sur la liste", JOptionPane.ERROR_MESSAGE);
+        }
+        catch (NbPassagersException nbPassagersException){
+            JOptionPane.showMessageDialog (null, nbPassagersException.getMessage(), "Erreur sur le nombre de passagers", JOptionPane.ERROR_MESSAGE);
         }
     }
 

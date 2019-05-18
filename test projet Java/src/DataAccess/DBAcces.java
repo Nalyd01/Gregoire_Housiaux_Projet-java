@@ -26,13 +26,13 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
         ResultSet data = récupData("SELECT * FROM trajet");
         return allTrajetsList(data);
     }
 
     @Override
-    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
         sql = "SELECT * FROM trajet WHERE matricule = ? AND ((? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee));";
@@ -50,7 +50,7 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
         sql = "SELECT * FROM trajet WHERE ((? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee)) AND client_id = ?;";
@@ -68,7 +68,7 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, NbPassagersException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
         sql = "SELECT * FROM trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND codePostal = ? AND nom = ?;";
@@ -85,7 +85,7 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public ArrayList<Trajet> getAllTrajets(ArrayList matricules) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public ArrayList<Trajet> getAllTrajets(ArrayList matricules) throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
         allTrajetsZone = new ArrayList<>();
@@ -99,7 +99,7 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+    public Trajet getTrajetById(int idTrajet) throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException{
         ResultSet data = récupData("SELECT * FROM trajet WHERE identifiant = " + idTrajet + ";");
         data.next();
         return créaTrajets(data);
@@ -259,7 +259,7 @@ public class DBAcces implements DataAccess {
         return  allTrajets;
     }
 
-    public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+    public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
         aEuPanne = data.getBoolean("panne");
         if(data.wasNull()){
             aEuPanne = false;
@@ -273,7 +273,7 @@ public class DBAcces implements DataAccess {
         return trajet;
     }
 
-    public ArrayList<Trajet> allTrajetsList(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException{
+    public ArrayList<Trajet> allTrajetsList(ResultSet data) throws SQLException, ValeurException,NbPassagersException, CodePostalException, IdException, TimeException{
         allTrajets = new ArrayList<>();
         while(data.next()){
             allTrajets.add(créaTrajets(data));
