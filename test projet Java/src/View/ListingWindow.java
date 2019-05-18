@@ -19,16 +19,15 @@ public class ListingWindow extends JFrame {
     private JPanel panel;
     private JTable table;
     private JScrollPane scrollPane;
-    static ListingWindow listingWindow;
-    static ListingWindow rechercheWindow;
+    private static ListingWindow listingWindow;
+    private static ListingWindow rechercheWindow;
+
     public ListingWindow(){
         super("Listing des trajets");
         initListing();
         afficherListing();
         closePreviousWindow(true);
     }
-
-
 
     public ListingWindow(String chauffeur, Timestamp date1, Timestamp date2){
         super("Listing des clients d'un chauffeur entre 2 dates");
@@ -236,7 +235,7 @@ public class ListingWindow extends JFrame {
     }
 
     public void initListing(){
-        setBounds(100,100,1650,500);
+        setBounds(100,100,1000,500);
 
         controller = new ApplicationController();
         panel = new JPanel();

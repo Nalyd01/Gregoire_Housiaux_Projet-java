@@ -248,16 +248,16 @@ public class TrajectFormPanel extends JPanel {
                     JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     if(!controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
                     }
                     if(!controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Ce client n'est pas disponible pour le moment", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Ce client n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
                 JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
-                appWindow.getFrameContainer().removeAll();
-                appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
-                appWindow.getFrameContainer().repaint();
+                appWindow.getContentPane().removeAll();
+                appWindow.getContentPane().add(scroller, BorderLayout.CENTER);
+                appWindow.getContentPane().repaint();
                 appWindow.setVisible(true);
 
             } catch (SQLException sqlException) {
