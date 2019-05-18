@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,10 +24,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="124">
+              <caret line="244" selection-start-line="244" selection-end-line="244" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,11 +44,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="115" column="4" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="117" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="257" column="56" lean-forward="true" selection-start-line="257" selection-start-column="56" selection-end-line="257" selection-end-column="56" />
+            <state relative-caret-position="-218">
+              <caret line="245" column="19" lean-forward="true" selection-start-line="245" selection-start-column="19" selection-end-line="245" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,13 +119,9 @@
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/TrajectUpdateThread.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/IdException.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" />
@@ -96,8 +135,12 @@
         <option value="$PROJECT_DIR$/test projet Java/src/Business/TacheMetier.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TripCostWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" />
       </list>
     </option>
   </component>
@@ -107,10 +150,51 @@
     <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -157,18 +241,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,7 +251,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558105961175" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558105962783" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -267,7 +339,8 @@
       <workItem from="1557946735379" duration="2096000" />
       <workItem from="1558097212434" duration="310000" />
       <workItem from="1558097560684" duration="2004000" />
-      <workItem from="1558104663217" duration="1268000" />
+      <workItem from="1558104663217" duration="1312000" />
+      <workItem from="1558165247969" duration="8460000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -423,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558105233258</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="small improvements in dbAccess">
+      <created>1558105980234</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1558105980234</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -441,7 +521,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98998000" />
+    <option name="totallyTimeSpent" value="107502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,7 +534,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -462,7 +541,7 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.32955465" />
       <window_info id="Structure" order="5" weight="0.24939272" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.17732793" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.15534739" />
       <window_info anchor="bottom" id="Inspection Results" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
@@ -472,7 +551,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3283582" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -487,38 +566,6 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" weight="0.32955465" />
-      <window_info id="Structure" order="5" weight="0.24939272" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.21376519" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32504147" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39966834" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.3283582" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3283582" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32669982" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -546,7 +593,8 @@
     <MESSAGE value="Final version" />
     <MESSAGE value="version de mercredi" />
     <MESSAGE value="Rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename" />
+    <MESSAGE value="small improvements in dbAccess" />
+    <option name="LAST_COMMIT_MESSAGE" value="small improvements in dbAccess" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TajectFormPanel.java" />
@@ -554,13 +602,6 @@
     <entry file="file://$USER_HOME$/Downloads/CalculatorTest.java" />
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectUpdateThread.java" />
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java.orig" />
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="44" column="33" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/SingletonConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -578,20 +619,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -637,20 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
@@ -665,16 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="46" column="58" lean-forward="true" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -705,16 +708,6 @@
           <folding>
             <element signature="e#629#630#0" expanded="true" />
             <element signature="e#667#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="222" column="17" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -766,10 +759,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="439">
+          <caret line="115" column="4" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="117" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -778,8 +792,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="257" column="56" lean-forward="true" selection-start-line="257" selection-start-column="56" selection-end-line="257" selection-end-column="56" />
+        <state relative-caret-position="-218">
+          <caret line="245" column="19" lean-forward="true" selection-start-line="245" selection-start-column="19" selection-end-line="245" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="78" column="56" lean-forward="true" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2925">
+          <caret line="238" column="24" lean-forward="true" selection-start-line="238" selection-start-column="24" selection-end-line="238" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="244" selection-start-line="244" selection-end-line="244" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

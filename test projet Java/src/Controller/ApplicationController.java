@@ -80,4 +80,8 @@ public class ApplicationController {
         return manager.getOnGoingTraject();
     }
 
+    public boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException{
+        return manager.availableChauffeur(matricule,heureDepart,heureArrivee);
+    }
+
 }

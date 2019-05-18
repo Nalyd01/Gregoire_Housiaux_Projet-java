@@ -238,6 +238,14 @@ public class DBAcces implements DataAccess {
         return  allTrajets;
     }
 
+    @Override
+    public boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException{
+        ResultSet data = récupData("SELECT * FROM trajet WHERE matricule = '"+ matricule +"' AND heureDepart BETWEEN '"+ heureDepart +"' " +
+                "AND '"+ heureArrivee +"' OR heureArrivee BETWEEN '"+ heureDepart +"' AND '"+ heureArrivee +"';");
+
+        return !data.next();
+    }
+
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         aEuPanne = data.getBoolean("panne");
         if(data.wasNull()){

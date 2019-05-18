@@ -243,9 +243,12 @@ public class TrajectFormPanel extends JPanel {
 
                 newTrajet = new Trajet(idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, localité, idCLient, aPanne, aEmbouteillage, heureFin, heureDépart);
 
-                controller.insertTrajet(newTrajet);
-
-                JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                if(controller.availableChauffeur(idChauffeur,heureDépart,heureFin)){
+                    controller.insertTrajet(newTrajet);
+                    JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                } else{
+                    JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
+                }
 
                 JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
                 appWindow.getFrameContainer().removeAll();
