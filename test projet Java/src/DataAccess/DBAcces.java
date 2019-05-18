@@ -35,7 +35,7 @@ public class DBAcces implements DataAccess {
     public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
-        sql = "SELECT * FROM trajet WHERE matricule = ? AND (? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee);";
+        sql = "SELECT * FROM trajet WHERE matricule = ? AND ((? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee));";
 
         statement = connection.prepareStatement(sql);
         statement.setInt(1, matricule);
@@ -53,7 +53,7 @@ public class DBAcces implements DataAccess {
     public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
-        sql = "SELECT * FROM trajet WHERE (? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee) AND client_id = ?;";
+        sql = "SELECT * FROM trajet WHERE ((? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee)) AND client_id = ?;";
 
         statement = connection.prepareStatement(sql);
         statement.setTimestamp(1, date1);

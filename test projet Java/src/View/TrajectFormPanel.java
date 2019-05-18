@@ -241,10 +241,11 @@ public class TrajectFormPanel extends JPanel {
                 heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
                 heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
 
-                if (controller.getAllTrajets(idChauffeur, heureDépart, heureFin).size() > 0) {
+
+                if (!controller.getAllTrajets(idChauffeur, heureDépart, heureFin).isEmpty()) {
                     throw  new ChauffeurExcpetion();
                 }
-                if(controller.getAllTrajets(heureDépart, heureFin, idCLient).size() > 0){
+                if(!controller.getAllTrajets(heureDépart, heureFin, idCLient).isEmpty()){
                     throw new ClientException();
                 }
 
@@ -253,6 +254,13 @@ public class TrajectFormPanel extends JPanel {
                 if(controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty() && controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
                     controller.insertTrajet(newTrajet);
                     JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    if(!controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    if(!controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Ce client n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
+                    }
                 }
                 JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
                 appWindow.getContentPane().removeAll();
