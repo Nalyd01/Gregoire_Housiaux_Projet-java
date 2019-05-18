@@ -242,11 +242,10 @@ public class TrajectFormPanel extends JPanel {
                 heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
 
 
-
-                if (controller.getAllTrajets(idChauffeur, heureDépart, heureFin).size() > 0) {
+                if (!controller.getAllTrajets(idChauffeur, heureDépart, heureFin).isEmpty()) {
                     throw  new ChauffeurExcpetion();
                 }
-                if(controller.getAllTrajets(heureDépart, heureFin, idCLient).size() > 0){
+                if(!controller.getAllTrajets(heureDépart, heureFin, idCLient).isEmpty()){
                     throw new ClientException();
                 }
 
