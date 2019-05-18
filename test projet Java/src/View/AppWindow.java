@@ -96,8 +96,8 @@ public class AppWindow extends JFrame {
 
                 costTrip = new JMenuItem("Calcul du coût d'un trajet");
                 businessTask.add(costTrip);
-                TacheMetierListener tacheMetierListener = new TacheMetierListener();
-                costTrip.addActionListener(tacheMetierListener);
+                TripCostListener tripCostListener = new TripCostListener();
+                costTrip.addActionListener(tripCostListener);
 
         this.addWindowListener( new WindowAdapter()
         { public void windowClosing( WindowEvent e)
@@ -168,11 +168,11 @@ public class AppWindow extends JFrame {
         }
     }
 
-    private class TacheMetierListener implements ActionListener{
+    private class TripCostListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                new TacheMetierWindow(AppWindow.this);
+                new TripCostWindow(AppWindow.this);
             }catch (Exception err){
                 err.printStackTrace();
             }

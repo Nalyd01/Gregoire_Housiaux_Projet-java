@@ -7,14 +7,14 @@ import java.awt.*;
 import java.sql.SQLException;
 import Exception.*;
 
-public class OnGoingTrajectPanel extends JPanel {
+public class OnGoingTripPanel extends JPanel {
     private JProgressBar progressBar;
     private JLabel trajetText;
     private ApplicationController controller;
     private Trajet trajet;
     private double pourcentage;
 
-    public OnGoingTrajectPanel(Trajet trajet){
+    public OnGoingTripPanel(Trajet trajet){
         this.trajet = trajet;
         controller = new ApplicationController();
 

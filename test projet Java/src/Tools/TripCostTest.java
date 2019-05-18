@@ -3,11 +3,11 @@ package Tools;
 
 import Model.Trajet;
 import org.junit.Assert;
-import Business.TacheMetier;
+import Business.TripCost;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
-public class TacheMetierTest {
+public class TripCostTest {
     private Trajet trajet;
     Calendar dateDepart;
 
@@ -44,12 +44,12 @@ public class TacheMetierTest {
     @org.junit.Test
     public void getCost() {
         double prixAttendu = 318.37;
-        Assert.assertEquals(prixAttendu, TacheMetier.getCost(trajet), 0.01);
+        Assert.assertEquals(prixAttendu, TripCost.getCost(trajet), 0.01);
     }
 
     @org.junit.Test
     public void getIndex(){
         int indexAttendu = 4;
-        Assert.assertEquals(indexAttendu, TacheMetier.getIndex(dateDepart.get(Calendar.HOUR_OF_DAY)));
+        Assert.assertEquals(indexAttendu, TripCost.getIndex(dateDepart.get(Calendar.HOUR_OF_DAY)));
     }
 }

@@ -47,4 +47,6 @@ public interface DataAccess {
     HashMap<String, Integer> getNbTrajetsParZones() throws SQLException;
 
     ArrayList<Trajet> getOnGoingTraject()throws SQLException;
+
+    boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException;
 }

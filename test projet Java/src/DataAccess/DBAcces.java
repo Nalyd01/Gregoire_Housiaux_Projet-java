@@ -27,12 +27,7 @@ public class DBAcces implements DataAccess {
 
     @Override
     public ArrayList<Trajet> getAllTrajets() throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
-        connection = SingletonConnection.getInstance();
-
-        sql = "SELECT * FROM trajet";
-        statement = connection.prepareStatement(sql);
-        ResultSet data = statement.executeQuery();
-
+        ResultSet data = récupData("SELECT * FROM trajet");
         return allTrajetsList(data);
     }
 
@@ -218,7 +213,7 @@ public class DBAcces implements DataAccess {
     @Override
     public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
         ResultSet data = récupData("SELECT matricule FROM trajet;");
-        zoneNbChauffeur = new HashMap<String, Integer>();
+        zoneNbChauffeur = new HashMap<>();
         for (String zone : getAllZones()){
             zoneNbChauffeur.put(zone, 0);
         }
@@ -241,6 +236,14 @@ public class DBAcces implements DataAccess {
             }
         }
         return  allTrajets;
+    }
+
+    @Override
+    public boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException{
+        ResultSet data = récupData("SELECT * FROM trajet WHERE matricule = '"+ matricule +"' AND heureDepart BETWEEN '"+ heureDepart +"' " +
+                "AND '"+ heureArrivee +"' OR heureArrivee BETWEEN '"+ heureDepart +"' AND '"+ heureArrivee +"';");
+
+        return !data.next();
     }
 
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {

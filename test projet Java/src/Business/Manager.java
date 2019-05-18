@@ -112,4 +112,8 @@ public class Manager {
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
         return dao.getOnGoingTraject();
     }
+
+    public boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException{
+        return dao.availableChauffeur(matricule,heureDepart,heureArrivee);
+    }
 }
