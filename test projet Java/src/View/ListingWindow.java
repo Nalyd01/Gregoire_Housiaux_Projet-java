@@ -19,19 +19,24 @@ public class ListingWindow extends JFrame {
     private JPanel panel;
     private JTable table;
     private JScrollPane scrollPane;
-
+    static ListingWindow listingWindow;
+    static ListingWindow rechercheWindow;
     public ListingWindow(){
         super("Listing des trajets");
         initListing();
         afficherListing();
+        closePreviousWindow(true);
     }
+
+
 
     public ListingWindow(String chauffeur, Timestamp date1, Timestamp date2){
         super("Listing des clients d'un chauffeur entre 2 dates");
         initListing();
-
         int matriculeChauffeur = Integer.parseInt(chauffeur.substring(15, chauffeur.indexOf(" ", 16)));
         afficherListing(matriculeChauffeur, date1, date2);
+
+        closePreviousWindow(false);
     }
 
     public ListingWindow(Timestamp date1, Timestamp date2, String localites){
@@ -41,6 +46,9 @@ public class ListingWindow extends JFrame {
         int codePostal = Integer.parseInt(localites.substring(0,localites.indexOf(" ")));
         String nomLocalite = localites.substring(localites.indexOf(" ")+1);
         afficherListing(codePostal, nomLocalite, date1, date2);
+
+        closePreviousWindow(false);
+
     }
 
     public ListingWindow(ArrayList matricule){
@@ -48,6 +56,8 @@ public class ListingWindow extends JFrame {
         initListing();
 
         afficherListing(matricule);
+
+        closePreviousWindow(false);
     }
 
     public void afficherListing(){
@@ -242,5 +252,23 @@ public class ListingWindow extends JFrame {
             créaTable(trajets);
         }
     }
+
+    public void closePreviousWindow(boolean isAListing){
+        if(isAListing){
+            if(listingWindow != null){
+                listingWindow.dispose();
+            }
+            listingWindow = this;
+        }
+        else {
+            if(rechercheWindow != null){
+                rechercheWindow.dispose();
+            }
+            rechercheWindow = this;
+        }
+
+    }
+
+
 
 }

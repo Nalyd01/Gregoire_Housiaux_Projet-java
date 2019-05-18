@@ -1,5 +1,7 @@
 package View;
 
+import Model.Trajet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -111,21 +113,14 @@ public class AppWindow extends JFrame {
     private class AccueilListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event){
-            frameContainer.removeAll();
-            frameContainer.add(new WelcomePanel(AppWindow.this), BorderLayout.CENTER);
-            frameContainer.repaint();
-            AppWindow.this.setVisible(true);
+            afficherAcceuil();
         }
     }
 
     private class InsertListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event) {
-            scroller = new JScrollPane(new TrajectFormPanel(AppWindow.this));
-            frameContainer.removeAll();
-            frameContainer.add(scroller, BorderLayout.CENTER);
-            frameContainer.repaint();
-            AppWindow.this.setVisible(true);
+            afficheTrajectForm();
         }
     }
 
@@ -179,8 +174,28 @@ public class AppWindow extends JFrame {
         }
     }
 
-    public Container getFrameContainer(){
-        return frameContainer;
+
+    public void afficheTrajectForm(){
+        scroller = new JScrollPane(new TrajectFormPanel(this));
+        frameContainer.removeAll();
+        frameContainer.add(scroller, BorderLayout.CENTER);
+        frameContainer.repaint();
+        AppWindow.this.setVisible(true);
+    }
+
+    public void afficheTrajectForm(Trajet trajet){
+        scroller = new JScrollPane(new TrajectFormPanel(trajet, this));
+        frameContainer.removeAll();
+        frameContainer.add(scroller, BorderLayout.CENTER);
+        frameContainer.repaint();
+        AppWindow.this.setVisible(true);
+    }
+
+    public void afficherAcceuil(){
+        frameContainer.removeAll();
+        frameContainer.add(new WelcomePanel(AppWindow.this), BorderLayout.CENTER);
+        frameContainer.repaint();
+        AppWindow.this.setVisible(true);
     }
 
 

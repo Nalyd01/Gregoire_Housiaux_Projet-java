@@ -29,7 +29,7 @@ public class TrajectFormPanel extends JPanel {
     private AppWindow appWindow;
     private int idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, idCLient;
     private String localité, strIdClient;
-    private Boolean aPanne, aEmbouteillage;
+    private Boolean aPanne, aEmbouteillage, isAModification;
     private Timestamp heureDépart, heureFin;
 
     public TrajectFormPanel(Trajet trajet, AppWindow appWindow){
@@ -40,6 +40,7 @@ public class TrajectFormPanel extends JPanel {
         nbPassagersText.setText(String.valueOf( trajet.getNbPassagers()));
         panne.setSelected(trajet.getaEuPanne());
         embouteillage.setSelected(trajet.getaEuEmbouteillage());
+        isAModification = true;
 
         try {
             setComboBoxSelection(comboBoxChauffeurs, controller.chauffeurById(trajet.getMatricule()));
@@ -59,6 +60,7 @@ public class TrajectFormPanel extends JPanel {
         this.appWindow = appWindow;
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         controller = new ApplicationController();
+        isAModification = false;
 
         try {
             list = controller.getAllChauffeurs() ;
@@ -241,20 +243,23 @@ public class TrajectFormPanel extends JPanel {
                 heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
                 heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
 
+                if (isAModification){
+                    controller.removeTrajetById(idTrajet);
+                    appWindow.afficherAcceuil();
+                }else {
+                    appWindow.afficheTrajectForm();
+                }
+
                 newTrajet = new Trajet(idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, localité, idCLient, aPanne, aEmbouteillage, heureFin, heureDépart);
+
 
                 if(controller.availableChauffeur(idChauffeur,heureDépart,heureFin)){
                     controller.insertTrajet(newTrajet);
-                    JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Trajet "+ (isAModification ? " modifier ": " créer ")+ "avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
                 } else{
                     JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
                 }
 
-                JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
-                appWindow.getFrameContainer().removeAll();
-                appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
-                appWindow.getFrameContainer().repaint();
-                appWindow.setVisible(true);
 
             } catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);

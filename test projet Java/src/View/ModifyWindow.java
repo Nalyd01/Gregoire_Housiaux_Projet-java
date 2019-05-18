@@ -42,14 +42,9 @@ public class ModifyWindow extends ListingWindow {
                 }catch (Exception e){
                     JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                scroller = new JScrollPane(new TrajectFormPanel(trajet, appWindow));
 
-                appWindow.getFrameContainer().removeAll();
-                appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
-                appWindow.getFrameContainer().repaint();
-                appWindow.setVisible(true);
+                appWindow.afficheTrajectForm(trajet);
 
-                deleteTrajet();
                 ModifyWindow.this.dispose();
             }
         }
