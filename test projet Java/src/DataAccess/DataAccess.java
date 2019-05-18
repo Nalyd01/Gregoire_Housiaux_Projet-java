@@ -16,6 +16,8 @@ public interface DataAccess {
 
     ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
+    ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
+
     ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
 
     ArrayList<Trajet> getAllTrajets(ArrayList matricule) throws SQLException, ValeurException, CodePostalException, IdException, TimeException;
@@ -47,6 +49,4 @@ public interface DataAccess {
     HashMap<String, Integer> getNbTrajetsParZones() throws SQLException;
 
     ArrayList<Trajet> getOnGoingTraject()throws SQLException;
-
-    boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException;
 }

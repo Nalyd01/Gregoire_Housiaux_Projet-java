@@ -24,6 +24,10 @@ public class ApplicationController {
         return manager.getAllTrajets(matricule, date1, date2);
     }
 
+    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        return manager.getAllTrajets(date1,date2,client_id);
+    }
+
     public ArrayList<Trajet> getAllTrajets(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         return manager.getAllTrajets(codePostal, nomLocalite, date1, date2);
     }
@@ -78,10 +82,6 @@ public class ApplicationController {
 
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
         return manager.getOnGoingTraject();
-    }
-
-    public boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException{
-        return manager.availableChauffeur(matricule,heureDepart,heureArrivee);
     }
 
 }

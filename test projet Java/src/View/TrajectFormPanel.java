@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
-import Exception.ValeurException;
+import Exception.*;
 
 import Model.Trajet;
 import Controller.ApplicationController;
@@ -243,13 +243,17 @@ public class TrajectFormPanel extends JPanel {
 
                 newTrajet = new Trajet(idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, localité, idCLient, aPanne, aEmbouteillage, heureFin, heureDépart);
 
-                if(controller.availableChauffeur(idChauffeur,heureDépart,heureFin)){
+                if(controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty() && controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
                     controller.insertTrajet(newTrajet);
                     JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
-                } else{
-                    JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    if(!controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    if(!controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Ce client n'est pas disponible pour le moment", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                    }
                 }
-
                 JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
                 appWindow.getFrameContainer().removeAll();
                 appWindow.getFrameContainer().add(scroller, BorderLayout.CENTER);
@@ -262,7 +266,13 @@ public class TrajectFormPanel extends JPanel {
                 JOptionPane.showMessageDialog(null, "L'heure de départ doit être être antérieure à la date d'arrivée et de maximum 24h" ,"heure invalide", JOptionPane.ERROR_MESSAGE);
             }catch (ValeurException exception){
                 JOptionPane.showMessageDialog(null, exception.getMessage(), "Le nombre doit être positif", JOptionPane.ERROR_MESSAGE);
-            }catch(Exception e){
+            }catch (CodePostalException codePostalException){
+                JOptionPane.showMessageDialog (null, codePostalException.getMessage(), "Erreur sur le code postal", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (IdException idException){
+                JOptionPane.showMessageDialog (null, idException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
+            }
+            catch(Exception e){
                 e.printStackTrace();
             }
         }

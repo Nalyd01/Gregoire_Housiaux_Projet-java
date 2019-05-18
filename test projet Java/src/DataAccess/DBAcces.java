@@ -35,12 +35,33 @@ public class DBAcces implements DataAccess {
     public ArrayList<Trajet> getAllTrajets(int matricule, Timestamp date1, Timestamp date2) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
         connection = SingletonConnection.getInstance();
 
-        sql = "SELECT * FROM trajet WHERE heureDepart >= ? AND heureArrivee <= ? AND matricule = ?;";
+        sql = "SELECT * FROM trajet WHERE matricule = ? AND (? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee);";
+
+        statement = connection.prepareStatement(sql);
+        statement.setInt(1, matricule);
+        statement.setTimestamp(2, date1);
+        statement.setTimestamp(3, date2);
+        statement.setTimestamp(4, date1);
+        statement.setTimestamp(5, date2);
+
+        ResultSet data = statement.executeQuery();
+
+        return allTrajetsList(data);
+    }
+
+    @Override
+    public ArrayList<Trajet> getAllTrajets(Timestamp date1, Timestamp date2, int client_id) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
+        connection = SingletonConnection.getInstance();
+
+        sql = "SELECT * FROM trajet WHERE (? BETWEEN heureDepart AND heureArrivee) OR (? BETWEEN heureDepart AND heureArrivee) OR (? < heuredepart AND ? > heureArrivee) AND client_id = ?;";
 
         statement = connection.prepareStatement(sql);
         statement.setTimestamp(1, date1);
         statement.setTimestamp(2, date2);
-        statement.setInt(3,matricule);
+        statement.setTimestamp(3, date1);
+        statement.setTimestamp(4, date2);
+        statement.setInt(5, client_id);
+
         ResultSet data = statement.executeQuery();
 
         return allTrajetsList(data);
@@ -236,14 +257,6 @@ public class DBAcces implements DataAccess {
             }
         }
         return  allTrajets;
-    }
-
-    @Override
-    public boolean availableChauffeur(int matricule, Timestamp heureDepart, Timestamp heureArrivee) throws SQLException{
-        ResultSet data = récupData("SELECT * FROM trajet WHERE matricule = '"+ matricule +"' AND heureDepart BETWEEN '"+ heureDepart +"' " +
-                "AND '"+ heureArrivee +"' OR heureArrivee BETWEEN '"+ heureDepart +"' AND '"+ heureArrivee +"';");
-
-        return !data.next();
     }
 
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, CodePostalException, IdException, TimeException {
