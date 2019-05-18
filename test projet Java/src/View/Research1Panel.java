@@ -45,7 +45,7 @@ public class Research1Panel extends JPanel {
         pointDépart = new JSpinner();
         model = new SpinnerDateModel();
         pointDépart.setModel(model);
-        editor = new JSpinner.DateEditor(pointDépart,"dd-MM-yyyy HH:mm:ss");
+        editor = new JSpinner.DateEditor(pointDépart,"dd-MM-yyyy HH:mm");
         pointDépart.setEditor(editor);
         this.add(pointDépart);
 
@@ -56,7 +56,7 @@ public class Research1Panel extends JPanel {
         pointFin = new JSpinner();
         model = new SpinnerDateModel();
         pointFin.setModel(model);
-        editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy HH:mm:ss");
+        editor = new JSpinner.DateEditor(pointFin,"dd-MM-yyyy HH:mm");
         pointFin.setEditor(editor);
         this.add(pointFin);
 

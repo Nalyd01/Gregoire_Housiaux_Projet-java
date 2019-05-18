@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurExcpetion.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurExcpetion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,91 +20,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+            <state relative-caret-position="170">
+              <caret line="58" column="67" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="245" column="17" lean-forward="true" selection-start-line="245" selection-start-column="17" selection-end-line="245" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurExcpetion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="87" selection-start-line="3" selection-start-column="87" selection-end-line="3" selection-end-column="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ClientException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/AppWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3774">
-              <caret line="237" column="28" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="125">
+              <caret line="49" column="70" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -146,8 +77,6 @@
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/IdException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/ModifyWindow.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/DeleteWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/OnGoingTrajectPanel.java" />
@@ -165,6 +94,8 @@
         <option value="$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurExcpetion.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" />
       </list>
     </option>
   </component>
@@ -376,6 +307,8 @@
       <workItem from="1558190575355" duration="3464000" />
       <workItem from="1558194188448" duration="330000" />
       <workItem from="1558203910445" duration="416000" />
+      <workItem from="1558209380011" duration="89000" />
+      <workItem from="1558209611614" duration="225000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -559,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558194521526</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="chgmts messages">
+      <created>1558209423278</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1558209423278</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -577,7 +517,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113673000" />
+    <option name="totallyTimeSpent" value="114019000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +542,7 @@
       <window_info anchor="bottom" id="Inspection Results" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32108626" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.32108626" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -628,7 +568,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changement format heure et orthographe" />
     <MESSAGE value="Research 1" />
     <MESSAGE value="Id auto_incremented" />
     <MESSAGE value="commencement recherche 2" />
@@ -653,7 +592,8 @@
     <MESSAGE value="small improvements in dbAccess" />
     <MESSAGE value=".." />
     <MESSAGE value="dispo" />
-    <option name="LAST_COMMIT_MESSAGE" value="dispo" />
+    <MESSAGE value="chgmts messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="chgmts messages" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TajectFormPanel.java" />
@@ -720,16 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="74" column="100" lean-forward="true" selection-start-line="74" selection-start-column="100" selection-end-line="74" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -811,17 +741,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="78" column="56" lean-forward="true" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -846,33 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/AppWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3774">
-          <caret line="237" column="28" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurExcpetion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -883,14 +789,21 @@
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Exception/ClientException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/AppWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+        <state relative-caret-position="374">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3808">
+          <caret line="237" column="28" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -899,11 +812,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="245" column="17" lean-forward="true" selection-start-line="245" selection-start-column="17" selection-end-line="245" selection-end-column="17" />
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="58" column="67" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="49" column="70" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
         </state>
       </provider>
     </entry>
