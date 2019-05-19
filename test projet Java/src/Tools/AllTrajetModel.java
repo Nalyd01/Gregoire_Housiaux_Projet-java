@@ -77,7 +77,7 @@ public class AllTrajetModel extends AbstractTableModel {
                     return "Non";
                 }
             } else{
-                return "null";
+                return null;
             }
             case 8 : if(trajet.getaEuEmbouteillage() != null){
                 if(trajet.getaEuEmbouteillage()){
@@ -86,7 +86,7 @@ public class AllTrajetModel extends AbstractTableModel {
                     return "Non";
                 }
             } else{
-                return "null";
+                return null;
             }
             case 9: {
                 newFormat = new SimpleDateFormat("HH:mm --> dd-MMM-yyyy");

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="calcul nb Trajets par zone dans business">
-      <change afterPath="$PROJECT_DIR$/test projet Java/src/Tools/NbTrajetsParZoneTest.java" afterDir="false" />
+    <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Business/NbTrajetsParZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Business/NbTrajetsParZone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,20 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+            <state relative-caret-position="425">
+              <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="212" column="32" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
+            <state relative-caret-position="238">
+              <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
             </state>
           </provider>
         </entry>
@@ -55,6 +52,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ajezt" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -105,9 +107,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="980" />
-    <option name="height" value="1091" />
+    <option name="x" value="-12" />
+    <option name="width" value="981" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -246,7 +248,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558283561511" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558283768832" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -347,7 +349,7 @@
       <workItem from="1558252229567" duration="3864000" />
       <workItem from="1558256672024" duration="142000" />
       <workItem from="1558259337267" duration="3068000" />
-      <workItem from="1558264770860" duration="9157000" />
+      <workItem from="1558264770860" duration="9531000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -594,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558271093862</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="chgmts">
+      <created>1558283573689</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1558283573689</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -630,7 +639,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132018000" />
+    <option name="totallyTimeSpent" value="132392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,7 +652,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -681,8 +689,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test supp" />
-    <MESSAGE value="modif recherche 2" />
     <MESSAGE value="finish recherches 2" />
     <MESSAGE value="trajetform modif" />
     <MESSAGE value="tache metier décimal au cost" />
@@ -706,7 +712,9 @@
     <MESSAGE value="Junit chgmts" />
     <MESSAGE value="chgmt format thread" />
     <MESSAGE value="calcul nb Trajets par zone dans business" />
-    <option name="LAST_COMMIT_MESSAGE" value="calcul nb Trajets par zone dans business" />
+    <MESSAGE value="chgmts" />
+    <MESSAGE value="modif alltrajet" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif alltrajet" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TajectFormPanel.java" />
@@ -944,17 +952,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+        <state relative-caret-position="238">
+          <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="212" column="32" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
+        <state relative-caret-position="425">
+          <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
         </state>
       </provider>
     </entry>
