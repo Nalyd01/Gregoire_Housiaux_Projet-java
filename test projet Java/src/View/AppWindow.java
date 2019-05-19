@@ -1,5 +1,6 @@
 package View;
 
+import DataAccess.SingletonConnection;
 import Model.Trajet;
 import javax.swing.*;
 import java.awt.*;
@@ -7,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.SQLException;
 
 public class AppWindow extends JFrame {
     private Container frameContainer;
@@ -109,9 +111,16 @@ public class AppWindow extends JFrame {
 
 
         this.addWindowListener( new WindowAdapter()
-        { public void windowClosing( WindowEvent e)
-        { System.exit(0); }
-        } );
+            { public void windowClosing( WindowEvent e)
+                {
+                    try {
+                        SingletonConnection.getInstance().close();
+                    }catch(SQLException sqlException){
+                        sqlException.printStackTrace();
+                    }
+                    System.exit(0);
+                }
+            } );
         setVisible(true);
     }
 

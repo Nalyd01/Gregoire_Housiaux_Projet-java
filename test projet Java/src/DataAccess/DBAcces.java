@@ -174,7 +174,7 @@ public class DBAcces implements DataAccess {
         statement.setInt(2, newTrajet.getNbKm());
         statement.setInt(3, newTrajet.getNbPassagers());
         statement.setNull(4, Types.BOOLEAN);
-        statement.setBoolean(5, newTrajet.getaEuEmbouteillage());
+        statement.setNull(5, Types.BOOLEAN);
         statement.setInt(6, newTrajet.getMatricule());
         statement.setInt(7, newTrajet.getCodePostal());
         statement.setString(8, newTrajet.getNomLocalite());
@@ -189,6 +189,12 @@ public class DBAcces implements DataAccess {
             sql = "UPDATE trajet SET panne = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "';";
             statement = connection.prepareStatement(sql);
             statement.setBoolean(1, newTrajet.getaEuPanne());
+            statement.executeUpdate();
+        }
+        if (newTrajet.getaEuEmbouteillage() != null) {
+            sql = "UPDATE trajet SET aEuEmbouteillage = ? WHERE identifiant = '" + newTrajet.getIdentifiant() + "';";
+            statement = connection.prepareStatement(sql);
+            statement.setBoolean(1, newTrajet.getaEuEmbouteillage());
             statement.executeUpdate();
         }
     }
@@ -249,14 +255,26 @@ public class DBAcces implements DataAccess {
     }
 
     public Trajet créaTrajets(ResultSet data) throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
-        aEuPanne = data.getBoolean("panne");
-        if(data.wasNull()){
-            aEuPanne = false;
+
+        Boolean panne;
+        if (data.getObject("panne" ) != null){
+            panne =  data.getBoolean("panne");
+        }
+        else {
+            panne = null;
+        }
+
+        Boolean embouteillage ;
+        if (data.getObject("aEuEmbouteillage" ) != null){
+            embouteillage =  data.getBoolean("aEuEmbouteillage");
+        }
+        else {
+            embouteillage = null;
         }
 
         trajet = new Trajet(data.getInt("identifiant"), data.getInt("nbKm"), data.getInt("nbPassagers"),
                 data.getInt("matricule"), data.getInt("codePostal"), data.getString("nom"),
-                data.getInt("client_id"), aEuPanne, data.getBoolean("aEuEmbouteillage"), data.getTimestamp("heureArrivee")
+                data.getInt("client_id"), panne, embouteillage, data.getTimestamp("heureArrivee")
                 , data.getTimestamp("heureDepart"));
 
         return trajet;
