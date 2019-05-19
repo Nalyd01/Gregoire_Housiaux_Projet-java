@@ -33,14 +33,18 @@ public class TripCostWindow extends ListingWindow {
         @Override
         public void actionPerformed(ActionEvent event){
             selectedRow = getTable().getSelectedRow();
-            try {
-                trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
-                prix = TripCost.getCost(trajet);
-                JOptionPane.showMessageDialog(null, "Le prix de ce trajet est de " + prix + "€" , "Calcul du prix de ce trajet", JOptionPane.INFORMATION_MESSAGE);
-            }catch (Exception e){
-                JOptionPane.showMessageDialog (null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            if (selectedRow == -1){
+                JOptionPane.showMessageDialog (null, "Vous devez sélectionner au moins une ligne", "Erreur pour la suppression", JOptionPane.ERROR_MESSAGE);
             }
-
+            else {
+                try {
+                    trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
+                    prix = TripCost.getCost(trajet);
+                    JOptionPane.showMessageDialog(null, "Le prix de ce trajet est de " + prix + "€", "Calcul du prix de ce trajet", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+                }
+            }
 
         }
     }

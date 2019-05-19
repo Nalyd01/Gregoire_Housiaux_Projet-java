@@ -29,7 +29,7 @@ public class TrajectFormPanel extends JPanel {
     private AppWindow appWindow;
     private int idTrajet, nbKm, nbPassagers, idChauffeur, codePostal, idCLient;
     private String localité, strIdClient;
-    private Boolean aPanne, aEmbouteillage;
+    private Boolean aPanne, aEmbouteillage, isAModification;
     private Timestamp heureDépart, heureFin;
 
     public TrajectFormPanel(Trajet trajet, AppWindow appWindow){
@@ -38,9 +38,9 @@ public class TrajectFormPanel extends JPanel {
         idText.setEditable(false);
         kmText.setText(String.valueOf( trajet.getNbKm()));
         nbPassagersText.setText(String.valueOf( trajet.getNbPassagers()));
-        panne.setSelected(trajet.getaEuPanne());
-        embouteillage.setSelected(trajet.getaEuEmbouteillage());
-
+        panne.setSelected((trajet.getaEuPanne() != null ? trajet.getaEuPanne() : false));
+        embouteillage.setSelected((trajet.getaEuEmbouteillage() != null ? trajet.getaEuEmbouteillage() : false));
+        isAModification = true;
         try {
             setComboBoxSelection(comboBoxChauffeurs, controller.chauffeurById(trajet.getMatricule()));
             setComboBoxSelection(comboBoxLocalites, trajet.getCodePostal() + " " + trajet.getNomLocalite());
@@ -58,6 +58,8 @@ public class TrajectFormPanel extends JPanel {
         this.appWindow = appWindow;
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         controller = new ApplicationController();
+        aPanne = new Boolean(true);
+        isAModification =false;
 
         try {
             list = controller.getAllChauffeurs() ;
@@ -233,12 +235,16 @@ public class TrajectFormPanel extends JPanel {
                 strIdClient = strIdClient.substring(0, strIdClient.indexOf(" "));
                 idCLient = Integer.parseInt(strIdClient);
 
-                aPanne = panne.isSelected();
+                aPanne = getStatementByJRadionButtonState(panne, notPanne);
 
-                aEmbouteillage = embouteillage.isSelected();
+                aEmbouteillage = getStatementByJRadionButtonState(embouteillage, notEmbouteillage);
 
                 heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
                 heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
+
+                if(isAModification){
+                    controller.removeTrajetById(idTrajet);
+                }
 
                 if (!controller.getAllTrajets(idChauffeur, heureDépart, heureFin).isEmpty()) {
                     throw  new ChauffeurException();
@@ -251,7 +257,7 @@ public class TrajectFormPanel extends JPanel {
 
                 if(controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty() && controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
                     controller.insertTrajet(newTrajet);
-                    JOptionPane.showMessageDialog(null, "Trajet créé avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Trajet " +(isAModification ? "modifier" : "créer") + " avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     if(!controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty()){
                         JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
@@ -260,12 +266,17 @@ public class TrajectFormPanel extends JPanel {
                         JOptionPane.showMessageDialog(null, "Ce client n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
-
-                JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
-                appWindow.getContentPane().removeAll();
-                appWindow.getContentPane().add(scroller, BorderLayout.CENTER);
-                appWindow.getContentPane().repaint();
-                appWindow.setVisible(true);
+                if (isAModification){
+                    appWindow.afficherAcceuil();
+                    new ModifyWindow(appWindow);
+                }
+                else {
+                    JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
+                    appWindow.getContentPane().removeAll();
+                    appWindow.getContentPane().add(scroller, BorderLayout.CENTER);
+                    appWindow.getContentPane().repaint();
+                    appWindow.setVisible(true);
+                }
 
             }catch (SQLException sqlException) {
                 JOptionPane.showMessageDialog(null, sqlException.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
@@ -303,6 +314,18 @@ public class TrajectFormPanel extends JPanel {
 
     public void errorEmptyField(String message){
         JOptionPane.showMessageDialog(null, message, "Erreur dans le formulaire", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public Boolean getStatementByJRadionButtonState(JRadioButton buttonYes, JRadioButton buttonNo){
+        if(buttonYes.isSelected()){
+            return true;
+        }
+        else if (buttonNo.isSelected()){
+            return false;
+        }
+        else {
+            return  null;
+        }
     }
 
 }

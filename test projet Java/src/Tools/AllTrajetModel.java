@@ -70,20 +70,24 @@ public class AllTrajetModel extends AbstractTableModel {
                     JOptionPane.showMessageDialog (null, valeurException.getMessage(), "Erreur sur la valeur", JOptionPane.ERROR_MESSAGE);
                 }
             }
-            case 7 : if(trajet.getaEuPanne() != null){
-                if(trajet.getaEuPanne()){
-                    return "Oui";
-                } else{
-                    return "Non";
-                }
-            } else{
-                return null;
-            }
-            case 8 : if(trajet.getaEuEmbouteillage()){
-                return "Oui";
-            } else{
-                return "Non";
-            }
+            case 7 :if(trajet.getaEuPanne() != null){
+                        if(trajet.getaEuPanne()){
+                            return "Oui";
+                        } else{
+                             return "Non";
+                        }
+                    } else{
+                        return null;
+                    }
+            case 8 :if(trajet.getaEuEmbouteillage() != null) {
+                        if (trajet.getaEuEmbouteillage()) {
+                            return "Oui";
+                        } else {
+                            return "Non";
+                        }
+                    }else {
+                        return null;
+                    }
             case 9: {
                 newFormat = new SimpleDateFormat("HH:mm --> dd-MMM-yyyy");
                 hArriveeFormatted = newFormat.format(trajet.getHeureArrivee());

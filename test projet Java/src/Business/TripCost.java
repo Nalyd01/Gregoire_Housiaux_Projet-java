@@ -90,8 +90,10 @@ public class TripCost {
         cost += nbKm[3] * PKm18_22;
         cost += nbKm[4] * PKm22_6;
 
-        cost += (trajet.getaEuEmbouteillage()? 3 : 0);
-
+        if(trajet.getaEuEmbouteillage() != null) {
+            cost += (trajet.getaEuEmbouteillage() ? 3 : 0);
+        }
+        
         costToFormat = new BigDecimal(cost).setScale(2, RoundingMode.HALF_UP);
         newCost = costToFormat.doubleValue();
 
