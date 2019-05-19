@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="037b006e-e354-42f5-8600-8d1257067a1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/DataAccess/DBAcces.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/DataAccess/DBAcces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/test projet Java/View/TrajectFormPanel$InsertListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test projet Java/View/TrajectFormPanel$InsertListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Business/TripCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/TripCost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/DBAcces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/DBAcces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/AllTrajetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/AllTrajetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AppWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TrajectFormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TrajectFormPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TripCostWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TripCostWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,17 +35,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/ListingWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
+            <state relative-caret-position="-550">
               <caret line="235" column="152" lean-forward="true" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="152" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataAccess/SingletonConnection.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Business/NbTrajetsParZone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="170">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -109,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/TripCostWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
@@ -314,7 +306,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558283061498" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558283729509" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -423,7 +415,7 @@
       <workItem from="1558125353115" duration="609000" />
       <workItem from="1558184363708" duration="6279000" />
       <workItem from="1558202815934" duration="3030000" />
-      <workItem from="1558275156639" duration="7892000" />
+      <workItem from="1558275156639" duration="8595000" />
     </task>
     <servers />
   </component>
@@ -460,7 +452,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177483000" />
+    <option name="totallyTimeSpent" value="178186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -473,7 +465,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4951246" visible="true" weight="0.26172706" />
       <window_info id="Structure" order="1" sideWeight="0.5048754" side_tool="true" weight="0.34221748" />
@@ -484,7 +475,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5048754" side_tool="true" weight="0.34221748" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34994584" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34994584" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33802816" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -631,7 +622,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/Research3.java" />
     <entry file="file://$PROJECT_DIR$/src/Constroller/ApplicationController.java" />
     <entry file="jar://$USER_HOME$/Downloads/mysql-connector-java-8.0.16/mysql-connector-java-8.0.16.jar!/com/mysql/cj/conf/ConnectionUrlParser.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -903,16 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DeleteWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Business/TripCost.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -930,17 +910,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ListingWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="235" column="152" lean-forward="true" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="152" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/TripCostWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DeleteWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ListingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-550">
+          <caret line="235" column="152" lean-forward="true" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Business/NbTrajetsParZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
