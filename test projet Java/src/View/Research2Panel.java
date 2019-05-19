@@ -1,6 +1,8 @@
 package View;
 
 import javax.swing.*;
+
+import Business.NbTrajetsParZone;
 import Controller.ApplicationController;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,7 +15,6 @@ import Exception.*;
 
 public class Research2Panel extends JPanel {
     private ApplicationController controller;
-    private HashMap<String,Integer> trajetsZone;
     private ArrayList zones, matriculeChauffeurs;
     private JComboBox boxZones;
     private JLabel zoneLabel;
@@ -29,13 +30,8 @@ public class Research2Panel extends JPanel {
         zoneLabel = new JLabel("Nombre de trajets par zone : ");
         this.add(zoneLabel);
 
-        try{
-            trajetsZone =  sortByValue(controller.getNbTrajetsParZones());
-            for(HashMap.Entry<String,Integer> entry : trajetsZone.entrySet()){
-                zones.add(entry.getKey() + " --> avec " + entry.getValue() + (entry.getValue() > 1 ? " trajets" : " trajet"));
-            }
-        } catch(SQLException exception){
-            JOptionPane.showMessageDialog (null, exception.getMessage(), "Erreur SQL", JOptionPane.ERROR_MESSAGE);
+        for(HashMap.Entry<String,Integer> entry : NbTrajetsParZone.getNbTrajets().entrySet()){
+            zones.add(entry.getKey() + " --> avec " + entry.getValue() + (entry.getValue() > 1 ? " trajets" : " trajet"));
         }
 
         boxZones = new JComboBox(zones.toArray());
@@ -50,19 +46,6 @@ public class Research2Panel extends JPanel {
         ResearchListener listener = new ResearchListener();
         researchButton.addActionListener(listener);
 
-    }
-
-    public HashMap<String, Integer> sortByValue(HashMap<String, Integer> hashMap)
-    {
-        List<Map.Entry<String, Integer> > list = new LinkedList<>(hashMap.entrySet());
-
-        Collections.sort(list,(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) -> (o2.getValue()).compareTo(o1.getValue()));
-
-        HashMap<String, Integer> temp = new LinkedHashMap<>();
-        for (Map.Entry<String, Integer> data : list) {
-            temp.put(data.getKey(), data.getValue());
-        }
-        return temp;
     }
 
     private class ResearchListener implements ActionListener{

@@ -63,8 +63,8 @@ public class ApplicationController {
         manager.insertTrajet(newTrajet);
     }
 
-    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
-        return manager.getNbTrajetsParZones();
+    public ArrayList<Integer> getMatriculesTrajets() throws SQLException {
+        return manager.getMatriculesTrajets();
     }
 
     public String chauffeurById(int matricule) throws SQLException, IdException {
@@ -79,8 +79,16 @@ public class ApplicationController {
         return manager.getChauffeursByZone(zone_id);
     }
 
+    public String getZoneChauffeur(int matricule) throws SQLException {
+        return manager.getZoneChauffeur(matricule);
+    }
+
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException{
         return manager.getOnGoingTraject();
+    }
+
+    public ArrayList<String> getAllZones() throws SQLException{
+        return manager.getAllZones();
     }
 
 }

@@ -92,8 +92,8 @@ public class Manager {
         dao.insertTrajet(newTrajet);
     }
 
-    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
-        return dao.getNbTrajetsParZones();
+    public ArrayList<Integer> getMatriculesTrajets() throws SQLException {
+        return dao.getMatriculesTrajets();
     }
 
     public String chauffeurById(int matricule) throws SQLException, IdException {
@@ -118,8 +118,16 @@ public class Manager {
         return dao.getChauffeursByZone(zone_id);
     }
 
+    public String getZoneChauffeur(int matricule) throws SQLException {
+        return dao.getZoneChauffeur(matricule);
+    }
+
     public ArrayList<Trajet> getOnGoingTraject()throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException{
         return dao.getOnGoingTraject();
+    }
+
+    public ArrayList<String> getAllZones() throws SQLException{
+        return dao.getAllZones();
     }
 
 }

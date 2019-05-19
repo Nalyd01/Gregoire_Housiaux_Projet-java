@@ -229,17 +229,13 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public HashMap<String, Integer> getNbTrajetsParZones() throws SQLException {
+    public ArrayList<Integer> getMatriculesTrajets() throws SQLException{
+        chauffeurs = new ArrayList();
         ResultSet data = récupData("SELECT matricule FROM trajet;");
-        zoneNbChauffeur = new HashMap<>();
-        for (String zone : getAllZones()){
-            zoneNbChauffeur.put(zone, 0);
+        while (data.next()){
+            chauffeurs.add(data.getInt("matricule"));
         }
-        while(data.next()){
-            String zoneChauffeur = getZoneChauffeur(data.getInt("matricule"));
-            zoneNbChauffeur.put(zoneChauffeur,zoneNbChauffeur.get(zoneChauffeur)+1);
-        }
-        return zoneNbChauffeur;
+        return chauffeurs;
     }
 
     @Override

@@ -45,7 +45,7 @@ public interface DataAccess {
 
     ArrayList getChauffeursByZone(int zone_id) throws SQLException;
 
-    HashMap<String, Integer> getNbTrajetsParZones() throws SQLException;
+    ArrayList<Integer> getMatriculesTrajets() throws SQLException;
 
     ArrayList<Trajet> getOnGoingTraject()throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException;
 }
