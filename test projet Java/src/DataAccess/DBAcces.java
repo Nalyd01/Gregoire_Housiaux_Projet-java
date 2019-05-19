@@ -243,15 +243,11 @@ public class DBAcces implements DataAccess {
     }
 
     @Override
-    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException{
         allTrajets = new ArrayList<>();
         ResultSet data = récupData("SELECT * FROM trajet where heureArrivee > current_time();");
         while (data.next()){
-            try {
                 allTrajets.add(créaTrajets(data));
-            }catch (Exception e){
-                e.printStackTrace();
-            }
         }
         return  allTrajets;
     }

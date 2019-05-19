@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="">
+    <list default="true" id="5908c076-55d3-4324-803e-8ec8266a8150" name="Default Changelist" comment="Junit chgmts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +23,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="58" />
+            <state relative-caret-position="1921">
+              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TrajectUpdateThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-187">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="116" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -61,17 +102,12 @@
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/IdException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TacheMetierWindow.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/OnGoingTrajectPanel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/TacheMetierTest.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Business/TacheMetier.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurExcpetion.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ValeurException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ClientException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/ChauffeurException.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Exception/NbPassagersException.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Model/Trajet.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/TrajectUpdateThread.java" />
@@ -82,18 +118,23 @@
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/Research3Panel.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/View/TripCostWindow.java" />
-        <option value="$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Business/TripCost.java" />
         <option value="$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/Business/Manager.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java" />
+        <option value="$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="width" value="981" />
-    <option name="height" value="1092" />
+    <option name="x" value="-11" />
+    <option name="width" value="980" />
+    <option name="height" value="1091" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -146,6 +187,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,6 +211,41 @@
               <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
               <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DataAccess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-java" type="462c0819:PsiDirectoryNode" />
+              <item name="test projet Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Tools" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -186,7 +263,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,7 +273,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558259638700" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558264380326" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -216,7 +292,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TripCostTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Gregoire_Housiaux_Java" />
@@ -243,8 +319,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TripCostTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TripCostTest" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +373,8 @@
       <workItem from="1558209611614" duration="2025000" />
       <workItem from="1558252229567" duration="3864000" />
       <workItem from="1558256672024" duration="142000" />
-      <workItem from="1558259337267" duration="278000" />
+      <workItem from="1558259337267" duration="3068000" />
+      <workItem from="1558264770860" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="Changement format heure et orthographe">
       <created>1557564671931</created>
@@ -523,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558256558105</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Junit chgmts">
+      <created>1558259697146</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558259697146</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -548,9 +632,18 @@
     <history-entry file="TripCostTest - 2019.05.19 at 11h 05m 48s.xml">
       <configuration name="TripCostTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TripCostTest - 2019.05.19 at 11h 52m 31s.xml">
+      <configuration name="TripCostTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripCostTest - 2019.05.19 at 11h 54m 03s.xml">
+      <configuration name="TripCostTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripCostTest - 2019.05.19 at 13h 02m 17s.xml">
+      <configuration name="TripCostTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120071000" />
+    <option name="totallyTimeSpent" value="123625000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,11 +664,11 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.32955465" />
       <window_info id="Structure" order="5" weight="0.24939272" />
-      <window_info content_ui="combo" id="Project" order="6" weight="0.18501171" />
+      <window_info content_ui="combo" id="Project" order="6" weight="0.37089202" />
       <window_info anchor="bottom" id="Inspection Results" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32108626" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.31629393" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.399361" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -601,7 +694,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commencement recherche 2 + affichage listing modif" />
     <MESSAGE value="modif affichage insert + dataAccess modif" />
     <MESSAGE value="affichage message erreur si champs non remplis dans le formulaire" />
     <MESSAGE value="test supp" />
@@ -626,7 +718,8 @@
     <MESSAGE value="chgmts format des recherches pour les dates" />
     <MESSAGE value="nbPassagersExceptions" />
     <MESSAGE value="refactor du code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor du code" />
+    <MESSAGE value="Junit chgmts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Junit chgmts" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TajectFormPanel.java" />
@@ -634,34 +727,6 @@
     <entry file="file://$USER_HOME$/Downloads/CalculatorTest.java" />
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectUpdateThread.java" />
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java.orig" />
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1493">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2564">
-          <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/SingletonConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -729,24 +794,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1187">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/AllTrajetModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-609">
           <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TrajectUpdateThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -757,27 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3329">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-677">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research2Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
@@ -785,24 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="262" selection-start-line="262" selection-end-line="262" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TripCostWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-65">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -841,10 +857,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/Desktop.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TripCostTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="58" />
+        <state relative-caret-position="187">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Model/Trajet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1255">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/TrajectFormPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="237" column="28" lean-forward="true" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DataAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="49" column="148" selection-start-line="49" selection-start-column="148" selection-end-line="49" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/DataAccess/DBAcces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="251" column="27" lean-forward="true" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Controller/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="81" column="155" selection-start-line="81" selection-start-column="155" selection-end-line="81" selection-end-column="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Business/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/Tools/TrajectUpdateThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/ListingWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="116" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/WelcomePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/Research1Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test projet Java/src/View/OnGoingTripPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
         </state>
       </provider>
     </entry>

@@ -5,6 +5,8 @@ import Model.Trajet;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+
 import Exception.*;
 
 public class OnGoingTripPanel extends JPanel {
@@ -13,6 +15,8 @@ public class OnGoingTripPanel extends JPanel {
     private ApplicationController controller;
     private Trajet trajet;
     private double pourcentage;
+    private SimpleDateFormat formatDateHeure;
+    private String heureDepart, heureArrivee;
 
     public OnGoingTripPanel(Trajet trajet){
         this.trajet = trajet;
@@ -24,13 +28,18 @@ public class OnGoingTripPanel extends JPanel {
         this.add(Box.createRigidArea(new Dimension(10,10)));
 
         progressBar = new JProgressBar();
+
         this.setVisible(true);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        formatDateHeure = new SimpleDateFormat("HH:mm dd-MM-yyyy");
+        heureDepart = formatDateHeure.format(trajet.getHeureDepart());
+        heureArrivee = formatDateHeure.format(trajet.getHeureArrivee());
 
         try {
             trajetText = new JLabel(controller.chauffeurById(trajet.getMatricule()));
             trajetText.setHorizontalAlignment(SwingConstants.CENTER);
-            progressBar.setString(trajet.getHeureDepart().toString()  + " --> " + trajet.getHeureArrivee().toString());
+            progressBar.setString(heureDepart  + " --> " + heureArrivee);
             progressBar.setStringPainted(true);
 
             this.add(trajetText);

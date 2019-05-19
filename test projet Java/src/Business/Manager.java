@@ -118,7 +118,7 @@ public class Manager {
         return dao.getChauffeursByZone(zone_id);
     }
 
-    public ArrayList<Trajet> getOnGoingTraject()throws SQLException{
+    public ArrayList<Trajet> getOnGoingTraject()throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException{
         return dao.getOnGoingTraject();
     }
 

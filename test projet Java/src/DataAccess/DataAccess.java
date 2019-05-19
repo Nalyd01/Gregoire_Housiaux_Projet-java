@@ -47,5 +47,5 @@ public interface DataAccess {
 
     HashMap<String, Integer> getNbTrajetsParZones() throws SQLException;
 
-    ArrayList<Trajet> getOnGoingTraject()throws SQLException;
+    ArrayList<Trajet> getOnGoingTraject()throws SQLException, ValeurException, NbPassagersException, CodePostalException, IdException, TimeException;
 }
