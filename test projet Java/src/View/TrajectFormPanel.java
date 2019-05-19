@@ -257,7 +257,7 @@ public class TrajectFormPanel extends JPanel {
 
                 if(controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty() && controller.getAllTrajets(heureDépart,heureFin,idCLient).isEmpty()){
                     controller.insertTrajet(newTrajet);
-                    JOptionPane.showMessageDialog(null, "Trajet " +(isAModification ? "modifier" : "créer") + " avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Trajet " +(isAModification ? "modifié" : "créé") + " avec succès", "Succès !", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     if(!controller.getAllTrajets(idChauffeur,heureDépart,heureFin).isEmpty()){
                         JOptionPane.showMessageDialog(null, "Ce chauffeur n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
