@@ -1,8 +1,8 @@
 package Tools;
 
+import Business.TripCost;
 import Model.Trajet;
 import org.junit.Assert;
-import Business.TripCost;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
@@ -15,17 +15,23 @@ public class TripCostTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-        heureDépart =4;
-        minuteDépart =0;
-        heureArrivée =11;
-        minuteArrivée =0;
+        heureDépart = 4;
+        minuteDépart = 0;
+        heureArrivée = 11;
+        minuteArrivée = 0;
         nbKm = 120;
         nbPassagers = 3;
         aEmbouteillage = false;
 
-        initDate(dateDépart,heureDépart,minuteDépart);
+        dateDépart = Calendar.getInstance();
+        dateDépart.set(Calendar.MINUTE, minuteDépart);
+        dateDépart.set(Calendar.SECOND, 0);
+        dateDépart.set(Calendar.HOUR_OF_DAY, heureDépart);
 
-        initDate(dateArrivée,heureArrivée,minuteArrivée);
+        dateArrivée = Calendar.getInstance();
+        dateArrivée.set(Calendar.MINUTE, minuteArrivée);
+        dateArrivée.set(Calendar.SECOND, 0);
+        dateArrivée.set(Calendar.HOUR_OF_DAY, heureArrivée);
 
         if (heureDépart > heureArrivée){
             dateArrivée.set(Calendar.DAY_OF_YEAR, dateArrivée.get(Calendar.DAY_OF_YEAR)+1);
@@ -46,12 +52,5 @@ public class TripCostTest {
     public void getIndex(){
         indexAttendu = 4;
         Assert.assertEquals(indexAttendu, TripCost.getIndex(dateDépart.get(Calendar.HOUR_OF_DAY)));
-    }
-
-    public void initDate(Calendar date, int heure, int minute){
-        date = Calendar.getInstance();
-        date.set(Calendar.MINUTE, minute);
-        date.set(Calendar.SECOND, 0);
-        date.set(Calendar.HOUR_OF_DAY, heure);
     }
 }
