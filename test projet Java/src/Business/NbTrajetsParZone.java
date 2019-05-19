@@ -1,7 +1,6 @@
 package Business;
 
 import Controller.ApplicationController;
-
 import javax.swing.*;
 import java.sql.SQLException;
 import java.util.*;
