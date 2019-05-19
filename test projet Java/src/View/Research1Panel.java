@@ -1,7 +1,6 @@
 package View;
 
 import Controller.ApplicationController;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

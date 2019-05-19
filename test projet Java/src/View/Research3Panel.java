@@ -51,8 +51,6 @@ public class Research3Panel extends JPanel {
         pointDépart.setEditor(editor);
         this.add(pointDépart);
 
-
-
         dateFin = new JLabel("Temps de fin : ");
         dateFin.setHorizontalAlignment(SwingConstants.RIGHT);
         this.add(dateFin);
@@ -72,7 +70,6 @@ public class Research3Panel extends JPanel {
         ResearchListener listener = new ResearchListener();
         researchButton.addActionListener(listener);
     }
-
 
     private class ResearchListener implements ActionListener {
         @Override

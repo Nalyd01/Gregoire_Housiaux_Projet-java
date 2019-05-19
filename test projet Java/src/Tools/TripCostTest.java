@@ -1,6 +1,5 @@
 package Tools;
 
-
 import Model.Trajet;
 import org.junit.Assert;
 import Business.TripCost;
@@ -9,47 +8,50 @@ import java.util.Calendar;
 
 public class TripCostTest {
     private Trajet trajet;
-    Calendar dateDepart;
+    private Calendar dateDépart, dateArrivée;
+    private int heureDépart, heureArrivée, minuteDépart, minuteArrivée, nbKm, nbPassagers, indexAttendu;
+    private boolean aEmbouteillage;
+    private double prixAttendu;
 
     @org.junit.Before
     public void setUp() throws Exception {
-        int heureDépart =4;
-        int minuteDépart =0;
-        int heureArrivé =11;
-        int minuteArrivé =0;
-        int nbKm = 120;
-        int NbPassager = 3;
-        boolean aEmbouteillage = false;
+        heureDépart =4;
+        minuteDépart =0;
+        heureArrivée =11;
+        minuteArrivée =0;
+        nbKm = 120;
+        nbPassagers = 3;
+        aEmbouteillage = false;
 
-        dateDepart = Calendar.getInstance();
-        dateDepart.set(Calendar.MINUTE, minuteDépart);
-        dateDepart.set(Calendar.SECOND, 0);
-        dateDepart.set(Calendar.HOUR_OF_DAY, heureDépart);
+        initDate(dateDépart,heureDépart,minuteDépart);
 
-        Calendar dateArrive = Calendar.getInstance();
-        dateArrive.set(Calendar.MINUTE, minuteArrivé);
-        dateArrive.set(Calendar.SECOND, 0);
-        dateArrive.set(Calendar.HOUR_OF_DAY, heureArrivé);
+        initDate(dateArrivée,heureArrivée,minuteArrivée);
 
-        if (heureDépart > heureArrivé){
-            dateArrive.set(Calendar.DAY_OF_YEAR, dateArrive.get(Calendar.DAY_OF_YEAR)+1);
+        if (heureDépart > heureArrivée){
+            dateArrivée.set(Calendar.DAY_OF_YEAR, dateArrivée.get(Calendar.DAY_OF_YEAR)+1);
         }
 
-
-        trajet = new Trajet(222222, nbKm, NbPassager, 123456,5330, "Maillen", 1, false, aEmbouteillage,
-            new Timestamp(dateArrive.getTime().getTime()),
-            new Timestamp(dateDepart.getTime().getTime()));
+        trajet = new Trajet(222222, nbKm, nbPassagers, 123456,5330, "Maillen", 1, false, aEmbouteillage,
+            new Timestamp(dateArrivée.getTime().getTime()),
+            new Timestamp(dateDépart.getTime().getTime()));
     }
 
     @org.junit.Test
     public void getCost() {
-        double prixAttendu = 318.37;
+        prixAttendu = 318.37;
         Assert.assertEquals(prixAttendu, TripCost.getCost(trajet), 0.01);
     }
 
     @org.junit.Test
     public void getIndex(){
-        int indexAttendu = 4;
-        Assert.assertEquals(indexAttendu, TripCost.getIndex(dateDepart.get(Calendar.HOUR_OF_DAY)));
+        indexAttendu = 4;
+        Assert.assertEquals(indexAttendu, TripCost.getIndex(dateDépart.get(Calendar.HOUR_OF_DAY)));
+    }
+
+    public void initDate(Calendar date, int heure, int minute){
+        date = Calendar.getInstance();
+        date.set(Calendar.MINUTE, minute);
+        date.set(Calendar.SECOND, 0);
+        date.set(Calendar.HOUR_OF_DAY, heure);
     }
 }

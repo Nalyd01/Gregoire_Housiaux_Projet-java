@@ -1,6 +1,5 @@
 package Tools;
 
-
 import javax.swing.*;
 import View.*;
 import  View.AppWindow;

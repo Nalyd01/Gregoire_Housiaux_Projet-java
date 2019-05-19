@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import Exception.*;
 import DataAccess.DBAcces;
 import Model.Trajet;

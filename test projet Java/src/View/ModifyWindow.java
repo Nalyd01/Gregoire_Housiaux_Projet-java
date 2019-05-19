@@ -2,7 +2,6 @@ package View;
 
 import Controller.ApplicationController;
 import Model.Trajet;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,9 +11,9 @@ import java.awt.event.ActionListener;
 public class ModifyWindow extends ListingWindow {
     private JButton modifyButt;
     private AppWindow appWindow;
-    private JScrollPane scroller;
     private ApplicationController controller;
     private Trajet trajet;
+    private int selectedRow;
 
     public ModifyWindow(AppWindow appWindow){
         this.appWindow = appWindow;
@@ -32,7 +31,7 @@ public class ModifyWindow extends ListingWindow {
     private class ModifyButtonListener implements ActionListener{
 
         public void actionPerformed(ActionEvent event){
-            int selectedRow = getTable().getSelectedRow();
+            selectedRow = getTable().getSelectedRow();
 
             if(selectedRow == -1){
                 JOptionPane.showMessageDialog (null, "Vous devez sélectionner une ligne", "Erreur pour la modification", JOptionPane.ERROR_MESSAGE);

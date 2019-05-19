@@ -5,39 +5,43 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Calendar;
 
-
 public class TripCost {
+    private static int[] heuresPallier = new int[] {10, 14, 18, 22, 6};
 
-    public static int[] heuresPallier = new int[] {10, 14, 18, 22, 6};
+    private static final double PKm6_10 = 2.5; // PKm = Prix au Km
+    private static final double PKm10_14 = 2;
+    private static final double PKm14_18 = 2.8;
+    private static final double PKm18_22 = 2.2;
+    private static final double PKm22_6 = 3;
 
-    public static final double PKm6_10 = 2.5; // PKm = Prix au Km
-    public static final double PKm10_14 = 2;
-    public static final double PKm14_18 = 2.8;
-    public static final double PKm18_22 = 2.2;
-    public static final double PKm22_6 = 3;
+    private static final double PPC6_10 = 2.4; //PPC = Prix de Prise en Charge
+    private static final double PPC10_14 = 1.8;
+    private static final double PPC14_18 = 2.6;
+    private static final double PPC18_22 = 2;
+    private static final double PPC22_6 = 2.8;
 
-    public static final double PPC6_10 = 2.4; //PPC = Prix de Prise en Charge
-    public static final double PPC10_14 = 1.8;
-    public static final double PPC14_18 = 2.6;
-    public static final double PPC18_22 = 2;
-    public static final double PPC22_6 = 2.8;
+    private static final double PCS6_10 = 3;// PCS = Prix par Client Supplémentaire
+    private static final double PCS10_14 = 2.5;
+    private static final double PCS14_18 = 3.2;
+    private static final double PCS18_22 = 2.75;
+    private static final double PCS22_6 = 3.5;
 
-    public static final double PCS6_10 = 3;// PCS = Prix par Client Supplémentaire
-    public static final double PCS10_14 = 2.5;
-    public static final double PCS14_18 = 3.2;
-    public static final double PCS18_22 = 2.75;
-    public static final double PCS22_6 = 3.5;
+    private static Calendar dateDépart, dateArrivée, timeToCompare;
+    private static double[] nbKm;
+    private static double cost, newCost;
+    private static int indexHour;
+    private static BigDecimal costToFormat;
 
     public static double getCost(Trajet trajet){
-        Calendar dateDépart = Calendar.getInstance();
+        dateDépart = Calendar.getInstance();
         dateDépart.setTimeInMillis(trajet.getHeureDepart().getTime());
 
-        Calendar dateArrivé = Calendar.getInstance();
-        dateArrivé.setTimeInMillis(trajet.getHeureArrivee().getTime());
+        dateArrivée = Calendar.getInstance();
+        dateArrivée.setTimeInMillis(trajet.getHeureArrivee().getTime());
 
-        double  nbKm[] = new double[5]; // 0 -> 6-10h, 1 -> 10-14h, 2 -> 14-18h, 3 ->  18-22h, 4 -> 22-06h
-        double cost = 0;
-        int indexHour = getIndex(dateDépart.get(Calendar.HOUR_OF_DAY));
+        nbKm = new double[5]; // 0 -> 6-10h, 1 -> 10-14h, 2 -> 14-18h, 3 ->  18-22h, 4 -> 22-06h
+        cost = 0;
+        indexHour = getIndex(dateDépart.get(Calendar.HOUR_OF_DAY));
 
         switch (indexHour){
             case 0 : cost += PPC6_10 + (PCS6_10 * (trajet.getNbPassagers()-1));
@@ -52,7 +56,7 @@ public class TripCost {
                 break;
         }
 
-        Calendar timeToCompare = ((Calendar) dateDépart.clone());
+        timeToCompare = ((Calendar) dateDépart.clone());
         timeToCompare.set(Calendar.MINUTE, 0);
         timeToCompare.set(Calendar.SECOND, 0);
 
@@ -62,11 +66,11 @@ public class TripCost {
 
         for (int i =0; i < 6 ; i++) {
             timeToCompare.set(Calendar.HOUR_OF_DAY, heuresPallier[indexHour]);
-            if (dateArrivé.after(timeToCompare)) {
+            if (dateArrivée.after(timeToCompare)) {
                 nbKm[indexHour] = (double)(timeToCompare.getTimeInMillis() - dateDépart.getTimeInMillis()) / (double)( trajet.getHeureArrivee().getTime()-trajet.getHeureDepart().getTime()) * trajet.getNbKm();
             }
             else {
-                nbKm[indexHour] = (double) (dateArrivé.getTimeInMillis()-dateDépart.getTimeInMillis()) / (double) (trajet.getHeureArrivee().getTime()-trajet.getHeureDepart().getTime()) * trajet.getNbKm();
+                nbKm[indexHour] = (double) (dateArrivée.getTimeInMillis()-dateDépart.getTimeInMillis()) / (double) (trajet.getHeureArrivee().getTime()-trajet.getHeureDepart().getTime()) * trajet.getNbKm();
                 break;
             }
             indexHour++;
@@ -88,8 +92,8 @@ public class TripCost {
 
         cost += (trajet.getaEuEmbouteillage()? 3 : 0);
 
-        BigDecimal costToFormat = new BigDecimal(cost).setScale(2, RoundingMode.HALF_UP);
-        double newCost = costToFormat.doubleValue();
+        costToFormat = new BigDecimal(cost).setScale(2, RoundingMode.HALF_UP);
+        newCost = costToFormat.doubleValue();
 
         return newCost;
     }

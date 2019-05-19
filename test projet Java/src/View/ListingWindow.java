@@ -6,9 +6,7 @@ import java.awt.*;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-
 import Model.Trajet;
-
 import Controller.ApplicationController;
 import Exception.*;
 import Tools.AllTrajetModel;
@@ -19,6 +17,11 @@ public class ListingWindow extends JFrame {
     private JPanel panel;
     private JTable table;
     private JScrollPane scrollPane;
+    private int matriculeChauffeur, codePostal;
+    private String nomLocalite;
+    private ArrayList<Trajet> trajets;
+    private AllTrajetModel model;
+    private DefaultTableCellRenderer render;
     private static ListingWindow listingWindow;
     private static ListingWindow rechercheWindow;
 
@@ -31,8 +34,10 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(String chauffeur, Timestamp date1, Timestamp date2){
         super("Listing des clients d'un chauffeur entre 2 dates");
+
         initListing();
-        int matriculeChauffeur = Integer.parseInt(chauffeur.substring(15, chauffeur.indexOf(" ", 16)));
+
+        matriculeChauffeur = Integer.parseInt(chauffeur.substring(15, chauffeur.indexOf(" ", 16)));
         afficherListing(matriculeChauffeur, date1, date2);
 
         closePreviousWindow(false);
@@ -40,10 +45,12 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(Timestamp date1, Timestamp date2, String localites){
         super("Listing des clients d'une localités entre 2 dates");
+
         initListing();
 
-        int codePostal = Integer.parseInt(localites.substring(0,localites.indexOf(" ")));
-        String nomLocalite = localites.substring(localites.indexOf(" ")+1);
+        codePostal = Integer.parseInt(localites.substring(0,localites.indexOf(" ")));
+        nomLocalite = localites.substring(localites.indexOf(" ")+1);
+
         afficherListing(codePostal, nomLocalite, date1, date2);
 
         closePreviousWindow(false);
@@ -52,6 +59,7 @@ public class ListingWindow extends JFrame {
 
     public ListingWindow(ArrayList matricule){
         super("Lisiting des clients d'une zone");
+
         initListing();
 
         afficherListing(matricule);
@@ -61,7 +69,7 @@ public class ListingWindow extends JFrame {
 
     public void afficherListing(){
         try{
-            ArrayList<Trajet> trajets = controller.getAllTrajets();
+            trajets = controller.getAllTrajets();
             testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
@@ -86,7 +94,7 @@ public class ListingWindow extends JFrame {
 
     public void afficherListing(int matriculeChauffeur, Timestamp date1, Timestamp date2){
         try{
-            ArrayList<Trajet> trajets = controller.getAllTrajets(matriculeChauffeur, date1, date2);
+            trajets = controller.getAllTrajets(matriculeChauffeur, date1, date2);
             testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
@@ -111,7 +119,7 @@ public class ListingWindow extends JFrame {
 
     public void afficherListing(int codePostal, String nomLocalite, Timestamp date1, Timestamp date2){
         try{
-            ArrayList<Trajet> trajets = controller.getAllTrajets(codePostal, nomLocalite, date1, date2);
+            trajets = controller.getAllTrajets(codePostal, nomLocalite, date1, date2);
             testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
@@ -136,7 +144,7 @@ public class ListingWindow extends JFrame {
 
     public void afficherListing(ArrayList matricule){
         try{
-            ArrayList<Trajet> trajets = controller.getAllTrajets(matricule);
+            trajets = controller.getAllTrajets(matricule);
             testAffichageListing(trajets);
         }
         catch (SQLException sqlException){
@@ -163,7 +171,7 @@ public class ListingWindow extends JFrame {
     }
 
     public void créaTable(ArrayList<Trajet> trajets){
-        AllTrajetModel model = new AllTrajetModel(trajets);
+        model = new AllTrajetModel(trajets);
 
         table = new JTable(model);
         largeurColonnes();
@@ -184,7 +192,7 @@ public class ListingWindow extends JFrame {
     }
 
     public void centrerTable() {
-        DefaultTableCellRenderer render = new DefaultTableCellRenderer();
+        render = new DefaultTableCellRenderer();
         render.setHorizontalAlignment(JLabel.CENTER);
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setCellRenderer(render);

@@ -1,7 +1,6 @@
 package View;
 
 import Model.Trajet;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -29,8 +28,9 @@ public class AppWindow extends JFrame {
         menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-            welcome = new JMenu("Accueil");
-            menuBar.add(welcome);
+        // Menu d'acueil
+        welcome = new JMenu("Accueil");
+        menuBar.add(welcome);
 
         welcomeMenu = new JMenuItem("Message d'accueil");
         welcome.add(welcomeMenu);
@@ -38,75 +38,80 @@ public class AppWindow extends JFrame {
         AccueilListener welcomeListener = new AccueilListener();
         welcomeMenu.addActionListener(welcomeListener);
 
-            insert = new JMenu("Insertion");
-            menuBar.add(insert);
+        // Menu d'insertion
+        insert = new JMenu("Insertion");
+        menuBar.add(insert);
 
-                newTrip = new JMenuItem("Nouveau trajet");
-                insert.add(newTrip);
+        newTrip = new JMenuItem("Nouveau trajet");
+        insert.add(newTrip);
 
-                InsertListener insertListener = new InsertListener();
-                newTrip.addActionListener(insertListener);
+        InsertListener insertListener = new InsertListener();
+        newTrip.addActionListener(insertListener);
 
-            change = new JMenu("Modification");
-            menuBar.add(change);
+        // Menu de modification
+        change = new JMenu("Modification");
+        menuBar.add(change);
 
-                changeTrip = new JMenuItem("Modifier un trajet");
-                change.add(changeTrip);
+        changeTrip = new JMenuItem("Modifier un trajet");
+        change.add(changeTrip);
 
-                ModifyListener modifyListener = new ModifyListener();
-                changeTrip.addActionListener(modifyListener);
+        ModifyListener modifyListener = new ModifyListener();
+        changeTrip.addActionListener(modifyListener);
 
-            suppression = new JMenu("Suppression");
-            menuBar.add(suppression);
+        // Menu de suppression
+        suppression = new JMenu("Suppression");
+        menuBar.add(suppression);
 
-                deleteTrip = new JMenuItem("Supprimer un trajet");
-                suppression.add(deleteTrip);
+        deleteTrip = new JMenuItem("Supprimer un trajet");
+        suppression.add(deleteTrip);
 
-                DeleteListener deleteListener = new DeleteListener();
-                deleteTrip.addActionListener(deleteListener);
+        DeleteListener deleteListener = new DeleteListener();
+        deleteTrip.addActionListener(deleteListener);
 
-            listing = new JMenu("Listing");
-            menuBar.add(listing);
+        // Menu de listing
+        listing = new JMenu("Listing");
+        menuBar.add(listing);
 
-                listTrip = new JMenuItem("Listing des trajets");
-                listing.add(listTrip);
+        listTrip = new JMenuItem("Listing des trajets");
+        listing.add(listTrip);
 
-                ListingListener listingListener = new ListingListener();
-                listTrip.addActionListener(listingListener);
+        ListingListener listingListener = new ListingListener();
+        listTrip.addActionListener(listingListener);
 
-            research = new JMenu("Recherches");
-            menuBar.add(research);
+        // Menu de recherches
+        research = new JMenu("Recherches");
+        menuBar.add(research);
 
-                research1 = new JMenuItem("Listing des clients d'une localité entre 2 dates");
-                research.add(research1);
-                research.addSeparator();
+        research1 = new JMenuItem("Listing des clients d'une localité entre 2 dates");
+        research.add(research1);
+        research.addSeparator();
 
-                research2 = new JMenuItem("Recherche des zones où il y a le plus de clients");
-                research.add(research2);
-                research.addSeparator();
+        research2 = new JMenuItem("Recherche des zones où il y a le plus de clients");
+        research.add(research2);
+        research.addSeparator();
 
-                research3 = new JMenuItem("Listing des clients d’un chauffeur entre 2 dates");
-                research.add(research3);
+        research3 = new JMenuItem("Listing des clients d’un chauffeur entre 2 dates");
+        research.add(research3);
 
-                ResearchListener researchListener = new ResearchListener();
-                research1.addActionListener(researchListener);
-                research2.addActionListener(researchListener);
-                research3.addActionListener(researchListener);
+        ResearchListener researchListener = new ResearchListener();
+        research1.addActionListener(researchListener);
+        research2.addActionListener(researchListener);
+        research3.addActionListener(researchListener);
 
-            businessTask = new JMenu("Tâche métier");
-            menuBar.add(businessTask);
+        // Menu de calcul de coût d'un trajet
+        businessTask = new JMenu("Tâche métier");
+        menuBar.add(businessTask);
 
-                costTrip = new JMenuItem("Calcul du coût d'un trajet");
-                businessTask.add(costTrip);
-                TripCostListener tripCostListener = new TripCostListener();
-                costTrip.addActionListener(tripCostListener);
+        costTrip = new JMenuItem("Calcul du coût d'un trajet");
+        businessTask.add(costTrip);
+        TripCostListener tripCostListener = new TripCostListener();
+        costTrip.addActionListener(tripCostListener);
+
 
         this.addWindowListener( new WindowAdapter()
         { public void windowClosing( WindowEvent e)
         { System.exit(0); }
         } );
-
-
         setVisible(true);
     }
 
@@ -174,7 +179,6 @@ public class AppWindow extends JFrame {
         }
     }
 
-
     public void afficheTrajectForm(){
         scroller = new JScrollPane(new TrajectFormPanel(this));
         frameContainer.removeAll();
@@ -197,7 +201,6 @@ public class AppWindow extends JFrame {
         frameContainer.repaint();
         AppWindow.this.setVisible(true);
     }
-
 
 }
 

@@ -3,7 +3,6 @@ package View;
 import Controller.ApplicationController;
 import Tools.TrajectUpdateThread;
 import Model.Trajet;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -16,6 +15,8 @@ public class WelcomePanel extends JPanel {
     private ArrayList<Trajet> trajets;
     private ApplicationController controller;
     private AppWindow appWindow;
+    private TrajectUpdateThread trajectUpdateThread;
+    private OnGoingTripPanel temp;
 
     public WelcomePanel(AppWindow appWindow) {
         this.appWindow = appWindow;
@@ -45,7 +46,7 @@ public class WelcomePanel extends JPanel {
         scroller = new JScrollPane(onGoingTraject);
         this.add(scroller, BorderLayout.CENTER);
 
-        TrajectUpdateThread trajectUpdateThread = new TrajectUpdateThread(this, appWindow);
+        trajectUpdateThread = new TrajectUpdateThread(this, appWindow);
         trajectUpdateThread.start();
     }
 
@@ -53,12 +54,13 @@ public class WelcomePanel extends JPanel {
         try {
             onGoingTraject.removeAll();
             trajets = controller.getOnGoingTraject();
-            OnGoingTripPanel temp;
+
             for (Trajet trajet :  trajets){
                 temp = new OnGoingTripPanel(trajet);
                 temp.update();
                 onGoingTraject.add(temp);
             }
+
             this.repaint();
             this.revalidate();
         }catch (Exception e){

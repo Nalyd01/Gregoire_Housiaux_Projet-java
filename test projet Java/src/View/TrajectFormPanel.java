@@ -1,4 +1,5 @@
 package View;
+
 import Exception.TimeException;
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +10,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import Exception.*;
-
 import Model.Trajet;
 import Controller.ApplicationController;
 
@@ -53,7 +53,6 @@ public class TrajectFormPanel extends JPanel {
         pointFin.setValue(new Timestamp(trajet.getHeureArrivee().getTime()));
 
     }
-
 
     public TrajectFormPanel(AppWindow appWindow){
         this.appWindow = appWindow;
@@ -195,7 +194,7 @@ public class TrajectFormPanel extends JPanel {
     }
 
     private class InsertListener implements ActionListener {
-
+        @Override
         public void actionPerformed(ActionEvent event) {
             try {
                 idTrajet = Integer.parseInt(idText.getText());
@@ -241,7 +240,6 @@ public class TrajectFormPanel extends JPanel {
                 heureDépart = new Timestamp(((Date)pointDépart.getValue()).getTime());
                 heureFin = new Timestamp(((Date)pointFin.getValue()).getTime());
 
-
                 if (!controller.getAllTrajets(idChauffeur, heureDépart, heureFin).isEmpty()) {
                     throw  new ChauffeurException();
                 }
@@ -262,6 +260,7 @@ public class TrajectFormPanel extends JPanel {
                         JOptionPane.showMessageDialog(null, "Ce client n'est pas disponible pour le moment", "Indisponibilité", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
+
                 JScrollPane scroller = new JScrollPane(new TrajectFormPanel(appWindow));
                 appWindow.getContentPane().removeAll();
                 appWindow.getContentPane().add(scroller, BorderLayout.CENTER);

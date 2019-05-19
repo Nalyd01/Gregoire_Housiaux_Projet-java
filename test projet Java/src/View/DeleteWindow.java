@@ -1,4 +1,5 @@
 package View;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,8 +12,8 @@ public class DeleteWindow extends ListingWindow {
         deleteButt = new JButton("Supprimer");
         this.add(deleteButt,BorderLayout.SOUTH);
 
-            DeleteButtonListener deleteButtonListener = new DeleteButtonListener();
-            deleteButt.addActionListener(deleteButtonListener);
+        DeleteButtonListener deleteButtonListener = new DeleteButtonListener();
+        deleteButt.addActionListener(deleteButtonListener);
     }
 
     private class DeleteButtonListener implements ActionListener{

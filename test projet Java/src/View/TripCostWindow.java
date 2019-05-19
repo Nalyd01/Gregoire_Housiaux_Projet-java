@@ -14,6 +14,7 @@ public class TripCostWindow extends ListingWindow {
     private ApplicationController controller;
     private Trajet trajet;
     private double prix;
+    private int selectedRow;
 
     public TripCostWindow(AppWindow appWindow){
         this.appWindow = appWindow;
@@ -29,9 +30,9 @@ public class TripCostWindow extends ListingWindow {
     }
 
     private class ModifyButtonListener implements ActionListener {
-
+        @Override
         public void actionPerformed(ActionEvent event){
-            int selectedRow = getTable().getSelectedRow();
+            selectedRow = getTable().getSelectedRow();
             try {
                 trajet = controller.getTrajetById((int) getTable().getValueAt(selectedRow, 0));
                 prix = TripCost.getCost(trajet);

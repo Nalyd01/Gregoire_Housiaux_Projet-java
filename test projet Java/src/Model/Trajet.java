@@ -10,7 +10,8 @@ public class Trajet {
     private Timestamp heureArrivee, heureDepart;
 
     public Trajet(int identifiant, int nbKm, int nbPassagers, int matricule, int codePostal, String nomLocalite, int client_id,
-                  Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart) throws ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
+                  Boolean aEuPanne, Boolean aEuEmbouteillage, Timestamp heureArrivee, Timestamp heureDepart)
+            throws ValeurException, NbPassagersException, CodePostalException, IdException, TimeException {
         setIdentifiant(identifiant);
         setNbKm(nbKm);
         setNbPassagers(nbPassagers);

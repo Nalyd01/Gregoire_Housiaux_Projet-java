@@ -3,10 +3,8 @@ package DataAccess;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import Exception.*;
 import Model.Trajet;
-
 
 public class DBAcces implements DataAccess {
     private Connection connection;
@@ -104,7 +102,6 @@ public class DBAcces implements DataAccess {
         data.next();
         return créaTrajets(data);
     }
-
 
     @Override
     public void removeTrajetById(int idTrajet) throws SQLException{
